@@ -785,49 +785,37 @@ namespace Aurora.Modules.Startup.FileBasedSimulationData
                 }
                 else if (filePath.StartsWith("entities/"))
                 {
-                    groups.Enqueue(data);
+                    MemoryStream ms = new MemoryStream(data);
+         SceneObjectGroup sceneObject = SceneObjectSerializer.FromXml2Format(ref ms, scene);
+	
+                ms.Close();
+  	
+                   ms = null;
+ 	
+                   data = null;
+ 	
+                    foreach (ISceneChildEntity part in sceneObject.ChildrenEntities())
+
+                    {
+	  	
+                       if (!foundLocalIDs.Contains(part.LocalId))
+  	
+                           foundLocalIDs.Add(part.LocalId);
+ 	
+                       else
+  	
+                          part.LocalId = 0; //Reset it! Only use it once!
+	  	
+                  }
+  	
+                   m_groups.Add(sceneObject);
                 }
                 data = null;
             }
             m_loadStream.Close();
             m_loadStream = null;
 
-            int threadCount = groups.Count > 16 ? 16 : groups.Count;
-            System.Threading.Thread[] threads = new System.Threading.Thread[threadCount];
-            for (int i = 0; i < threadCount; i++)
-            {
-                threads[i] = new System.Threading.Thread(() =>
-                    {
-                        byte[] groupData;
-                        while(groups.TryDequeue(out groupData))
-                        {
-                            MemoryStream ms = new MemoryStream(groupData);
-                            SceneObjectGroup sceneObject = SceneObjectSerializer.FromXml2Format(ref ms, scene);
-                            ms.Close();
-                            ms = null;
-                            data = null;
-                            if (sceneObject != null)
-                            {
-                                foreach (ISceneChildEntity part in sceneObject.ChildrenEntities())
-                                {
-                                    lock (foundLocalIDs)
-                                    {
-                                        if (!foundLocalIDs.Contains(part.LocalId))
-                                            foundLocalIDs.Add(part.LocalId);
-                                        else
-                                            part.LocalId = 0; //Reset it! Only use it once!
-                                    }
-                                }
-                                m_groups.Add(sceneObject);
-                            }
-                        }
-                    });
-                threads[i].Start();
-            }
-            for (int i = 0; i < threadCount; i++)
-                threads[i].Join();
-
-
+            
             foundLocalIDs.Clear();
             GC.Collect();
         }
