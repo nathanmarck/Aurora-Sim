@@ -476,6 +476,10 @@ namespace Aurora.Modules.Web.Translators
                     return "Save Menu Item";
                 case "SelectItem":
                     return "Select Item";
+                case "DeleteItem":
+                    return "Delete Item";
+                case "AddItem":
+                    return "Add Item";
                 case "PageLocationText":
                     return "Page Location";
                 case "PageIDText":
@@ -550,7 +554,7 @@ namespace Aurora.Modules.Web.Translators
                     return "Mar";
                 case "Apr":
                     return "Apr";
-                case "May":
+                case "May_Short":
                     return "May";
                 case "Jun":
                     return "Jun";
@@ -574,6 +578,8 @@ namespace Aurora.Modules.Web.Translators
                     return "March";
                 case "April":
                     return "April";
+                case "May":
+                    return "May";
                 case "June":
                     return "June";
                 case "July":
@@ -588,6 +594,18 @@ namespace Aurora.Modules.Web.Translators
                     return "November";
                 case "December":
                     return "December";
+					
+                //Language Switcher Tooltips
+                case "en":
+                    return "English";
+                case "fr":
+                    return "French";
+                case "de":
+                    return "German";
+                case "it":
+                    return "Italian";
+                case "es":
+                    return "Spanish";
             }
             return "UNKNOWN CHARACTER";
         }

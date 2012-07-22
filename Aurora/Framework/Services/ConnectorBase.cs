@@ -95,7 +95,12 @@ namespace Aurora.Framework
                 IConfigSource source = registry.RequestModuleInterface<ISimulationBase>().ConfigSource;
                 IConfig config;
                 if ((config = source.Configs["AuroraConnectors"]) != null)
-                    m_doRemoteCalls = config.GetBoolean("DoRemoteCalls", false);
+                {
+                    if (config.Contains(name + "DoRemoteCalls"))
+                        m_doRemoteCalls = config.GetBoolean(name + "DoRemoteCalls", false);
+                    else
+                        m_doRemoteCalls = config.GetBoolean("DoRemoteCalls", false);
+                }
                 if ((config = source.Configs["Configuration"]) != null)
                 {
                     m_OSDRequestTimeout = config.GetInt("OSDRequestTimeout", m_OSDRequestTimeout);
@@ -341,7 +346,12 @@ namespace Aurora.Framework
                         object[] parameters = new object[paramInfo.Length];
                         int paramNum = 0;
                         foreach (ParameterInfo param in paramInfo)
-                            parameters[paramNum++] = Util.OSDToObject(args[param.Name], param.ParameterType);
+                        {
+                            if(param.ParameterType == typeof(OSD))
+                                parameters[paramNum++] = args[param.Name];
+                            else
+                                parameters[paramNum++] = Util.OSDToObject(args[param.Name], param.ParameterType);
+                        }
 
                         object o = methodInfo.Method.FastInvoke(paramInfo, methodInfo.Reference, parameters);
                         OSDMap response = new OSDMap();
