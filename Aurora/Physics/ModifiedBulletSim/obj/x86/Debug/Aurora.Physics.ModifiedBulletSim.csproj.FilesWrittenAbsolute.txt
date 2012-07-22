@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Physics/Aurora.Physics.ModifiedBulletSim.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Physics/Aurora.Physics.ModifiedBulletSim.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/Physics/ModifiedBulletSim/obj/x86/Debug/Aurora.Physics.ModifiedBulletSim.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/Physics/ModifiedBulletSim/obj/x86/Debug/Aurora.Physics.ModifiedBulletSim.dll.mdb

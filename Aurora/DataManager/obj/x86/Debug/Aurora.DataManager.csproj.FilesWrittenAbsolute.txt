@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.DataManager.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.DataManager.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/DataManager/obj/x86/Debug/Aurora.DataManager.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/DataManager/obj/x86/Debug/Aurora.DataManager.dll.mdb

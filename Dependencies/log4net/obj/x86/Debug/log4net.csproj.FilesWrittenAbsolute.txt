@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/log4net.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/log4net.dll
+/Users/nathan/Documents/Aurora-Sim/Dependencies/log4net/obj/x86/Debug/log4net.dll
+/Users/nathan/Documents/Aurora-Sim/Dependencies/log4net/obj/x86/Debug/log4net.dll.mdb

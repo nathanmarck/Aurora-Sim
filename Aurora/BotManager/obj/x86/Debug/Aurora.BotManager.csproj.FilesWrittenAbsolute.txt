@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.BotManager.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.BotManager.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/BotManager/obj/x86/Debug/Aurora.BotManager.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/BotManager/obj/x86/Debug/Aurora.BotManager.dll.mdb

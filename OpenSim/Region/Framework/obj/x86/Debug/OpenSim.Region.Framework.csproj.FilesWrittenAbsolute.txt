@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/OpenSim.Region.Framework.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/OpenSim.Region.Framework.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Region/Framework/obj/x86/Debug/OpenSim.Region.Framework.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Region/Framework/obj/x86/Debug/OpenSim.Region.Framework.dll.mdb

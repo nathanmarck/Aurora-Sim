@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.WebServer.exe.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.WebServer.exe
+/Users/nathan/Documents/Aurora-Sim/Aurora/WebServer/obj/x86/Debug/Aurora.WebServer.exe
+/Users/nathan/Documents/Aurora-Sim/Aurora/WebServer/obj/x86/Debug/Aurora.WebServer.exe.mdb

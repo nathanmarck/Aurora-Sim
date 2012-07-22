@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Griffin.Networking.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Griffin.Networking.dll
+/Users/nathan/Documents/Aurora-Sim/Dependencies/Griffin.Networking/obj/x86/Debug/Griffin.Networking.dll
+/Users/nathan/Documents/Aurora-Sim/Dependencies/Griffin.Networking/obj/x86/Debug/Griffin.Networking.dll.mdb

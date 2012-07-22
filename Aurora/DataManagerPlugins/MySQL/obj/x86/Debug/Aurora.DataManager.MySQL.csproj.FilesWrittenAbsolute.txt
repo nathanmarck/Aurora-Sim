@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.DataManager.MySQL.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.DataManager.MySQL.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/DataManagerPlugins/MySQL/obj/x86/Debug/Aurora.DataManager.MySQL.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/DataManagerPlugins/MySQL/obj/x86/Debug/Aurora.DataManager.MySQL.dll.mdb

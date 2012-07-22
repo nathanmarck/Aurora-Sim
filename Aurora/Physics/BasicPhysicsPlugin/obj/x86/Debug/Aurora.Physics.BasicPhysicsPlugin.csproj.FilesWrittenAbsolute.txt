@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Physics/Aurora.Physics.BasicPhysicsPlugin.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Physics/Aurora.Physics.BasicPhysicsPlugin.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/Physics/BasicPhysicsPlugin/obj/x86/Debug/Aurora.Physics.BasicPhysicsPlugin.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/Physics/BasicPhysicsPlugin/obj/x86/Debug/Aurora.Physics.BasicPhysicsPlugin.dll.mdb

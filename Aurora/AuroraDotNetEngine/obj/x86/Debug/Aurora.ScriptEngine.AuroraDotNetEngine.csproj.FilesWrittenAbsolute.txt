@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.ScriptEngine.AuroraDotNetEngine.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.ScriptEngine.AuroraDotNetEngine.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/AuroraDotNetEngine/obj/x86/Debug/Aurora.ScriptEngine.AuroraDotNetEngine.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/AuroraDotNetEngine/obj/x86/Debug/Aurora.ScriptEngine.AuroraDotNetEngine.dll.mdb

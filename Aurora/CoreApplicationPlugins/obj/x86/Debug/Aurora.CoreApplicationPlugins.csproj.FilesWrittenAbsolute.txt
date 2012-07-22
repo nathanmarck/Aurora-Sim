@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.CoreApplicationPlugins.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.CoreApplicationPlugins.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/CoreApplicationPlugins/obj/x86/Debug/Aurora.CoreApplicationPlugins.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/CoreApplicationPlugins/obj/x86/Debug/Aurora.CoreApplicationPlugins.dll.mdb

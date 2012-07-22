@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/OpenSim.Services.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/OpenSim.Services.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Services/obj/x86/Debug/OpenSim.Services.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Services/obj/x86/Debug/OpenSim.Services.dll.mdb

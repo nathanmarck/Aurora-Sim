@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/OpenSim.Region.ClientStack.LindenUDP.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/OpenSim.Region.ClientStack.LindenUDP.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Region/ClientStack/LindenUDP/obj/x86/Debug/OpenSim.Region.ClientStack.LindenUDP.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Region/ClientStack/LindenUDP/obj/x86/Debug/OpenSim.Region.ClientStack.LindenUDP.dll.mdb

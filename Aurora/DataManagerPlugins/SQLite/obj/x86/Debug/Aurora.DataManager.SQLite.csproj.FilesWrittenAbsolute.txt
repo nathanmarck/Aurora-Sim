@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.DataManager.SQLite.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.DataManager.SQLite.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/DataManagerPlugins/SQLite/obj/x86/Debug/Aurora.DataManager.SQLite.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/DataManagerPlugins/SQLite/obj/x86/Debug/Aurora.DataManager.SQLite.dll.mdb

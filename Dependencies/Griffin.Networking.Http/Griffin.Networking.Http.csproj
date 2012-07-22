@@ -1,0 +1,403 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+	<PropertyGroup>
+	  <ProjectType>Local</ProjectType>
+	  <ProductVersion>9.0.21022</ProductVersion>
+	  <SchemaVersion>2.0</SchemaVersion>
+	  <ProjectGuid>{30EF6AF7-0000-0000-0000-000000000000}</ProjectGuid>
+	  <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	  <ApplicationIcon></ApplicationIcon>
+	  <AssemblyKeyContainerName>
+	  </AssemblyKeyContainerName>
+	  <AssemblyName>Griffin.Networking.Http</AssemblyName>
+	  <DefaultClientScript>JScript</DefaultClientScript>
+	  <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+	  <DefaultTargetSchema>IE50</DefaultTargetSchema>
+	  <DelaySign>false</DelaySign>
+	  <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	  <OutputType>Library</OutputType>
+	  <AppDesignerFolder></AppDesignerFolder>
+	  <RootNamespace>Griffin.Networking.Http</RootNamespace>
+	  <StartupObject></StartupObject>
+	  <StartArguments></StartArguments>
+	  <FileUpgradeFlags>
+	  </FileUpgradeFlags>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>True</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>False</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>True</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>False</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>True</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>False</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>False</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>True</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>False</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>True</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>False</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>True</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Reference Include="Microsoft.CSharp" >
+		  <Name>Microsoft.CSharp</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System" >
+		  <Name>System</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Core" >
+		  <Name>System.Core</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Data" >
+		  <Name>System.Data</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Data.DataSetExtensions" >
+		  <Name>System.Data.DataSetExtensions</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Web" >
+		  <Name>System.Web</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Xml" >
+		  <Name>System.Xml</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Xml.Linq" >
+		  <Name>System.Xml.Linq</Name>
+		<Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="../Griffin.Networking/Griffin.Networking.csproj">
+		<Name>Griffin.Networking</Name>
+		<Project>{FE34DA3F-0000-0000-0000-000000000000}</Project>
+		<Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+		<Private>False</Private>
+	  </ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="BadRequestException.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="HttpException.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="HttpListener.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="NameValueParser.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\AuthenticationHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\BodyDecoder.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\BufferTracer.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\ErrorHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\FileHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\HeaderDecoder.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\IScopeListener.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\PipelineFailureHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\RequestScope.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Handlers\ResponseEncoder.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpCookie.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpCookieCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpFile.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpFileCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpHeaderCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpHeaderItem.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpMessage.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpParser.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpRequest.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpResponse.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\HttpResponseCookie.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\IHttpParser.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\Parameter.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\ParameterCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Implementation\Infrastructure\UrlDecoder.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\HttpError.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\ReceivedHttpRequest.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\SendHttpResponse.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Properties\AssemblyInfo.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IHeaderCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IHeaderItem.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IHttpCookie.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IHttpCookieCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IHttpFile.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IHttpFileCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IMessage.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IParameter.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IParameterCollection.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IRequest.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IResponse.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Protocol\IResponseCookie.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\IBodyDecoder.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\IFileService.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\BasicAuthentication.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\DigestAuthenticator.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\HostAsRealmRepository.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\IAuthenticateUserService.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\IAuthenticationUser.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\IAuthenticator.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\IRealmRepository.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\PrincipalFactory.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Authentication\SingleRealm.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\BodyDecoders\CompositeBodyDecoderService.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\BodyDecoders\MultipartDecoder.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\BodyDecoders\UrlDecoders.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\BodyDecoders\Mono\MultiPartParser.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\BodyDecoders\Mono\StrUtils.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Errors\ErrorFormatterContext.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Errors\IErrorFormatter.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Errors\NamespaceDoc.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Errors\SimpleErrorFormatter.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Files\CompositeFileService.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Files\DiskFileService.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Files\FileContext.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Services\Files\MimeTypeProvider.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+	<PropertyGroup>
+	  <PreBuildEvent>
+	  </PreBuildEvent>
+	  <PostBuildEvent>
+	  </PostBuildEvent>
+	</PropertyGroup>
+</Project>

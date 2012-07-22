@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/SmartThreadPool.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/SmartThreadPool.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Tools/SmartThreadPool/obj/x86/Debug/SmartThreadPool.dll
+/Users/nathan/Documents/Aurora-Sim/OpenSim/Tools/SmartThreadPool/obj/x86/Debug/SmartThreadPool.dll.mdb

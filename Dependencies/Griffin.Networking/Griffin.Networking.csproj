@@ -1,0 +1,376 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+	<PropertyGroup>
+	  <ProjectType>Local</ProjectType>
+	  <ProductVersion>9.0.21022</ProductVersion>
+	  <SchemaVersion>2.0</SchemaVersion>
+	  <ProjectGuid>{FE34DA3F-0000-0000-0000-000000000000}</ProjectGuid>
+	  <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	  <ApplicationIcon></ApplicationIcon>
+	  <AssemblyKeyContainerName>
+	  </AssemblyKeyContainerName>
+	  <AssemblyName>Griffin.Networking</AssemblyName>
+	  <DefaultClientScript>JScript</DefaultClientScript>
+	  <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+	  <DefaultTargetSchema>IE50</DefaultTargetSchema>
+	  <DelaySign>false</DelaySign>
+	  <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	  <OutputType>Library</OutputType>
+	  <AppDesignerFolder></AppDesignerFolder>
+	  <RootNamespace>Griffin.Networking</RootNamespace>
+	  <StartupObject></StartupObject>
+	  <StartArguments></StartArguments>
+	  <FileUpgradeFlags>
+	  </FileUpgradeFlags>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>True</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>False</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>True</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>False</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>True</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>False</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>False</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>True</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>False</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>True</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <BaseAddress>285212672</BaseAddress>
+	  <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+	  <ConfigurationOverrideFile>
+	  </ConfigurationOverrideFile>
+	  <DefineConstants>TRACE;DEBUG;NET_3_5</DefineConstants>
+	  <DocumentationFile></DocumentationFile>
+	  <DebugSymbols>False</DebugSymbols>
+	  <FileAlignment>4096</FileAlignment>
+	  <Optimize>True</Optimize>
+	  <OutputPath>../../bin/</OutputPath>
+	  <RegisterForComInterop>False</RegisterForComInterop>
+	  <RemoveIntegerChecks>False</RemoveIntegerChecks>
+	  <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	  <WarningLevel>4</WarningLevel>
+	  <NoStdLib>False</NoStdLib>
+	  <NoWarn></NoWarn>
+	  <PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Reference Include="Microsoft.CSharp" >
+		  <Name>Microsoft.CSharp</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System" >
+		  <Name>System</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Core" >
+		  <Name>System.Core</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Data" >
+		  <Name>System.Data</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Data.DataSetExtensions" >
+		  <Name>System.Data.DataSetExtensions</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Web" >
+		  <Name>System.Web</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Xml" >
+		  <Name>System.Xml</Name>
+		<Private>False</Private>
+	  </Reference>
+	  <Reference Include="System.Xml.Linq" >
+		  <Name>System.Xml.Linq</Name>
+		<Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="IChannel.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IDownstreamHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IPipeline.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IPipelineFactory.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IPipelineHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IPipelineHandlerContext.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IPipelineMessage.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IServiceLocator.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="IUpstreamHandler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="ObjectExtensions.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\BufferPool.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\BufferPoolStream.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\BufferPoolStream2.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\BufferSlice.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\BufferSliceReader.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\CircularStream.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\IBufferSlice.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\IPeekable.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\PeekableMemoryStream.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\PeekableStream.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\ReusableBufferSlice.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\Reusable\BufferSlize.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\Reusable\ByteBufferPool.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Buffers\Reusable\IBufferRecycler.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Channels\TcpChannel.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Channels\TcpClientChannel.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Channels\TcpServerChannel.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Channels\TcpServerChildChannel.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\BaseLogger.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\ConsoleLogger.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\FilteredLogger.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\ILogger.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\LogLevel.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\LogManager.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\NamespaceDoc.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\NullLogger.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\SimpleFilteredLogManager.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\SimpleLogManager.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Logging\SystemDebugLogger.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\BindSocket.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\ChildChannelConnected.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Close.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Closed.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Connect.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Connected.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Disconnect.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Disconnected.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\PipelineFailure.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Received.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\ReceivedInStream.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\SendBuffer.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\SendSlice.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\SendStream.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Messages\Sent.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Net4Classes\ConcurrentQueue.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Net4Classes\ObjectPool.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Pipelines\DelegatePipelineFactory.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Pipelines\Pipeline.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Pipelines\PipelineDownstreamContext.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Pipelines\PipelineUpstreamContext.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Pipelines\ServiceLocatorPipelineFactory.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="Properties\AssemblyInfo.cs">
+		<SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+	<PropertyGroup>
+	  <PreBuildEvent>
+	  </PreBuildEvent>
+	  <PostBuildEvent>
+	  </PostBuildEvent>
+	</PropertyGroup>
+</Project>

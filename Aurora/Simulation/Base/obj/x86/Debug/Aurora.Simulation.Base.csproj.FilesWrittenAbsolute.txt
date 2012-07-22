@@ -1,0 +1,4 @@
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.Simulation.Base.dll.mdb
+/Users/nathan/Documents/Aurora-Sim/bin/Aurora.Simulation.Base.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/Simulation/Base/obj/x86/Debug/Aurora.Simulation.Base.dll
+/Users/nathan/Documents/Aurora-Sim/Aurora/Simulation/Base/obj/x86/Debug/Aurora.Simulation.Base.dll.mdb
