@@ -44,12 +44,14 @@ namespace Aurora.Modules.Web
                 string UserZip = requestParameters["UserZip"].ToString();
                 string UserCity = requestParameters["UserCity"].ToString();
                 string UserEmail = requestParameters["UserEmail"].ToString();
-                string AvatarScope = requestParameters.ContainsKey("AvatarScope") ? requestParameters["AvatarScope"].ToString() : UUID.Zero.ToString();
                 string UserDOBMonth = requestParameters["UserDOBMonth"].ToString();
                 string UserDOBDay = requestParameters["UserDOBDay"].ToString();
                 string UserDOBYear = requestParameters["UserDOBYear"].ToString();
                 string AvatarArchive = requestParameters.ContainsKey("AvatarArchive") ? requestParameters["AvatarArchive"].ToString() : "";
                 bool ToSAccept = requestParameters.ContainsKey("ToSAccept") && requestParameters["ToSAccept"].ToString() == "Accepted";
+
+                IGenericsConnector generics = Aurora.DataManager.DataManager.RequestPlugin<IGenericsConnector>();
+                var settings = generics.GetGeneric<GridSettings>(UUID.Zero, "WebSettings", "Settings");
 
                 if (ToSAccept)
                 {
@@ -57,7 +59,7 @@ namespace Aurora.Modules.Web
 
                     IUserAccountService accountService = webInterface.Registry.RequestModuleInterface<IUserAccountService>();
                     UUID userID = UUID.Random();
-                    error = accountService.CreateUser(userID, UUID.Parse(AvatarScope), AvatarName, AvatarPassword, UserEmail);
+                    error = accountService.CreateUser(userID, settings.DefaultScopeID, AvatarName, AvatarPassword, UserEmail);
                     if (error == "")
                     {
                         IAgentConnector con = Aurora.DataManager.DataManager.RequestPlugin<IAgentConnector>();
@@ -90,7 +92,7 @@ namespace Aurora.Modules.Web
                             profileData.UpdateUserProfile(profile);
                         }
 
-                        webInterface.Redirect(httpResponse, "/");
+                        webInterface.Redirect(httpResponse, "/", filename);
 
                         return vars;
                     }
@@ -124,7 +126,7 @@ namespace Aurora.Modules.Web
                 avatarArchives.Add(new Dictionary<string, object> { 
                 { "AvatarArchiveName", archive.Name },
                 { "AvatarArchiveSnapshotID", archive.Snapshot }, 
-                { "AvatarArchiveURL", webTextureService.GetTextureURL(UUID.Parse(archive.Snapshot)) } 
+                { "AvatarArchiveSnapshotURL", webTextureService.GetTextureURL(UUID.Parse(archive.Snapshot)) } 
                 });
 
             vars.Add("AvatarArchive", avatarArchives);
@@ -161,6 +163,7 @@ namespace Aurora.Modules.Web
             vars.Add("UserEmailText", translator.GetTranslatedString("UserEmailText"));
             vars.Add("Submit", translator.GetTranslatedString("Submit"));
             vars.Add("ErrorMessage", error);
+            vars.Add("SubmitURL", "index.html?page=register");
 
             return vars;
         }

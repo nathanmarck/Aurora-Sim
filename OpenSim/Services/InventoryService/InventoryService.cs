@@ -387,8 +387,6 @@ namespace OpenSim.Services.InventoryService
                 asset = m_AssetService.Get(AvatarWearable.DEFAULT_SHIRT_ASSET.ToString());
                 if (asset != null)
                 {
-                    OpenMetaverse.Assets.AssetClothing clothingOld = new OpenMetaverse.Assets.AssetClothing(asset.ID, asset.Data);
-                    clothingOld.Decode();
                     OpenMetaverse.Assets.AssetClothing clothing = new OpenMetaverse.Assets.AssetClothing()
                     {
                         Creator = m_LibraryService.LibraryOwner,
@@ -400,7 +398,6 @@ namespace OpenSim.Services.InventoryService
                     };
                     clothing.Encode();
                     asset.Data = clothing.AssetData;
-                    string data = Utils.BytesToString(asset.Data);
                     asset.ID = UUID.Random();
                     asset.ID = m_AssetService.Store(asset);
                     defaultShirt.AssetID = asset.ID;
@@ -437,6 +434,8 @@ namespace OpenSim.Services.InventoryService
                         WearableType = WearableType.Pants,
                         Textures = new Dictionary<AvatarTextureIndex, UUID>() { { AvatarTextureIndex.LowerPants, UUID.Parse("5748decc-f629-461c-9a36-a35a221fe21f") } }
                     };
+                    clothing.Encode();
+                    asset.Data = clothing.AssetData;
                     asset.ID = UUID.Random();
                     asset.ID = m_AssetService.Store(asset);
                     defaultPants.AssetID = asset.ID;
@@ -893,7 +892,7 @@ namespace OpenSim.Services.InventoryService
                         {
                             string FullName = xitem.CreatorId.Remove(0, 7);
                             string[] FirstLast = FullName.Split(' ');
-                            UserAccount account = m_UserAccountService.GetUserAccount(UUID.Zero, FirstLast[0],
+                            UserAccount account = m_UserAccountService.GetUserAccount(null, FirstLast[0],
                                                                                       FirstLast[1]);
                             if (account == null)
                             {
@@ -1137,7 +1136,7 @@ namespace OpenSim.Services.InventoryService
                 if ((item.CurrentPermissions & (uint)PermissionMask.Transfer) == 0)
                     return null;
 
-                IUserManagement uman = m_registry.RequestModuleInterface<IUserManagement>();
+                IUserFinder uman = m_registry.RequestModuleInterface<IUserFinder>();
                 if (uman != null)
                     uman.AddUser(item.CreatorIdAsUuid, item.CreatorData);
 
@@ -1325,7 +1324,7 @@ namespace OpenSim.Services.InventoryService
         public virtual void FixInventory(string[] cmd)
         {
             string userName = MainConsole.Instance.Prompt("Name of user");
-            UserAccount account = m_UserAccountService.GetUserAccount(UUID.Zero, userName);
+            UserAccount account = m_UserAccountService.GetUserAccount(null, userName);
             if (account == null)
             {
                 MainConsole.Instance.Warn("Could not find user");

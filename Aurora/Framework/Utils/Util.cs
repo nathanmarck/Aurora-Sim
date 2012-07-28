@@ -49,7 +49,6 @@ using System.Windows.Forms;
 using System.Xml;
 using Amib.Threading;
 using Nini.Config;
-using Nwc.XmlRpc;
 using OpenMetaverse;
 using OpenMetaverse.StructuredData;
 using ReaderWriterLockSlim = System.Threading.ReaderWriterLockSlim;
@@ -934,32 +933,6 @@ namespace Aurora.Framework
                 Buffer.BlockCopy(readBuffer, 0, buffer, 0, totalBytesRead);
             }
             return buffer;
-        }
-
-        public static XmlRpcResponse XmlRpcCommand(string url, string methodName, params object[] args)
-        {
-            return SendXmlRpcCommand(url, methodName, args);
-        }
-
-        public static XmlRpcResponse SendXmlRpcCommand(string url, string methodName, object[] args)
-        {
-            XmlRpcRequest client = new XmlRpcRequest(methodName, args);
-            return client.Send(url, 6000);
-        }
-
-        /// <summary>
-        ///   Returns an error message that the user could not be found in the database
-        /// </summary>
-        /// <returns>XML string consisting of a error element containing individual error(s)</returns>
-        public static XmlRpcResponse CreateUnknownUserErrorResponse()
-        {
-            XmlRpcResponse response = new XmlRpcResponse();
-            Hashtable responseData = new Hashtable();
-            responseData["error_type"] = "unknown_user";
-            responseData["error_desc"] = "The user requested is not in the database";
-
-            response.Value = responseData;
-            return response;
         }
 
         /// <summary>
@@ -2266,6 +2239,8 @@ namespace Aurora.Framework
                     Hashtable headers = (Hashtable)req["headers"];
                     if (headers.ContainsKey("remote_addr") && headers["remote_addr"] != null)
                         return headers["remote_addr"].ToString();
+                    if (headers.ContainsKey("Host") && headers["Host"] != null)
+                        return headers["Host"].ToString().Split(':')[0];
                 }
                 catch (Exception e)
                 {
@@ -2583,6 +2558,16 @@ namespace Aurora.Framework
             return list.ConvertAll<T>(converter);
         }
 
+        public static Dictionary<string, T> ConvertMap<T>(this OSDMap array, Converter<OSD, T> converter)
+        {
+            Dictionary<string, T> map = new Dictionary<string, T>();
+            foreach (KeyValuePair<string, OSD> o in array)
+            {
+                map.Add(o.Key, converter(o.Value));
+            }
+            return map;
+        }
+
         public static OSDArray ToOSDArray<T>(this List<T> array)
         {
             OSDArray list = new OSDArray();
@@ -2591,6 +2576,18 @@ namespace Aurora.Framework
                 OSD osd = Util.MakeOSD(o, o.GetType());
                 if (osd != null)
                     list.Add(osd);
+            }
+            return list;
+        }
+
+        public static OSDMap ToOSDMap<A,B>(this Dictionary<A, B> array)
+        {
+            OSDMap list = new OSDMap();
+            foreach (KeyValuePair<A, B> o in array)
+            {
+                OSD osd = Util.MakeOSD(o.Value, o.Value.GetType());
+                if (osd != null)
+                    list.Add(o.Key.ToString(), osd);
             }
             return list;
         }
@@ -2710,6 +2707,38 @@ namespace Aurora.Framework
             {
                 il.Emit(OpCodes.Ldc_I4, value);
             }
+        }
+    }
+
+    public class AllScopeIDImpl : IDataTransferable
+    {
+        public UUID ScopeID = UUID.Zero;
+        public List<UUID> AllScopeIDs
+        {
+            get
+            {
+                List<UUID> ids = new List<UUID>();
+                if (!ids.Contains(ScopeID))
+                    ids.Add(ScopeID);
+                return ids;
+            }
+            set
+            {
+            }
+        }
+
+        public static List<T> CheckScopeIDs<T>(List<UUID> scopeIDs, List<T> list) where T : AllScopeIDImpl
+        {
+            if (scopeIDs == null || scopeIDs.Count == 0 || scopeIDs.Contains(UUID.Zero))
+                return list;
+            return new List<T>(list.Where(r => scopeIDs.Any(s => r.AllScopeIDs.Contains(s)) || r.AllScopeIDs.Contains(UUID.Zero)));
+        }
+
+        public static T CheckScopeIDs<T>(List<UUID> scopeIDs, T l) where T : AllScopeIDImpl
+        {
+            if (l == null || scopeIDs == null || scopeIDs.Count == 0 || scopeIDs.Contains(UUID.Zero))
+                return l;
+            return (scopeIDs.Any(s => l.AllScopeIDs.Contains(s)) || l.AllScopeIDs.Contains(UUID.Zero)) ? l : null;
         }
     }
 }

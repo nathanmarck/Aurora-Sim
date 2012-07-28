@@ -97,6 +97,8 @@ namespace Aurora.Modules.Startup
                 scene.RegionInfo.GridSecureSessionID = error.SessionID;
                 //Update our local copy of what our region flags are
                 scene.RegionInfo.RegionFlags = error.RegionFlags;
+                scene.RegionInfo.ScopeID = error.Region.ScopeID;
+                scene.RegionInfo.AllScopeIDs = error.Region.AllScopeIDs;
 
                 //Save the new SessionID to the database
                 if (g != null) g.AddGeneric(scene.RegionInfo.RegionID, "GridSessionID", "GridSessionID", s.ToOSD());
@@ -383,7 +385,7 @@ namespace Aurora.Modules.Startup
                                                                               return true;
                                                                           return false;
                                                                       }) == null)
-                            m_knownNeighbors[targetregionID].Add(m_scenes[0].GridService.GetRegionByUUID(UUID.Zero,
+                            m_knownNeighbors[targetregionID].Add(m_scenes[0].GridService.GetRegionByUUID(null,
                                                                                                          regionID));
                     }
                 }

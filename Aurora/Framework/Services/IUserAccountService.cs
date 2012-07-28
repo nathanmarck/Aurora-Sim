@@ -34,14 +34,13 @@ using OpenMetaverse.StructuredData;
 
 namespace OpenSim.Services.Interfaces
 {
-    public class UserAccount : IDataTransferable, BaseCacheAccount
+    public class UserAccount : AllScopeIDImpl, BaseCacheAccount
     {
         public int Created;
         public string Email;
         public string Name { get; set;}
         public OSDMap GenericData = new OSDMap();
         public UUID PrincipalID { get; set; }
-        public UUID ScopeID;
         public Dictionary<string, object> ServiceURLs;
         public int UserFlags;
         public int UserLevel;
@@ -105,13 +104,7 @@ namespace OpenSim.Services.Interfaces
             result["UserFlags"] = UserFlags.ToString();
             result["UserTitle"] = UserTitle;
 
-#if (!ISWIN)
-            string str = string.Empty;
-            foreach (KeyValuePair<string, object> l in ServiceURLs)
-                str = str + (l.Key + "*" + (l.Value ?? "") + ";");
-#else
             string str = ServiceURLs.Aggregate(string.Empty, (current, kvp) => current + (kvp.Key + "*" + (kvp.Value ?? "") + ";"));
-#endif
             result["ServiceURLs"] = str;
 
             return result;
@@ -149,21 +142,10 @@ namespace OpenSim.Services.Interfaces
                 if (str != string.Empty)
                 {
                     string[] parts = str.Split(new[] { ';' });
-#if (!ISWIN)
-                    foreach (string s in parts)
-                    {
-                        string[] parts2 = s.Split(new[] { '*' });
-                        if (parts2.Length == 2)
-                        {
-                            ServiceURLs[parts2[0]] = parts2[1];
-                        }
-                    }
-#else
                     foreach (string[] parts2 in parts.Select(s => s.Split(new[] {'*'})).Where(parts2 => parts2.Length == 2))
                     {
                         ServiceURLs[parts2[0]] = parts2[1];
                     }
-#endif
                 }
             }
         }
@@ -173,21 +155,17 @@ namespace OpenSim.Services.Interfaces
             OSDMap result = new OSDMap();
             result["FirstName"] = FirstName;
             result["LastName"] = LastName;
+            result["Name"] = Name;
             result["Email"] = Email;
             result["PrincipalID"] = PrincipalID;
             result["ScopeID"] = ScopeID;
+            result["AllScopeIDs"] = AllScopeIDs.ToOSDArray();
             result["Created"] = Created;
             result["UserLevel"] = UserLevel;
             result["UserFlags"] = UserFlags;
             result["UserTitle"] = UserTitle;
 
-#if (!ISWIN)
-            string str = string.Empty;
-            foreach (KeyValuePair<string, object> l in ServiceURLs)
-                str = str + (l.Key + "*" + (l.Value ?? "") + ";");
-#else
             string str = ServiceURLs.Aggregate(string.Empty, (current, kvp) => current + (kvp.Key + "*" + (kvp.Value ?? "") + ";"));
-#endif
             result["ServiceURLs"] = str;
 
             return result;
@@ -195,16 +173,16 @@ namespace OpenSim.Services.Interfaces
 
         public override void FromOSD(OSDMap map)
         {
-            if (map.ContainsKey("FirstName") && map.ContainsKey("LastName"))
-                Name = map["FirstName"] + " " + map["LastName"];
+            Name = map["FirstName"] + " " + map["LastName"];
             if (map.ContainsKey("Name"))
-                Name = map["Name"].ToString();
-            if (map.ContainsKey("Email"))
-                Email = map["Email"].ToString();
+                Name = map["Name"].AsString();
+            Email = map["Email"].AsString();
             if (map.ContainsKey("PrincipalID"))
                 PrincipalID = map["PrincipalID"];
             if (map.ContainsKey("ScopeID"))
                 ScopeID = map["ScopeID"];
+            if (map.ContainsKey("AllScopeIDs"))
+                AllScopeIDs = ((OSDArray)map["AllScopeIDs"]).ConvertAll<UUID>(o => o);
             if (map.ContainsKey("UserLevel"))
                 UserLevel = map["UserLevel"];
             if (map.ContainsKey("UserFlags"))
@@ -214,28 +192,17 @@ namespace OpenSim.Services.Interfaces
 
             if (map.ContainsKey("Created"))
                 Created = map["Created"];
+            ServiceURLs = new Dictionary<string, object>();
             if (map.ContainsKey("ServiceURLs") && map["ServiceURLs"] != null)
             {
-                ServiceURLs = new Dictionary<string, object>();
                 string str = map["ServiceURLs"].ToString();
                 if (str != string.Empty)
                 {
                     string[] parts = str.Split(new[] { ';' });
-#if (!ISWIN)
-                    foreach (string s in parts)
-                    {
-                        string[] parts2 = s.Split(new[] { '*' });
-                        if (parts2.Length == 2)
-                        {
-                            ServiceURLs[parts2[0]] = parts2[1];
-                        }
-                    }
-#else
                     foreach (string[] parts2 in parts.Select(s => s.Split(new[] {'*'})).Where(parts2 => parts2.Length == 2))
                     {
                         ServiceURLs[parts2[0]] = parts2[1];
                     }
-#endif
                 }
             }
         }
@@ -251,7 +218,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name = "scopeID"></param>
         /// <param name = "userID"></param>
         /// <returns></returns>
-        UserAccount GetUserAccount(UUID scopeID, UUID userID);
+        UserAccount GetUserAccount(List<UUID> scopeIDs, UUID userID);
 
         /// <summary>
         ///   Get a user given by a first and last name
@@ -260,7 +227,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name = "FirstName"></param>
         /// <param name = "LastName"></param>
         /// <returns></returns>
-        UserAccount GetUserAccount(UUID scopeID, string FirstName, string LastName);
+        UserAccount GetUserAccount(List<UUID> scopeIDs, string FirstName, string LastName);
 
         /// <summary>
         ///   Get a user given by its full name
@@ -268,7 +235,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name = "scopeID"></param>
         /// <param name = "Email"></param>
         /// <returns></returns>
-        UserAccount GetUserAccount(UUID scopeID, string Name);
+        UserAccount GetUserAccount(List<UUID> scopeIDs, string Name);
 
         /// <summary>
         ///   Returns the list of avatars that matches both the search criterion and the scope ID passed
@@ -276,7 +243,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name = "scopeID"></param>
         /// <param name = "query"></param>
         /// <returns></returns>
-        List<UserAccount> GetUserAccounts(UUID scopeID, string query);
+        List<UserAccount> GetUserAccounts(List<UUID> scopeIDs, string query);
 
         /// <summary>
         /// Returns a paginated list of avatars that matches both the search criteriion and the scope ID passed
@@ -286,7 +253,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name="start"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        List<UserAccount> GetUserAccounts(UUID scopeID, string query, uint? start, uint? count);
+        List<UserAccount> GetUserAccounts(List<UUID> scopeIDs, string query, uint? start, uint? count);
 
         /// <summary>
         /// Returns a paginated list of avatars that matches both the search criteriion and the scope ID passed
@@ -295,7 +262,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name="level">greater than or equal to clause is used</param>
         /// <param name="flags">bit mask clause is used</param>
         /// <returns></returns>
-        List<UserAccount> GetUserAccounts(UUID scopeID, int level, int flags);
+        List<UserAccount> GetUserAccounts(List<UUID> scopeIDs, int level, int flags);
 
         /// <summary>
         /// Returns the number of avatars that match both the search criterion and the scope ID passed
@@ -303,7 +270,7 @@ namespace OpenSim.Services.Interfaces
         /// <param name="scopeID"></param>
         /// <param name="query"></param>
         /// <returns></returns>
-        uint NumberOfUserAccounts(UUID scopeID, string query);
+        uint NumberOfUserAccounts(List<UUID> scopeIDs, string query);
 
         /// <summary>
         ///   Store the data given, wich replaces the stored data, therefore must be complete.
@@ -351,12 +318,12 @@ namespace OpenSim.Services.Interfaces
     public interface IUserAccountData : IAuroraDataPlugin
     {
         string Realm { get; }
-        UserAccount[] Get(string[] fields, string[] values);
+        UserAccount[] Get(List<UUID> scopeIDs, string[] fields, string[] values);
         bool Store(UserAccount data);
         bool DeleteAccount(UUID userID, bool archiveInformation);
-        UserAccount[] GetUsers(UUID scopeID, string query);
-        UserAccount[] GetUsers(UUID scopeID, string query, uint? start, uint? count);
-        UserAccount[] GetUsers(UUID scopeID, int level, int flags);
-        uint NumberOfUsers(UUID scopeID, string query);
+        UserAccount[] GetUsers(List<UUID> scopeIDs, string query);
+        UserAccount[] GetUsers(List<UUID> scopeIDs, string query, uint? start, uint? count);
+        UserAccount[] GetUsers(List<UUID> scopeIDs, int level, int flags);
+        uint NumberOfUsers(List<UUID> scopeIDs, string query);
     }
 }

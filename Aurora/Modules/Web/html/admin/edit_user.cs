@@ -39,7 +39,7 @@ namespace Aurora.Modules.Web
 
             IUserAccountService userService = webInterface.Registry.RequestModuleInterface<IUserAccountService>();
             var agentService = Aurora.DataManager.DataManager.RequestPlugin<IAgentConnector>();
-            UserAccount account = userService.GetUserAccount(UUID.Zero, user);
+            UserAccount account = userService.GetUserAccount(null, user);
             IAgentInfo agent = agentService.GetAgent(user);
             if (requestParameters.ContainsKey("Submit") &&
                 requestParameters["Submit"].ToString() == "SubmitPasswordChange")
@@ -47,11 +47,16 @@ namespace Aurora.Modules.Web
                 string password = requestParameters["password"].ToString();
                 string passwordconf = requestParameters["passwordconf"].ToString();
 
-                IAuthenticationService authService = webInterface.Registry.RequestModuleInterface<IAuthenticationService>();
-                if (authService != null)
-                    error = authService.SetPassword(user, "UserAccount", password) ? "" : "Failed to set your password, try again later";
+                if (password != passwordconf)
+                    error = "Passwords do not match";
                 else
-                    error = "No authentication service was available to change your password";
+                {
+                    IAuthenticationService authService = webInterface.Registry.RequestModuleInterface<IAuthenticationService>();
+                    if (authService != null)
+                        error = authService.SetPassword(user, "UserAccount", password) ? "" : "Failed to set your password, try again later";
+                    else
+                        error = "No authentication service was available to change your password";
+                }
             }
             else if (requestParameters.ContainsKey("Submit") &&
                 requestParameters["Submit"].ToString() == "SubmitEmailChange")
@@ -69,7 +74,7 @@ namespace Aurora.Modules.Web
             else if (requestParameters.ContainsKey("Submit") &&
                 requestParameters["Submit"].ToString() == "SubmitDeleteUser")
             {
-                //userService.DeleteUser(user, password, true, false);
+                userService.DeleteUser(user, "", false, false);
             }
             if (requestParameters.ContainsKey("Submit") &&
                 requestParameters["Submit"].ToString() == "SubmitTempBanUser")
@@ -78,7 +83,7 @@ namespace Aurora.Modules.Web
                 int timeHours = int.Parse(requestParameters["TimeHours"].ToString());
                 int timeMinutes = int.Parse(requestParameters["TimeMinutes"].ToString());
                 agent.Flags |= IAgentFlags.TempBan;
-                DateTime until = DateTime.Now.AddDays(timeDays).AddHours(timeDays).AddMinutes(timeMinutes);
+                DateTime until = DateTime.Now.AddDays(timeDays).AddHours(timeHours).AddMinutes(timeMinutes);
                 agent.OtherAgentInformation["TemperaryBanInfo"] = until;
                 agentService.UpdateAgent(agent);
             }
@@ -99,12 +104,20 @@ namespace Aurora.Modules.Web
             if (requestParameters.ContainsKey("Submit") &&
                 requestParameters["Submit"].ToString() == "SubmitLoginAsUser")
             {
-                Authenticator.ChangeAuthentication(httpRequest, user);
-                webInterface.Redirect(httpResponse, "/");
+                Authenticator.ChangeAuthentication(httpRequest, account);
+                webInterface.Redirect(httpResponse, "/", filename);
                 return vars;
             }
+            if (requestParameters.ContainsKey("Submit") &&
+                requestParameters["Submit"].ToString() == "SubmitKickUser")
+            {
+                string message = requestParameters["KickMessage"].ToString();
+                IGridWideMessageModule messageModule = webInterface.Registry.RequestModuleInterface<IGridWideMessageModule>();
+                if (messageModule != null)
+                    messageModule.KickUser(account.PrincipalID, message);
+            }
             string bannedUntil = "";
-            bool userBanned = ((agent.Flags & IAgentFlags.PermBan) == IAgentFlags.PermBan || (agent.Flags & IAgentFlags.TempBan) == IAgentFlags.TempBan);
+            bool userBanned = agent == null ? false : ((agent.Flags & IAgentFlags.PermBan) == IAgentFlags.PermBan || (agent.Flags & IAgentFlags.TempBan) == IAgentFlags.TempBan);
             if (userBanned)
             {
                 if ((agent.Flags & IAgentFlags.TempBan) == IAgentFlags.TempBan && agent.OtherAgentInformation["TemperaryBanInfo"].AsDate() < DateTime.Now)
@@ -143,16 +156,23 @@ namespace Aurora.Modules.Web
             vars.Add("Login", translator.GetTranslatedString("Login"));
 
             vars.Add("AdminLoginInAsUserText", translator.GetTranslatedString("AdminLoginInAsUserText"));
-            vars.Add("AdminUnbanUserText", translator.GetTranslatedString("AdminUnbanUserText"));
+			vars.Add("AdminLoginInAsUserInfoText", translator.GetTranslatedString("AdminLoginInAsUserInfoText"));
             vars.Add("AdminDeleteUserText", translator.GetTranslatedString("AdminDeleteUserText"));
+            vars.Add("AdminDeleteUserInfoText", translator.GetTranslatedString("AdminDeleteUserInfoText"));
+            vars.Add("AdminUnbanUserText", translator.GetTranslatedString("AdminUnbanUserText"));
             vars.Add("AdminTempBanUserText", translator.GetTranslatedString("AdminTempBanUserText"));
+            vars.Add("AdminTempBanUserInfoText", translator.GetTranslatedString("AdminTempBanUserInfoText"));
             vars.Add("AdminBanUserText", translator.GetTranslatedString("AdminBanUserText"));
+            vars.Add("AdminBanUserInfoText", translator.GetTranslatedString("AdminBanUserInfoText"));
             vars.Add("BanText", translator.GetTranslatedString("BanText"));
             vars.Add("UnbanText", translator.GetTranslatedString("UnbanText"));
             vars.Add("TimeUntilUnbannedText", translator.GetTranslatedString("TimeUntilUnbannedText"));
             vars.Add("EdittingText", translator.GetTranslatedString("EdittingText"));
             vars.Add("BannedUntilText", translator.GetTranslatedString("BannedUntilText"));
-            
+
+            vars.Add("KickAUserText", translator.GetTranslatedString("KickAUserText"));
+            vars.Add("KickMessageText", translator.GetTranslatedString("KickMessageText"));
+            vars.Add("KickUserText", translator.GetTranslatedString("KickUserText"));
 
             List<Dictionary<string, object>> daysArgs = new List<Dictionary<string, object>>();
             for (int i = 0; i <= 100; i++)

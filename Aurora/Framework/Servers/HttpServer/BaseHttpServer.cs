@@ -608,6 +608,7 @@ namespace Aurora.Framework.Servers.HttpServer
                 var decoder = new CompositeBodyDecoder();
                 decoder.Add("application/json", new JsonBodyDecoder());
                 decoder.Add("application/xml", new JsonBodyDecoder());
+                decoder.Add("application/x-gzip", new JsonBodyDecoder());
                 decoder.Add("application/llsd+json", new JsonBodyDecoder());
                 decoder.Add("application/llsd+xml", new JsonBodyDecoder());
                 decoder.Add("application/xml+llsd", new JsonBodyDecoder());
@@ -1319,6 +1320,8 @@ namespace Aurora.Framework.Servers.HttpServer
             {
                 //Fix the current Culture
                 Culture.SetCurrentCulture();
+
+                response.KeepAlive = request.KeepAlive;
 
                 IStreamedRequestHandler requestHandler;
                 if (_server.TryGetStreamHandler(BaseHttpServer.GetHandlerKey(request.HttpMethod, path), out requestHandler))

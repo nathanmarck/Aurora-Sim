@@ -35,7 +35,7 @@ namespace Aurora.Modules.Web
             var vars = new Dictionary<string, object>();
             if (httpRequest.Query.ContainsKey("regionid"))
             {
-                GridRegion region = webInterface.Registry.RequestModuleInterface<IGridService>().GetRegionByUUID(UUID.Zero,
+                GridRegion region = webInterface.Registry.RequestModuleInterface<IGridService>().GetRegionByUUID(null,
                     UUID.Parse(httpRequest.Query["regionid"].ToString()));
 
                 IEstateConnector estateConnector = Aurora.DataManager.DataManager.RequestPlugin<IEstateConnector>();
@@ -44,7 +44,7 @@ namespace Aurora.Modules.Web
                 vars.Add("RegionName", region.RegionName);
                 vars.Add("OwnerUUID", estate.EstateOwner);
                 vars.Add("OwnerName", webInterface.Registry.RequestModuleInterface<IUserAccountService>().
-                    GetUserAccount(UUID.Zero, estate.EstateOwner).Name);
+                    GetUserAccount(null, estate.EstateOwner).Name);
                 vars.Add("RegionLocX", region.RegionLocX / Constants.RegionSize);
                 vars.Add("RegionLocY", region.RegionLocY / Constants.RegionSize);
                 vars.Add("RegionSizeX", region.RegionSizeX);
@@ -77,7 +77,7 @@ namespace Aurora.Modules.Web
                 IDirectoryServiceConnector directoryConnector = Aurora.DataManager.DataManager.RequestPlugin<IDirectoryServiceConnector>();
                 if (directoryConnector != null)
                 {
-                    List<LandData> data = directoryConnector.GetParcelsByRegion(0, 10, region.RegionID, UUID.Zero, UUID.Zero, ParcelFlags.None, ParcelCategory.Any);
+                    List<LandData> data = directoryConnector.GetParcelsByRegion(0, 10, region.RegionID, UUID.Zero, ParcelFlags.None, ParcelCategory.Any);
                     List<Dictionary<string, object>> parcels = new List<Dictionary<string, object>>();
                     foreach (var p in data)
                     {
@@ -88,8 +88,14 @@ namespace Aurora.Modules.Web
                         parcel.Add("ParcelName", p.Name);
                         parcel.Add("ParcelOwnerUUID", p.OwnerID);
                         IUserAccountService accountService = webInterface.Registry.RequestModuleInterface<IUserAccountService>();
-                        if(accountService != null)
-                            parcel.Add("ParcelOwnerName", accountService.GetUserAccount(UUID.Zero, p.OwnerID).Name);
+                        if (accountService != null)
+                        {
+                            var account = accountService.GetUserAccount(null, p.OwnerID);
+                            if (account == null)
+                                parcel.Add("ParcelOwnerName", translator.GetTranslatedString("NoAccountFound"));
+                            else
+                                parcel.Add("ParcelOwnerName", account.Name);
+                        }
                         parcels.Add(parcel);
                     }
                     vars.Add("ParcelInRegion", parcels);
@@ -100,8 +106,13 @@ namespace Aurora.Modules.Web
                 if (webTextureService != null && region.TerrainMapImage != UUID.Zero)
                     vars.Add("RegionImageURL", webTextureService.GetTextureURL(region.TerrainMapImage));
                 else
-                    vars.Add("RegionImageURL", "images/info.jpg");
+                    vars.Add("RegionImageURL", "images/icons/no_picture.jpg");
 
+                // Menu Region
+                vars.Add("MenuRegionTitle", translator.GetTranslatedString("MenuRegionTitle"));
+                vars.Add("MenuParcelTitle", translator.GetTranslatedString("MenuParcelTitle"));
+                vars.Add("MenuOwnerTitle", translator.GetTranslatedString("MenuOwnerTitle"));				
+				
                 vars.Add("RegionInformationText", translator.GetTranslatedString("RegionInformationText"));
                 vars.Add("OwnerNameText", translator.GetTranslatedString("OwnerNameText"));
                 vars.Add("RegionLocationText", translator.GetTranslatedString("RegionLocationText"));
@@ -119,6 +130,10 @@ namespace Aurora.Modules.Web
                 vars.Add("styles3", translator.GetTranslatedString("styles3"));
                 vars.Add("styles4", translator.GetTranslatedString("styles4"));
                 vars.Add("styles5", translator.GetTranslatedString("styles5"));
+
+                vars.Add("StyleSwitcherStylesText", translator.GetTranslatedString("StyleSwitcherStylesText"));
+                vars.Add("StyleSwitcherLanguagesText", translator.GetTranslatedString("StyleSwitcherLanguagesText"));
+                vars.Add("StyleSwitcherChoiceText", translator.GetTranslatedString("StyleSwitcherChoiceText"));
 			
                 // Language Switcher
                 vars.Add("en", translator.GetTranslatedString("en"));
@@ -126,9 +141,10 @@ namespace Aurora.Modules.Web
                 vars.Add("de", translator.GetTranslatedString("de"));
                 vars.Add("it", translator.GetTranslatedString("it"));
                 vars.Add("es", translator.GetTranslatedString("es"));
-                }
 
-            return vars;
+            }
+
+			return vars;
         }
 
         public bool AttemptFindPage(string filename, ref OSHttpResponse httpResponse, out string text)

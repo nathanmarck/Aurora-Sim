@@ -56,7 +56,7 @@ namespace Aurora.Modules.Web.Translators
                 case "Submit":
                     return "Invia";
 
-                // English only so far
+
                 case "SpecialWindowTitleText":
                     return "Titolo sezione Info Speciali";
                 case "SpecialWindowTextText":
@@ -247,7 +247,7 @@ namespace Aurora.Modules.Web.Translators
                 case "MenuSettingsManager":
                     return "Modifica delle Impostazioni";
                 case "MenuManager":
-                    return "Impostaioni Amministratore";
+                    return "Ammin";
 
 				// Tooltips Menu Buttons
                 case "TooltipsMenuHome":
@@ -295,7 +295,23 @@ namespace Aurora.Modules.Web.Translators
                 case "TooltipsMenuSettingsManager":
                     return "Manager delle impostazioni";
                 case "TooltipsMenuManager":
-                    return "Impostazioni Amministratore";
+                    return "Impostaioni Amministratore";
+
+				// Menu Region
+                case "MenuRegionTitle":
+                    return "Region";
+                case "MenuParcelTitle":
+                    return "Parcel";
+                case "MenuOwnerTitle":
+                    return "Owner";
+				
+				// Menu Profile
+                case "MenuProfileTitle":
+                    return "Profil";
+                case "MenuGroupTitle":
+                    return "Group";
+                case "MenuPicksTitle":
+                    return "Picks";
 
 				// Urls
                 case "WelcomeScreen":
@@ -318,6 +334,25 @@ namespace Aurora.Modules.Web.Translators
                     return "Dark Degrade";
                 case "styles5":
                     return "Luminus";
+
+                case "StyleSwitcherStylesText":
+                    return "Styles";
+                case "StyleSwitcherLanguagesText":
+                    return "Languages";
+                case "StyleSwitcherChoiceText":
+                    return "Choice";
+
+                // Language Switcher Tooltips
+                case "en":
+                    return "English";
+                case "fr":
+                    return "French";
+                case "de":
+                    return "German";
+                case "it":
+                    return "Italian";
+                case "es":
+                    return "Spanish";
 
 				// Index Page
                 case "HomeText":
@@ -356,10 +391,14 @@ namespace Aurora.Modules.Web.Translators
                     return "Phoenix Viewer";
                 case "SingularityViewer":
                     return "Singularity Viewer";
-				
+                case "ZenViewer":
+                    return "Zen Viewer";
+					
                 //Logout page
                 case "LoggedOutSuccessfullyText":
                     return "Sei stato disconnesso.";
+                case "Logout":
+                    return "Logout";
 
                 //Change user information page
                 case "ChangeUserInformationText":
@@ -424,22 +463,34 @@ namespace Aurora.Modules.Web.Translators
                     return "Cerca una Regione";
                 case "RegionSearchText":
                     return "Cerca Regione";
+                case "SearchResultForRegionText":
+                    return "Search Result For Region";
 
                 //Edit user page
                 case "AdminDeleteUserText":
-                    return "Elimina Utente: questa operazione cancellera l Accaount ed eliminera tutti i dati associati ad esso.";
+                    return "Elimina Utente";
+                case "AdminDeleteUserInfoText":
+                    return "Questa operazione cancellera l Accaount ed eliminera tutti i dati associati ad esso.";
                 case "BanText":
                     return "Vieta Accesso";
                 case "UnbanText":
                     return "Consenti Accesso";
                 case "AdminTempBanUserText":
-                    return "Vieta temporaneamente Accesso: Questo blocca  un utente per il periodo di tempo desiderato.";
+                    return "Vieta temporaneamente Accesso";
+                case "AdminTempBanUserInfoText":
+                    return "Questo blocca  un utente per il periodo di tempo desiderato.";
                 case "AdminBanUserText":
-                    return "Sblocca Utente: Questo Sblocca u utente finche non e sbloccato.";
+                    return "Sblocca Utente";
+                case "AdminBanUserInfoText":
+                    return "Questo Sblocca u utente finche non e sbloccato.";
                 case "AdminUnbanUserText":
-                    return "Sblocca Utente: Rimuove tutti i blocchi temporanei e definitivi su un utente.";
+                    return "Sblocca Utente";
+                case "AdminUnbanUserInfoText":
+                    return "Rimuove tutti i blocchi temporanei e definitivi su un utente.";
                 case "AdminLoginInAsUserText":
-                    return "Accedi come utente: Verrai disconnesso dal tuo Account amministratore e ti connetterai come Utente e vedrai ogni cosa come la vedono gli Utenti normali.";
+                    return "Accedi come utente";
+	            case "AdminLoginInAsUserInfoText":
+                    return "Verrai disconnesso dal tuo Account amministratore e ti connetterai come Utente e vedrai ogni cosa come la vedono gli Utenti normali.";
                 case "TimeUntilUnbannedText":
                     return "Tempo mancante allo sblocco utente";
                 case "DaysText":
@@ -451,7 +502,13 @@ namespace Aurora.Modules.Web.Translators
                 case "EdittingText":
                     return "Modifica";
                 case "BannedUntilText":
-                    return "Utente bloccato fino a:";
+                    return "Utente bloccato fino a";
+                case "KickAUserText":
+                    return "Kick A User (Logs them out within 30 seconds)";
+                case "KickMessageText":
+                    return "Message To User";
+                case "KickUserText":
+                    return "Kick User";
 
                 //factory_reset
                 case "FactoryReset":
@@ -476,6 +533,10 @@ namespace Aurora.Modules.Web.Translators
                     return "Salva elemento del menu";
                 case "SelectItem":
                     return "Seleziona un elemento";
+                case "DeleteItem":
+                    return "Delete Item";
+                case "AddItem":
+                    return "Add Item";
                 case "PageLocationText":
                     return "Posizione della Pagina";
                 case "PageIDText":
@@ -541,31 +602,31 @@ namespace Aurora.Modules.Web.Translators
                 case "Saturday":
                     return "Sabato";
 
-
-                case "Jan":
+                case "Jan_Short":
                     return "Gen";
-                case "Feb":
+                case "Feb_Short":
                     return "Feb";
-                case "Mar":
+                case "Mar_Short":
                     return "Mar";
-                case "Apr":
+                case "Apr_Short":
                     return "Apr";
                 case "May_Short":
                     return "Mag";  
-                case "Jun":
+                case "Jun_Short":
                     return "Giu";
-                case "Jul":
+                case "Jul_Short":
                     return "Lug";
-                case "Aug":
+                case "Aug_Short":
                     return "Ago";
-                case "Sep":
+                case "Sep_Short":
                     return "Set";
-                case "Oct":
+                case "Oct_Short":
                     return "Ott";
-                case "Nov":
+                case "Nov_Short":
                     return "Nov";
-                case "Dec":
+                case "Dec_Short":
                     return "Dic";
+
                 case "January":
                     return "Gennaio";
                 case "February":
@@ -591,17 +652,22 @@ namespace Aurora.Modules.Web.Translators
                 case "December":
                     return "Dicembre";
 
-                //Language Switcher Tooltips
-                case "en":
-                    return "English";
-                case "fr":
-                    return "French";
-                case "de":
-                    return "German";
-                case "it":
-                    return "Italian";
-                case "es":
-                    return "Spanish";
+				// ColorBox
+                case "ColorBoxImageText":
+                    return "Image";
+                case "ColorBoxOfText":
+                    return "of";
+                case "ColorBoxPreviousText":
+                    return "Previous";
+                case "ColorBoxNextText":
+                    return "Next";
+                case "ColorBoxCloseText":
+                    return "Close";
+                case "ColorBoxStartSlideshowText":
+                    return "Start Slide Show";
+                case "ColorBoxStopSlideshowText":
+                    return "Stop Slide Show";
+
             }
             return "UNKNOWN CHARACTER";
         }

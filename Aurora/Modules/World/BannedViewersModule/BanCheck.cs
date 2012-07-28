@@ -47,8 +47,6 @@ namespace Aurora.Modules.Ban
     {
         #region Declares
 
-        ILoginService m_service;
-        IConfigSource m_source;
         BanCheck m_module;
 
         public string Name
@@ -62,8 +60,6 @@ namespace Aurora.Modules.Ban
 
         public void Initialize(ILoginService service, IConfigSource source, IRegistryCore registry)
         {
-            m_source = source;
-            m_service = service;
             m_module = new BanCheck(source, registry.RequestModuleInterface<IUserAccountService>());
         }
 
@@ -261,7 +257,7 @@ namespace Aurora.Modules.Ban
             PresenceInfo info;
             if (!UUID.TryParse(cmdparams[3], out AgentID))
             {
-                UserAccount account = m_accountService.GetUserAccount(UUID.Zero, Util.CombineParams(cmdparams, 3));
+                UserAccount account = m_accountService.GetUserAccount(null, Util.CombineParams(cmdparams, 3));
                 if (account == null)
                 {
                     MainConsole.Instance.Warn("Cannot find user.");
@@ -289,7 +285,7 @@ namespace Aurora.Modules.Ban
             PresenceInfo info;
             if (!UUID.TryParse(cmdparams[2], out AgentID))
             {
-                UserAccount account = m_accountService.GetUserAccount(UUID.Zero, Util.CombineParams(cmdparams, 2));
+                UserAccount account = m_accountService.GetUserAccount(null, Util.CombineParams(cmdparams, 2));
                 if (account == null)
                 {
                     MainConsole.Instance.Warn("Cannot find user.");
@@ -335,7 +331,7 @@ namespace Aurora.Modules.Ban
             PresenceInfo info;
             if (!UUID.TryParse(cmdparams[2], out AgentID))
             {
-                UserAccount account = m_accountService.GetUserAccount(UUID.Zero, Util.CombineParams(cmdparams, 2));
+                UserAccount account = m_accountService.GetUserAccount(null, Util.CombineParams(cmdparams, 2));
                 if (account == null)
                 {
                     MainConsole.Instance.Warn("Cannot find user.");
@@ -374,7 +370,7 @@ namespace Aurora.Modules.Ban
             int Num = 4;
             if (!UUID.TryParse(cmdparams[3], out AgentID))
             {
-                UserAccount account = m_accountService.GetUserAccount(UUID.Zero, Util.CombineParams(cmdparams, 3, 5));
+                UserAccount account = m_accountService.GetUserAccount(null, Util.CombineParams(cmdparams, 3, 5));
                 if (account == null)
                 {
                     MainConsole.Instance.Warn("Cannot find user.");
@@ -404,7 +400,7 @@ namespace Aurora.Modules.Ban
 
         private void DisplayUserInfo(PresenceInfo info)
         {
-            UserAccount account = m_accountService.GetUserAccount(UUID.Zero, info.AgentID);
+            UserAccount account = m_accountService.GetUserAccount(null, info.AgentID);
             if (account != null)
                 MainConsole.Instance.Info("User Info for " + account.Name);
             else
@@ -421,7 +417,7 @@ namespace Aurora.Modules.Ban
                 MainConsole.Instance.Info("   Known Alt Accounts: ");
                 foreach (var acc in info.KnownAlts)
                 {
-                    account = m_accountService.GetUserAccount(UUID.Zero, UUID.Parse(acc));
+                    account = m_accountService.GetUserAccount(null, UUID.Parse(acc));
                     if (account != null)
                         MainConsole.Instance.Info("   " + account.Name);
                     else
@@ -574,8 +570,6 @@ namespace Aurora.Modules.Ban
     {
         #region Declares
 
-        private ILoginService m_service;
-        private IConfigSource m_source;
         private List<IPAddress> IPBans = new List<IPAddress>();
         private List<string> IPRangeBans = new List<string>();
 
@@ -590,9 +584,6 @@ namespace Aurora.Modules.Ban
 
         public void Initialize(ILoginService service, IConfigSource source, IRegistryCore registry)
         {
-            m_source = source;
-            m_service = service;
-
             IConfig config = source.Configs["GrieferProtection"];
             if (config != null)
             {

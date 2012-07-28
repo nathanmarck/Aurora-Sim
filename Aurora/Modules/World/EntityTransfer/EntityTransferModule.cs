@@ -144,11 +144,11 @@ namespace Aurora.Modules.EntityTransfer
             int x = 0, y = 0;
             Util.UlongToInts(regionHandle, out x, out y);
 
-            GridRegion reg = sp.Scene.GridService.GetRegionByPosition (sp.Scene.RegionInfo.ScopeID, x, y);
+            GridRegion reg = sp.Scene.GridService.GetRegionByPosition (sp.ControllingClient.AllScopeIDs, x, y);
             
             if (reg == null)
             {
-                List<GridRegion> regions = sp.Scene.GridService.GetRegionRange(sp.Scene.RegionInfo.ScopeID, x - (sp.Scene.GridService.GetRegionViewSize() * sp.Scene.RegionInfo.RegionSizeX),
+                List<GridRegion> regions = sp.Scene.GridService.GetRegionRange(sp.ControllingClient.AllScopeIDs, x - (sp.Scene.GridService.GetRegionViewSize() * sp.Scene.RegionInfo.RegionSizeX),
                     x + (sp.Scene.GridService.GetRegionViewSize() * sp.Scene.RegionInfo.RegionSizeX),
                     y - (sp.Scene.GridService.GetRegionViewSize() * sp.Scene.RegionInfo.RegionSizeY),
                     y + (sp.Scene.GridService.GetRegionViewSize() * sp.Scene.RegionInfo.RegionSizeY));
@@ -416,7 +416,7 @@ namespace Aurora.Modules.EntityTransfer
         public void RequestTeleportLocation(IClientAPI remoteClient, string regionName, Vector3 position,
                                             Vector3 lookat, uint teleportFlags)
         {
-            GridRegion regionInfo = remoteClient.Scene.RequestModuleInterface<IGridService>().GetRegionByName(UUID.Zero, regionName);
+            GridRegion regionInfo = remoteClient.Scene.RequestModuleInterface<IGridService>().GetRegionByName(remoteClient.AllScopeIDs, regionName);
             if (regionInfo == null)
             {
                 // can't find the region: Tell viewer and abort
@@ -475,7 +475,7 @@ namespace Aurora.Modules.EntityTransfer
             GridRegion info = null;
             try
             {
-                info = remoteClient.Scene.RequestModuleInterface<IGridService>().GetRegionByUUID(UUID.Zero, regionID);
+                info = remoteClient.Scene.RequestModuleInterface<IGridService>().GetRegionByUUID(remoteClient.AllScopeIDs, regionID);
             }
             catch( Exception ex)
             {
@@ -524,7 +524,7 @@ namespace Aurora.Modules.EntityTransfer
                 
             if (uinfo != null)
             {
-                GridRegion regionInfo = client.Scene.GridService.GetRegionByUUID(UUID.Zero, uinfo.HomeRegionID);
+                GridRegion regionInfo = client.Scene.GridService.GetRegionByUUID(client.AllScopeIDs, uinfo.HomeRegionID);
                 if (regionInfo == null)
                 {
                     Vector3 position = Vector3.Zero, lookAt = Vector3.Zero;
@@ -547,7 +547,7 @@ namespace Aurora.Modules.EntityTransfer
             else
             {
                 //Default region time...
-                List<GridRegion> Regions = client.Scene.GridService.GetDefaultRegions(UUID.Zero);
+                List<GridRegion> Regions = client.Scene.GridService.GetDefaultRegions(client.AllScopeIDs);
                 if(Regions.Count != 0)
                 {
                     MainConsole.Instance.DebugFormat("[ENTITY TRANSFER MODULE]: User's home region was not found, using {0} {1} ({2}-{3})",
@@ -592,8 +592,6 @@ namespace Aurora.Modules.EntityTransfer
                 agent.PhysicsActor.IsPhysical = false;
             
             MainConsole.Instance.DebugFormat("[EntityTransferModule]: Crossing agent {0} to region {1}", agent.Name, crossingRegion.RegionName);
-
-            IScene m_scene = agent.Scene;
 
             try
             {
@@ -763,21 +761,17 @@ namespace Aurora.Modules.EntityTransfer
                 if(grp.SitTargetAvatar.Count != 0)
                 {
                     bool success = false;
-                    lock(grp.SitTargetAvatar)
+                    foreach (UUID avID in grp.SitTargetAvatar)
                     {
-                        foreach(UUID avID in grp.SitTargetAvatar)
-                        {
-                            IScenePresence SP = grp.Scene.GetScenePresence(avID);
-                            SP.Velocity = grp.RootChild.PhysActor.Velocity;
-                            InternalCross(SP, attemptedPos, false, destination);
-                            success = grp.Scene.GetScenePresence(avID).IsChildAgent;
-                        }
+                        IScenePresence SP = grp.Scene.GetScenePresence(avID);
+                        SP.Velocity = grp.RootChild.PhysActor.Velocity;
+                        InternalCross(SP, attemptedPos, false, destination);
+                        success = grp.Scene.GetScenePresence(avID).IsChildAgent;
                     }
                     if(success)
                     {
                         foreach(ISceneChildEntity part in grp.ChildrenEntities())
                             part.SitTargetAvatar.Clear();
-                        grp.SitTargetAvatar.Clear();
 
                         IBackupModule backup = grp.Scene.RequestModuleInterface<IBackupModule>();
                         if(backup != null)
@@ -799,7 +793,6 @@ namespace Aurora.Modules.EntityTransfer
                     {
                         foreach (ISceneChildEntity part in grp.ChildrenEntities())
                             part.SitTargetAvatar.Clear();
-                        grp.SitTargetAvatar.Clear();
 
                         IBackupModule backup = grp.Scene.RequestModuleInterface<IBackupModule>();
                         if (backup != null)

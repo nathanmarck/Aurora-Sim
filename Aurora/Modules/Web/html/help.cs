@@ -35,7 +35,8 @@ namespace Aurora.Modules.Web
 			vars.Add("ImprudenceViewer", translator.GetTranslatedString("ImprudenceViewer"));
 			vars.Add("PhoenixViewer", translator.GetTranslatedString("PhoenixViewer"));
 			vars.Add("SingularityViewer", translator.GetTranslatedString("SingularityViewer"));
-			
+			vars.Add("ZenViewer", translator.GetTranslatedString("ZenViewer"));
+
 			return vars;			
         }
 

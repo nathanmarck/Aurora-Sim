@@ -155,7 +155,7 @@ namespace OpenSim.Services.CapsService
             NameValueCollection query = HttpUtility.ParseQueryString(httpRequest.Url.Query);
             string amt = query.GetOne("page-size");
             string name = query.GetOne("names");
-            List<UserAccount> accounts = m_service.Registry.RequestModuleInterface<IUserAccountService>().GetUserAccounts(UUID.Zero, name) ??
+            List<UserAccount> accounts = m_service.Registry.RequestModuleInterface<IUserAccountService>().GetUserAccounts(m_service.ClientCaps.AccountInfo.AllScopeIDs, name, 0, uint.Parse(amt)) ??
                                          new List<UserAccount>(0);
 
             OSDMap body = new OSDMap();
@@ -214,11 +214,10 @@ namespace OpenSim.Services.CapsService
             Vector3 position = new Vector3((float)pos["X"].AsReal(),
                 (float)pos["Y"].AsReal(),
                 (float)pos["Z"].AsReal());
-            OSDMap lookat = rm["LocationLookAt"] as OSDMap;
-            // this vector does not appear to be used
+            /*OSDMap lookat = rm["LocationLookAt"] as OSDMap;
             Vector3 lookAt = new Vector3((float)lookat["X"].AsReal(),
                 (float)lookat["Y"].AsReal(),
-                (float)lookat["Z"].AsReal());
+                (float)lookat["Z"].AsReal());*/
             ulong RegionHandle = rm["RegionHandle"].AsULong();
             const uint tpFlags = 16;
 
@@ -232,8 +231,8 @@ namespace OpenSim.Services.CapsService
             string reason = "";
             int x, y;
             Util.UlongToInts(RegionHandle, out x, out y);
-            GridRegion destination = m_service.Registry.RequestModuleInterface<IGridService>().GetRegionByPosition(UUID.Zero,
-                x, y);
+            GridRegion destination = m_service.Registry.RequestModuleInterface<IGridService>().GetRegionByPosition(
+                m_service.ClientCaps.AccountInfo.AllScopeIDs, x, y);
             ISimulationService simService = m_service.Registry.RequestModuleInterface<ISimulationService>();
             AgentData ad = new AgentData();
             AgentCircuitData circuitData = null;

@@ -87,7 +87,6 @@ namespace OpenSim.Services.MessagingService
 
                     List<FriendInfo> friends = friendsService.GetFriends(us);
                     List<UUID> OnlineFriends = new List<UUID>();
-                    List<string> previouslyContactedURLs = new List<string>();
                     foreach (FriendInfo friend in friends)
                     {
                         if (friend.TheirFlags == -1 || friend.MyFlags == -1)
@@ -126,7 +125,7 @@ namespace OpenSim.Services.MessagingService
                                 {
                                     OnlineFriends.Add(FriendToInform);
                                     //Post!
-                                    GridRegion r = gridService.GetRegionByUUID(UUID.Zero, friendinfo.CurrentRegionID);
+                                    GridRegion r = gridService.GetRegionByUUID(null, friendinfo.CurrentRegionID);
                                     if (r != null)
                                         asyncPoster.Post(r.RegionHandle,
                                                          SyncMessageHelper.AgentStatusChange(us, FriendToInform,
@@ -148,7 +147,7 @@ namespace OpenSim.Services.MessagingService
                     //If the user is coming online, send all their friends online statuses to them
                     if (isOnline)
                     {
-                        GridRegion ourRegion = gridService.GetRegionByUUID(UUID.Zero, UUID.Parse(info[2].ToString()));
+                        GridRegion ourRegion = gridService.GetRegionByUUID(null, UUID.Parse(info[2].ToString()));
                         if (ourRegion != null)
                         {
                             foreach (UUID onlineFriend in OnlineFriends)
@@ -165,7 +164,6 @@ namespace OpenSim.Services.MessagingService
 
         protected OSDMap OnMessageReceived(OSDMap message)
         {
-            IGridService gridService = m_registry.RequestModuleInterface<IGridService>();
             IAsyncMessagePostService asyncPost = m_registry.RequestModuleInterface<IAsyncMessagePostService>();
             //We need to check and see if this is an AgentStatusChange
             if (message.ContainsKey("Method") && message["Method"] == "AgentStatusChange")

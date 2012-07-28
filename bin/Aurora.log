@@ -1449,3 +1449,1177 @@ System.IndexOutOfRangeException: Array index is out of range.
 2012-07-22 14:32:59,821 INFO  - Aurora.Framework.BaseConsole [RegisterRegionWithGrid]: Deregistering region Genesis HQ from the grid...
 2012-07-22 14:32:59,872 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Terminating
 2012-07-22 14:32:59,872 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2012-07-22 14:45:27,930 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-22 14:45:27,945 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-22 14:45:27,946 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-22 14:45:27,946 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-22 14:45:27,946 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-22 14:45:28,801 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-22 14:45:29,899 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-22 14:45:30,292 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-22 14:45:30,312 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-22 14:45:30,577 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-22 14:45:30,579 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-22 14:45:31,896 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-22 14:45:31,958 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 128 object(s) in Genesis HQ
+2012-07-22 14:45:31,968 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-22 14:45:32,190 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-22 14:45:32,203 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 4.457s
+2012-07-22 14:50:31,092 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 14:50:31,896 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 14:55:31,897 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-22 21:22:30,369 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-22 21:22:30,706 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1805993318)
+2012-07-22 21:22:30,806 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <184.6002, 129.7897, 22.04933>.
+2012-07-22 21:22:30,830 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST// on port 9000 took 580 ms for a request sized 0.002468109mb response sized -9.536743E-07mb
+2012-07-22 21:22:34,714 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://31.54.129.248:9000/CAPS/b9fa805b-4155-46f5-bf0d-348581110b7a0000/
+2012-07-22 21:22:37,891 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 31.54.129.248:64028 took 485ms
+2012-07-22 21:22:38,735 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-22 21:22:41,442 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-22 21:22:44,417 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-22 21:25:31,913 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 21:25:32,070 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 21:30:32,073 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 21:30:32,126 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 21:35:32,128 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 21:35:32,205 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 21:40:32,208 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 21:40:32,281 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 21:45:32,281 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-22 21:59:21,415 WARN  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: HTTP handler threw an exception System.IO.FileNotFoundException: Could not find file "/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico".
+File name: '/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico'
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllBytes (System.String path) [0x00000] in <filename unknown>:0 
+  at Aurora.Modules.Web.WebInterface.FindAndSendPage (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.GenericStreamHandler.Handle (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.HandleStreamHandler (Aurora.Framework.Servers.HttpServer.OSHttpRequest request, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, System.String path, System.Int32& respcontentLength, IStreamedRequestHandler requestHandler) [0x00000] in <filename unknown>:0 .
+2012-07-22 22:00:07,532 WARN  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: HTTP handler threw an exception System.IO.FileNotFoundException: Could not find file "/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico".
+File name: '/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico'
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllBytes (System.String path) [0x00000] in <filename unknown>:0 
+  at Aurora.Modules.Web.WebInterface.FindAndSendPage (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.GenericStreamHandler.Handle (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.HandleStreamHandler (Aurora.Framework.Servers.HttpServer.OSHttpRequest request, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, System.String path, System.Int32& respcontentLength, IStreamedRequestHandler requestHandler) [0x00000] in <filename unknown>:0 .
+2012-07-22 22:00:34,313 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 31.54.129.248 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-22 22:00:34,531 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 172873209)
+2012-07-22 22:00:34,603 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <130.4515, 109.3306, 26.77899>.
+2012-07-22 22:00:34,619 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST// on port 9000 took 569 ms for a request sized 0.002468109mb response sized -9.536743E-07mb
+2012-07-22 22:00:38,189 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://31.54.129.248:9000/CAPS/830400ba-2b6b-4b77-9540-42292a585bdf0000/
+2012-07-22 22:00:54,321 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 31.54.129.248:51890 took 316ms
+2012-07-22 22:00:54,599 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-22 22:00:57,488 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-22 22:01:01,842 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-22 22:05:32,283 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:05:32,658 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:10:32,660 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:10:32,732 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:15:32,734 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:15:32,803 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:20:32,805 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:20:32,859 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:25:32,877 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:25:32,931 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:30:32,933 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:30:32,987 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:35:32,988 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-22 22:40:32,990 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-22 22:40:33,058 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-22 22:45:33,060 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-23 00:43:15,125 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-23 11:42:57,828 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-23 11:42:57,893 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 428421623)
+2012-07-23 11:42:57,911 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <141.9637, 137.5808, 26.99997>.
+2012-07-23 11:42:59,444 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://31.54.129.248:9000/CAPS/a9becf5a-ebe4-4317-9710-190ae10d95f20000/
+2012-07-23 11:43:01,315 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 31.54.129.248:65257 took 22ms
+2012-07-23 11:43:01,946 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-23 11:43:04,054 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-23 11:43:07,546 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-23 11:50:33,096 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-23 11:50:33,170 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-23 11:55:33,170 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-23 12:45:33,173 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-23 12:45:33,277 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-23 12:50:33,278 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-23 13:15:33,281 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-23 13:15:33,409 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-23 13:20:33,410 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-23 14:33:28,211 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-23 14:45:31,085 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-23 14:45:31,244 FATAL - Aurora.Framework.BaseConsole 10 PRIMS WERE NOT GOING TO BE SAVED! FORCE SAVING NOW! 
+2012-07-23 14:45:32,415 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-23 23:17:34,257 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 31.54.129.248 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-23 23:17:34,317 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1461754438)
+2012-07-23 23:17:34,355 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <137.697, 111.1506, 22.18213>.
+2012-07-23 23:17:41,593 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://31.54.129.248:9000/CAPS/dc78aecc-2276-4fff-a299-4c8caa04dee80000/
+2012-07-23 23:18:07,800 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 31.54.129.248:52892 took 66ms
+2012-07-23 23:18:08,249 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-23 23:18:12,566 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-23 23:18:17,694 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-23 23:50:33,432 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-23 23:50:33,517 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-23 23:55:33,519 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-23 23:55:33,580 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-23 23:57:09,671 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(12,4) Invalid argument in 'link_message'
+ prim name: Object@ <121.2999, 101.4654, 22.02803> itemID: a5513ed6-2965-4a95-91d1-cf2f0109c1d4, CompiledFile: ScriptEngines/eed/eed73b6f-81af-4cad-aa6d-9bdb0b6f0108.dll
+2012-07-23 23:57:09,686 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/4e5e0fe5-02df-4dad-9821-0cf0a74eee6c6088 on port 9000 took 505 ms for a request sized 0.0005207062mb response sized 0.0002603531mb
+2012-07-23 23:57:25,603 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-23 23:57:26,585 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/0686dac4-5281-438b-a3a3-d49f9b1d04165797 on port 9000 took 986 ms for a request sized 0.0005788803mb response sized 0.0001897812mb
+2012-07-23 23:57:30,515 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-24 00:00:33,582 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 00:00:33,662 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 00:05:33,663 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-24 10:29:34,946 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-24 10:29:35,012 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1603318677)
+2012-07-24 10:29:35,031 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <127.4424, 105.5323, 22.1829>.
+2012-07-24 10:31:48,434 INFO  - Aurora.Framework.BaseConsole [COMMANDFILE]: Running shutdown_commands.txt
+2012-07-24 10:31:48,437 INFO  - Aurora.Framework.BaseConsole [Scene]: Closing down the single simulator: Genesis HQ
+2012-07-24 10:31:48,439 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 10:31:48,854 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 10:31:49,906 INFO  - Aurora.Framework.BaseConsole [RegisterRegionWithGrid]: Deregistering region Genesis HQ from the grid...
+2012-07-24 10:31:49,975 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Terminating
+2012-07-24 10:31:49,975 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2012-07-24 10:32:04,578 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-24 10:32:04,595 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-24 10:32:04,595 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-24 10:32:04,595 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-24 10:32:04,595 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-24 10:32:05,638 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-24 10:32:06,808 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-24 10:32:07,011 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-24 10:32:07,030 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-24 10:32:07,094 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-24 10:32:07,096 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-24 10:32:08,910 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-24 10:32:08,980 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 138 object(s) in Genesis HQ
+2012-07-24 10:32:08,992 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-24 10:32:09,224 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-24 10:32:09,248 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 4.883s
+2012-07-24 10:34:32,041 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-24 10:34:32,246 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 47905603)
+2012-07-24 10:34:32,315 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <127.4424, 105.5323, 22.1829>.
+2012-07-24 10:34:33,738 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.178.88.162:9000/CAPS/e3198a37-d4bf-4e49-99c3-36069501dbb80000/
+2012-07-24 10:34:35,435 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.178.88.162:52526 took 271ms
+2012-07-24 10:34:35,936 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-24 10:34:37,623 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-24 10:34:41,149 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-24 10:37:08,000 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 10:37:09,320 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 10:42:09,321 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-24 10:50:27,818 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/df68c4f3-a20f-4435-8c8b-ef8cb98f8b295496 on port 9000 took 1514 ms for a request sized 0.0006217957mb response sized 0.0001897812mb
+2012-07-24 10:52:09,324 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 10:52:09,417 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 10:57:09,418 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-24 11:00:21,100 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(14,4) syntax error prim name: Object@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/0ad/0ad94fde-9251-4b03-a8ef-47a8e4a37762.dll
+2012-07-24 11:00:27,679 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-24 11:00:27,840 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(28,1) Unexpected EOF prim name: Object@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/6ab/6ab388a9-95fc-4975-bd4c-f5a1863f2533.dll
+2012-07-24 11:00:42,309 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-24 11:00:42,441 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(30,1) Unexpected EOF prim name: Object@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/78a/78ae5e6e-6122-4e4e-b924-a815ee047a76.dll
+2012-07-24 11:02:04,934 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-24 11:02:06,101 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/5c7a833d-8193-4dd1-9647-a911ba3ed9a35699 on port 9000 took 1171 ms for a request sized 0.0009260178mb response sized 0.0001897812mb
+2012-07-24 11:02:09,421 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 11:02:09,511 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 11:07:09,516 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 11:07:09,576 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 11:09:41,036 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/9fb195c8-b98b-4c16-bb3c-c981b020e2456992 on port 9000 took 1186 ms for a request sized 0.0009527206mb response sized 0.0001897812mb
+2012-07-24 11:12:09,599 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 11:12:09,658 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 11:17:09,660 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-24 14:39:38,843 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/d81d9a72-1d3a-49b2-8886-c8f65fbf829e/ on port 9000 took 559 ms for a request sized 0.002736092mb response sized 0mb
+2012-07-24 17:05:35,565 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(13,1) Unexpected EOF prim name: Genesis Server@ <176.108, 114.1426, 22.56592> itemID: 7f8d0723-bfa6-4374-ac89-9a8d24144904, CompiledFile: ScriptEngines/3af/3aff3664-a1d2-4b40-a185-25a66aaeb4e6.dll
+2012-07-24 17:05:41,998 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'remote connections manager.lsl' to fire event changed
+2012-07-24 17:05:43,218 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/a3b4af25-25c0-4a9d-8534-26f1d4a513ac7276 on port 9000 took 1223 ms for a request sized 0.0002498627mb response sized 0.0001897812mb
+2012-07-24 17:07:09,675 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 17:07:09,843 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 17:07:32,501 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/89f5bfe3-b9bc-49c7-9945-80a25f98959e5582 on port 9000 took 1432 ms for a request sized 0.001088142mb response sized 0.0001897812mb
+2012-07-24 17:12:09,847 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 17:12:09,929 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 17:17:09,930 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-24 17:57:42,762 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/d81d9a72-1d3a-49b2-8886-c8f65fbf829e/ on port 9000 took 2361 ms for a request sized 0.002746582mb response sized 0mb
+2012-07-24 17:57:50,647 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-24 20:28:32,842 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-24 20:28:33,221 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1013918670)
+2012-07-24 20:28:33,241 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <136.2267, 108.3499, 22.18287>.
+2012-07-24 20:28:33,307 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST// on port 9000 took 535 ms for a request sized 0.002468109mb response sized -9.536743E-07mb
+2012-07-24 20:28:35,932 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.178.88.162:9000/CAPS/2d32b115-a289-4b61-a775-8a7e45930e740000/
+2012-07-24 20:28:38,791 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.178.88.162:62907 took 85ms
+2012-07-24 20:28:39,202 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-24 20:28:42,044 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-24 20:28:44,723 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-24 22:30:52,024 WARN  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: HTTP handler threw an exception System.IO.FileNotFoundException: Could not find file "/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico".
+File name: '/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico'
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllBytes (System.String path) [0x00000] in <filename unknown>:0 
+  at Aurora.Modules.Web.WebInterface.FindAndSendPage (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.GenericStreamHandler.Handle (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.HandleStreamHandler (Aurora.Framework.Servers.HttpServer.OSHttpRequest request, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, System.String path, System.Int32& respcontentLength, IStreamedRequestHandler requestHandler) [0x00000] in <filename unknown>:0 .
+2012-07-24 22:32:58,940 WARN  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: HTTP handler threw an exception System.IO.FileNotFoundException: Could not find file "/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico".
+File name: '/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico'
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllBytes (System.String path) [0x00000] in <filename unknown>:0 
+  at Aurora.Modules.Web.WebInterface.FindAndSendPage (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.GenericStreamHandler.Handle (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.HandleStreamHandler (Aurora.Framework.Servers.HttpServer.OSHttpRequest request, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, System.String path, System.Int32& respcontentLength, IStreamedRequestHandler requestHandler) [0x00000] in <filename unknown>:0 .
+2012-07-24 22:33:09,541 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 86.178.88.162 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-24 22:33:09,647 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1178183786)
+2012-07-24 22:33:09,665 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <126.5231, 109.0412, 22.18163>.
+2012-07-24 22:33:11,674 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.178.88.162:9000/CAPS/3704c88f-35a1-4683-8cb2-c3d652a2dbd80000/
+2012-07-24 22:33:15,754 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.178.88.162:60351 took 83ms
+2012-07-24 22:33:16,165 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-24 22:33:18,963 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-24 22:33:24,284 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-24 23:13:39,518 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(31,40) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/a05/a059343f-0add-423d-bb4e-3b9f569befbf.dll
+2012-07-24 23:13:39,543 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/2f22c00d-e1ec-4866-b61a-26b36c36e2307226 on port 9000 took 829 ms for a request sized 0.001173019mb response sized 0.0002307892mb
+2012-07-24 23:13:43,579 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-24 23:13:43,852 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(33,4) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/c49/c4959011-6c5f-41d9-9af5-fbb58f7c2043.dll
+2012-07-24 23:13:52,568 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-24 23:13:54,449 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/8d482d72-27c8-426f-9015-f81b016c01de6728 on port 9000 took 1885 ms for a request sized 0.001182556mb response sized 0.0001897812mb
+2012-07-24 23:14:19,765 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/a49234b7-785e-4eb7-b5ce-17881cd494aa5026 on port 9000 took 1146 ms for a request sized 0.0003356934mb response sized 0.0001897812mb
+2012-07-24 23:15:28,743 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/184cc3cd-ffa6-466e-a028-9133887c1ef15478 on port 9000 took 1123 ms for a request sized 0.001285553mb response sized 0.0001897812mb
+2012-07-24 23:15:34,827 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/dc54ae4e-32d8-44f0-982c-d2561125fc6c7405 on port 9000 took 1223 ms for a request sized 0.001290321mb response sized 0.0001897812mb
+2012-07-24 23:17:10,016 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-24 23:17:10,145 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-24 23:22:10,146 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-24 23:51:35,715 ERROR - Aurora.Framework.BaseConsole Exception in poll service thread: System.NullReferenceException: Object reference not set to an instance of an object
+  at Griffin.Networking.Channels.TcpChannel.Disconnect () [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Channels.TcpChannel.HandleDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.Pipeline+ChannelAsDownstreeamHandler.HandleDownstream (IPipelineHandlerContext context, IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineDownstreamContext.Invoke (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineDownstreamContext.SendDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Http.Handlers.ResponseEncoder.HandleDownstream (IPipelineHandlerContext context, IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineDownstreamContext.Invoke (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.Pipeline.SendDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineUpstreamContext.SendDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.OSHttpResponse.Send () [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.SendGenericHTTPResponse (System.Collections.Hashtable responsedata, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, Aurora.Framework.Servers.HttpServer.OSHttpRequest request) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.PollServiceWorkerThread.Run () [0x00000] in <filename unknown>:0 
+2012-07-25 00:02:37,536 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(2,6) syntax error prim name: Object@ <133.9611, 104.5731, 21.31592> itemID: 993e11a2-985a-4507-b369-fabd260bc784, CompiledFile: ScriptEngines/2b8/2b806a6c-4972-4f22-a74c-438fc180b836.dll
+2012-07-25 00:02:59,405 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'New Script' to fire event changed
+2012-07-25 00:02:59,532 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(2,1) syntax error prim name: Object@ <133.9611, 104.5731, 21.31592> itemID: 993e11a2-985a-4507-b369-fabd260bc784, CompiledFile: ScriptEngines/f3a/f3a48d2c-cbf0-4af9-8e34-910e78be91ae.dll
+2012-07-25 00:03:14,831 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'New Script' to fire event changed
+2012-07-25 00:03:14,956 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(10,1) Unexpected EOF prim name: Object@ <133.9611, 104.5731, 21.31592> itemID: 993e11a2-985a-4507-b369-fabd260bc784, CompiledFile: ScriptEngines/b59/b591f8bc-31e7-48b7-8497-ae165bfc8cfb.dll
+2012-07-25 00:03:25,092 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'New Script' to fire event changed
+2012-07-25 00:03:26,266 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/1ccdcda2-ef01-4e00-9e61-a08e4f43296d5281 on port 9000 took 1215 ms for a request sized 0.0002365112mb response sized 0.0001897812mb
+2012-07-25 00:07:10,148 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:07:10,415 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:09:10,100 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/3ee93a15-7df3-4d85-9b6f-38bb844455f95902 on port 9000 took 1072 ms for a request sized 0.0001974106mb response sized 0.0001897812mb
+2012-07-25 00:09:33,070 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/53da5f76-cf39-48da-b4ec-0587cc4d2a3c5116 on port 9000 took 1086 ms for a request sized 0.0002059937mb response sized 0.0001897812mb
+2012-07-25 00:11:24,442 ERROR - Aurora.Framework.BaseConsole Error (exception) compiling script:
+System.IndexOutOfRangeException: Array index is out of range.
+  at Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools.LSLConverter.CleanError (System.String message) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools.LSLConverter.FindErrorLine (System.CodeDom.Compiler.CompilerError CompErr, System.Object map, System.String script, System.Int32& LineN, System.Int32& CharN) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools.Compiler.CompileFromDotNetText (System.String Script, IScriptConverter converter, System.String assembly, System.String originalScript, Boolean inMemory) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools.Compiler.PerformScriptCompile (System.String Script, UUID itemID, UUID ownerUUID, System.String& assembly) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptData.Start (LUStruct startInfo) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/039/0398e336-78c9-47fc-a60a-a16a9214f04f.dll
+2012-07-25 00:11:24,485 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/3a457e07-43c2-431d-8366-54d55c2faa515371 on port 9000 took 1438 ms for a request sized 0.001361847mb response sized 0.001297951mb
+2012-07-25 00:12:06,155 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:12:07,276 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/84f36569-c350-4de9-a83b-591e0640628e6411 on port 9000 took 1174 ms for a request sized 0.001369476mb response sized 0.0001897812mb
+2012-07-25 00:12:10,419 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:12:10,482 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:12:55,399 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/fffeb4c4-97cb-4019-8289-80c33271b31f6458 on port 9000 took 1127 ms for a request sized 0.001396179mb response sized 0.0001897812mb
+2012-07-25 00:13:24,347 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/0def8d5a-1915-46e8-b359-c9317b4a05015632 on port 9000 took 1122 ms for a request sized 0.00139904mb response sized 0.0001897812mb
+2012-07-25 00:14:09,365 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(42,8) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/56a/56a595c5-bbad-4b30-85e2-dc096187e24f.dll
+2012-07-25 00:16:07,267 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:16:07,395 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(43,8) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/faa/faa318b9-5da0-4147-b3f4-4e8618af9cd2.dll
+2012-07-25 00:17:10,485 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:17:10,564 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:17:40,508 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:17:40,657 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(34,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/0f9/0f9b7820-cfa9-4bcf-a843-0230cdbeb992.dll
+2012-07-25 00:17:58,834 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:17:58,962 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(43,8) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/59a/59acbc80-0848-46ff-9563-c876b170aa49.dll
+2012-07-25 00:18:11,274 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:18:11,402 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(34,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/beb/bebce82e-c88e-4284-b3b6-1309db820be0.dll
+2012-07-25 00:20:18,267 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:20:18,417 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(35,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/4d4/4d434186-6f77-4e89-b461-979172b133bc.dll
+2012-07-25 00:22:10,568 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:22:10,647 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:27:10,648 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 00:32:52,552 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:32:52,701 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(44,8) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/808/80806226-a610-422a-ad89-8cab00998b20.dll
+2012-07-25 00:32:57,787 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:32:57,930 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(44,8) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/242/24272eef-4f18-4aac-a451-f3d3097313a7.dll
+2012-07-25 00:33:07,096 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:33:07,245 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(35,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/98a/98a876a9-e75c-42a5-ba84-e5e67255402e.dll
+2012-07-25 00:33:27,574 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:33:27,723 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(35,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/839/8395664d-bf45-4598-83a0-3c37fc53efa8.dll
+2012-07-25 00:33:31,777 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:33:32,011 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(35,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/705/70541678-3be4-4684-b92e-6aeb2773428b.dll
+2012-07-25 00:34:03,485 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:34:03,632 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(51,4) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/f56/f5653b39-95a9-48a4-be68-307472df4a27.dll
+2012-07-25 00:34:11,925 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:34:13,045 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/c886876f-6758-465a-b576-08db62c6cf4b7691 on port 9000 took 1123 ms for a request sized 0.00152874mb response sized 0.0001897812mb
+2012-07-25 00:34:54,844 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(36,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/58b/58bc6bf4-8629-47e4-a944-53f9663a98cc.dll
+2012-07-25 00:35:02,929 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:35:03,079 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(36,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/b4b/b4b48479-0911-4660-b40e-a25abbb63018.dll
+2012-07-25 00:37:10,651 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:37:10,714 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:37:16,927 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:37:17,053 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(36,7) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/a51/a5180211-5fc4-4d7a-8640-595299a65f44.dll
+2012-07-25 00:42:00,804 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:42:01,922 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/62d95a9d-50e3-4659-9492-736309bbeb075330 on port 9000 took 1175 ms for a request sized 0.001517296mb response sized 0.0001897812mb
+2012-07-25 00:42:10,716 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:42:10,782 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:44:11,568 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(57,4) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/190/1904632a-7e88-4531-b769-a57540bc3967.dll
+2012-07-25 00:44:18,273 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 00:47:10,785 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 00:47:10,865 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 00:52:10,865 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 01:10:07,921 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(30,50) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/110/11065bfb-09b2-43af-b3e9-482aa6b20342.dll
+2012-07-25 01:10:07,972 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/23dff42e-e62a-4861-b970-3e11f10bab915380 on port 9000 took 737 ms for a request sized 0.001485825mb response sized 0.0002307892mb
+2012-07-25 01:10:15,112 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 01:10:16,234 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/8db72a21-7948-4a37-8ebc-95af68dd90155115 on port 9000 took 1309 ms for a request sized 0.001484871mb response sized 0.0001897812mb
+2012-07-25 01:10:30,694 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(31,0): Error: The name `seperated' does not exist in the current context
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/3b8/3b88f9d9-b5bd-4986-88fe-75dc8029310f.dll
+2012-07-25 01:10:30,718 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/00d20d10-9482-4c55-ad2e-3a9e007a2a7a6204 on port 9000 took 1077 ms for a request sized 0.001495361mb response sized 0.0002908707mb
+2012-07-25 01:10:39,673 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 01:10:40,702 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(32,0): Error: Cannot implicitly convert type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types.list' to `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types.LSLString'. An explicit conversion exists (are you missing a cast?)
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/fa8/fa8f2f33-b32f-4195-a55e-8c4f4decaf12.dll
+2012-07-25 01:10:40,742 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/831b8041-f649-427a-a6b1-71b9af021cb56122 on port 9000 took 1129 ms for a request sized 0.001512527mb response sized 0.0004329681mb
+2012-07-25 01:11:01,159 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 01:11:01,294 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(31,24) syntax error prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/049/049d6002-896f-458d-96e6-bef4b97cf16d.dll
+2012-07-25 01:11:08,110 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 01:11:09,119 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(32,0): Error: Cannot implicitly convert type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types.list' to `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types.LSLString'. An explicit conversion exists (are you missing a cast?)
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/3a0/3a00b64b-c5f5-4bf4-9c32-fd1b746ebc98.dll
+2012-07-25 01:11:09,125 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/1eb0bc76-ccd2-4970-bc3c-cd4194b609d35648 on port 9000 took 1020 ms for a request sized 0.001512527mb response sized 0.0004329681mb
+2012-07-25 01:11:15,480 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 01:11:16,655 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/15f4fc88-c793-46f5-8dfc-3e8e37c0daa86246 on port 9000 took 1230 ms for a request sized 0.00151062mb response sized 0.0001897812mb
+2012-07-25 01:12:10,868 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 01:12:10,989 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 01:17:10,990 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 01:30:17,691 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/5905a2a6-c2e5-4c2f-9b79-91916e173eda7498 on port 9000 took 1230 ms for a request sized 0.001457214mb response sized 0.0001897812mb
+2012-07-25 01:32:10,992 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 01:32:11,118 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 01:34:37,866 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+The compiler for language "ascript" is not in list of allowed compilers. Script will not be executed! prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 68a81fa1-05cf-4741-a242-e74b254e7c76, CompiledFile: ScriptEngines/545/545c58eb-b465-4e7c-811c-c2cb0e6368a9.dll
+2012-07-25 01:35:00,076 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 01:37:11,121 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 01:37:11,185 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 01:42:11,186 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 02:06:18,123 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-25 08:42:50,117 INFO  - Aurora.Framework.BaseConsole [COMMANDFILE]: Running shutdown_commands.txt
+2012-07-25 08:42:50,124 INFO  - Aurora.Framework.BaseConsole [Scene]: Closing down the single simulator: Genesis HQ
+2012-07-25 08:42:50,126 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 08:42:50,193 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 08:42:51,296 INFO  - Aurora.Framework.BaseConsole [RegisterRegionWithGrid]: Deregistering region Genesis HQ from the grid...
+2012-07-25 08:42:51,322 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Terminating
+2012-07-25 08:42:51,323 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2012-07-25 08:47:58,168 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-25 08:47:58,182 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-25 08:47:58,182 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-25 08:47:58,182 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-25 08:47:58,183 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-25 08:47:58,927 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-25 08:48:00,061 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-25 08:48:00,221 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-25 08:48:00,240 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-25 08:48:00,291 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-25 08:48:00,293 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-25 08:48:02,143 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-25 08:48:02,205 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 138 object(s) in Genesis HQ
+2012-07-25 08:48:02,215 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-25 08:48:04,172 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-25 08:48:04,182 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 6.225s
+2012-07-25 08:49:02,998 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-25 08:49:03,199 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1262218790)
+2012-07-25 08:49:03,271 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <128.6535, 107.4021, 22.18291>.
+2012-07-25 08:49:04,056 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.178.88.162:9000/CAPS/87e86e37-7b94-4405-be14-85aaf21672560000/
+2012-07-25 08:49:06,289 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.178.88.162:49667 took 279ms
+2012-07-25 08:49:06,483 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-25 08:49:07,323 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-25 08:49:10,558 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-25 08:49:29,223 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(26,7): Error: Unexpected symbol `default' in class, struct, or interface member declaration
+(28,5): Error: Class, struct, or interface method must have a return type
+(36,5): Error: Class, struct, or interface method must have a return type
+(46,5): Error: Class, struct, or interface method must have a return type
+(66,5): Error: Class, struct, or interface method must have a return type
+(73,0): Error: Unexpected symbol `}'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/0ac/0ac68003-6009-4414-b610-58b4d4cf9e60.dll
+2012-07-25 08:49:29,259 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/7bc8225b-45c5-433f-85d8-1dad3659c2d86112 on port 9000 took 541 ms for a request sized 0.001475334mb response sized 0.000702858mb
+2012-07-25 08:49:36,432 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:49:36,717 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(26,7): Error: Unexpected symbol `default' in class, struct, or interface member declaration
+(28,5): Error: Class, struct, or interface method must have a return type
+(36,5): Error: Class, struct, or interface method must have a return type
+(46,5): Error: Class, struct, or interface method must have a return type
+(66,5): Error: Class, struct, or interface method must have a return type
+(73,0): Error: Unexpected symbol `}'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/2c0/2c03ef90-3642-479a-9a19-5ef314373867.dll
+2012-07-25 08:50:28,217 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:50:28,532 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(26,7): Error: Unexpected symbol `default' in class, struct, or interface member declaration
+(28,5): Error: Class, struct, or interface method must have a return type
+(36,5): Error: Class, struct, or interface method must have a return type
+(46,5): Error: Class, struct, or interface method must have a return type
+(66,5): Error: Class, struct, or interface method must have a return type
+(73,0): Error: Unexpected symbol `}'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/f3b/f3b0e10a-2ef5-4112-831c-9997faeb30c0.dll
+2012-07-25 08:52:23,552 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:52:23,864 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(72,0): Error: Unexpected symbol `}'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/901/9011f0db-e8f6-4bb1-b2d8-cb3044ad3469.dll
+2012-07-25 08:52:33,917 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:52:34,792 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,1): Error: The type or namespace name `list' could not be found. Are you missing a using directive or an assembly reference?
+(35,23): Error: The type or namespace name `integer' could not be found. Are you missing a using directive or an assembly reference?
+(35,50): Error: The type or namespace name `key' could not be found. Are you missing a using directive or an assembly reference?
+(45,29): Error: The type or namespace name `integer' could not be found. Are you missing a using directive or an assembly reference?
+(45,49): Error: The type or namespace name `integer' could not be found. Are you missing a using directive or an assembly reference?
+(45,82): Error: The type or namespace name `key' could not be found. Are you missing a using directive or an assembly reference?
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/529/5298ef74-05a4-4fce-ace7-341e32583d23.dll
+2012-07-25 08:52:34,833 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/679c8ea4-f2a8-40b9-912e-e3a3f08345f86634 on port 9000 took 931 ms for a request sized 0.001509666mb response sized 0.001046181mb
+2012-07-25 08:53:01,263 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 08:53:02,607 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 08:53:36,644 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:53:37,363 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,1): Error: The type or namespace name `LSL_TYPES' could not be found. Are you missing a using directive or an assembly reference?
+(35,23): Error: The type or namespace name `LSL_TYPES' could not be found. Are you missing a using directive or an assembly reference?
+(35,63): Error: The type or namespace name `LSL_TYPES' could not be found. Are you missing a using directive or an assembly reference?
+(45,29): Error: The type or namespace name `LSL_TYPES' could not be found. Are you missing a using directive or an assembly reference?
+(45,62): Error: The type or namespace name `integer' could not be found. Are you missing a using directive or an assembly reference?
+(45,95): Error: The type or namespace name `LSL_TYPES' could not be found. Are you missing a using directive or an assembly reference?
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/b28/b281854e-2d9a-4851-b367-c6761632f2dc.dll
+2012-07-25 08:53:37,411 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/2929ed63-decf-438b-92dc-cd43fbb004db5156 on port 9000 took 847 ms for a request sized 0.001571655mb response sized 0.001066208mb
+2012-07-25 08:54:32,251 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:54:33,081 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,11): Error: The nested type `lsllist' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(35,33): Error: The nested type `lslinteger' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(35,73): Error: The nested type `lslkey' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(45,39): Error: The nested type `lslinteger' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(45,62): Error: The type or namespace name `integer' could not be found. Are you missing a using directive or an assembly reference?
+(45,105): Error: The nested type `lslkey' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/275/275433ff-b1c3-47d9-8659-a1441115efd2.dll
+2012-07-25 08:54:33,118 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/64b1cef6-801f-46af-b127-19cfe1bab6457063 on port 9000 took 871 ms for a request sized 0.001571655mb response sized 0.001000404mb
+2012-07-25 08:56:02,622 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:56:03,450 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,11): Error: The nested type `LSLList' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(35,73): Error: The nested type `LSLKey' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(45,62): Error: The type or namespace name `integer' could not be found. Are you missing a using directive or an assembly reference?
+(45,105): Error: The nested type `LSLKey' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/321/321aa97e-3b08-4e81-97ae-27e1d09c5f0b.dll
+2012-07-25 08:56:03,486 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/90a16b34-f5ce-4dd6-b4e5-81eecf6c963f7185 on port 9000 took 889 ms for a request sized 0.001571655mb response sized 0.0007352829mb
+2012-07-25 08:56:52,845 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:56:53,560 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,11): Error: The nested type `LSLList' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(35,73): Error: The nested type `LSLKey' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+(45,118): Error: The nested type `LSLKey' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/f1e/f1e5d153-305c-4bc8-92d8-083e73f701ea.dll
+2012-07-25 08:56:53,606 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/689aa0a8-f28b-4859-b134-06b00b437ffc6086 on port 9000 took 766 ms for a request sized 0.001584053mb response sized 0.0005931854mb
+2012-07-25 08:58:02,609 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 08:58:02,681 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 08:59:05,562 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:59:06,399 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,11): Error: The nested type `LSLList' does not exist in the type `Aurora.ScriptEngine.AuroraDotNetEngine.LSL_Types'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/ac6/ac61baba-1d4f-42ac-adbd-45b4060df172.dll
+2012-07-25 08:59:06,427 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/185c0696-aa0e-4244-b73d-ca7677b9f50a5979 on port 9000 took 880 ms for a request sized 0.001589775mb response sized 0.0003347397mb
+2012-07-25 08:59:13,447 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 08:59:14,468 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(30,51): Error: The name `llGetObjectDesc' does not exist in the current context
+(30,34): Error: The best overloaded method match for `Aurora.ScriptEngine.AuroraDotNetEngine.APIs.Interfaces.ILSL_Api.llRegionSay(int, string)' has some invalid arguments
+(1,1): Error: /Users/nathan/Documents/Aurora-Sim/bin/Aurora.ScriptEngine.AuroraDotNetEngine.dll (Location of the symbol related to previous error)
+(30,34): Error: Argument `#2' cannot convert `object' expression to type `string'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/38a/38a87b59-ee86-402e-9b84-267bde72d40d.dll
+2012-07-25 08:59:14,515 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/98a9fbc7-3480-433c-a42a-9ed7578b8c6e7356 on port 9000 took 1083 ms for a request sized 0.001586914mb response sized 0.0007247925mb
+2012-07-25 09:02:13,421 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 09:02:14,487 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/234b94b6-9460-4a9b-8659-f5af52135a6a6719 on port 9000 took 1270 ms for a request sized 0.001605034mb response sized 0.0001897812mb
+2012-07-25 09:02:14,493 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:02:35,718 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:03:02,684 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 09:03:02,749 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 09:07:52,825 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/2201bcfc-d67f-49a1-8d0b-386bf03507c87774 on port 9000 took 1122 ms for a request sized 0.0001487732mb response sized 0.0001897812mb
+2012-07-25 09:07:58,413 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:07:59,077 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:07:59,281 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:07:59,470 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:08:02,752 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 09:08:02,820 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 09:13:02,821 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 09:15:47,666 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(36,18): Error: not all code paths return a value
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/e18/e1817cf9-375c-46c6-b3ef-64882b06d764.dll
+2012-07-25 09:15:47,679 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/098854cd-e8b2-486e-a364-c6a8bf82b1857730 on port 9000 took 983 ms for a request sized 0.001606941mb response sized 0.0002679825mb
+2012-07-25 09:15:56,557 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 09:15:56,581 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:18:02,824 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 09:18:02,886 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 09:19:25,154 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(36,11): Error: Class, struct, or interface method must have a return type
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/719/719cdfa3-217d-4dc3-851d-eeaf795b6429.dll
+2012-07-25 09:19:25,198 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/10f5e7e4-a351-411e-a621-4f7a6ef405c25938 on port 9000 took 673 ms for a request sized 0.001600266mb response sized 0.0002918243mb
+2012-07-25 09:19:31,372 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 09:19:31,414 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/4f8/4f8469de-3c97-4b35-b3cd-d11eea53f4fc.dll
+2012-07-25 09:23:02,890 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 09:23:02,953 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 09:28:02,954 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 10:14:07,745 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/98f1b580-91c6-4c85-8385-7bc09b34cd3b/ on port 9000 took 538 ms for a request sized 0.002729416mb response sized 0mb
+2012-07-25 12:50:45,211 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/aeec7078-2533-4f7f-8345-39258cc411327097 on port 9000 took 1276 ms for a request sized 0.001617432mb response sized 0.0001897812mb
+2012-07-25 12:50:45,234 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: 4ba936b1-21da-410f-9827-37ca0afe001d, CompiledFile: ScriptEngines/529/5296e10a-ef76-467d-8482-6775ab401432.dll
+2012-07-25 12:53:02,962 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 12:53:03,067 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 12:58:03,070 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 13:09:08,758 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/98f1b580-91c6-4c85-8385-7bc09b34cd3b/ on port 9000 took 602 ms for a request sized 0.002728462mb response sized 0mb
+2012-07-25 13:27:04,161 INFO  - Aurora.Framework.BaseConsole [COMMANDFILE]: Running shutdown_commands.txt
+2012-07-25 13:27:04,164 INFO  - Aurora.Framework.BaseConsole [Scene]: Closing down the single simulator: Genesis HQ
+2012-07-25 13:27:04,167 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 13:27:04,278 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 13:27:06,026 INFO  - Aurora.Framework.BaseConsole [RegisterRegionWithGrid]: Deregistering region Genesis HQ from the grid...
+2012-07-25 13:27:06,053 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Terminating
+2012-07-25 13:27:06,053 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2012-07-25 16:25:45,235 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-25 16:25:45,264 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-25 16:25:45,264 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-25 16:25:45,264 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-25 16:25:45,264 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-25 16:25:47,136 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-25 16:25:48,800 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-25 16:25:49,052 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-25 16:25:49,072 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-25 16:25:49,157 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-25 16:25:49,160 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-25 16:25:51,777 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-25 16:25:51,847 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 138 object(s) in Genesis HQ
+2012-07-25 16:25:51,857 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-25 16:25:52,197 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-25 16:25:52,200 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 7.771s
+2012-07-25 16:27:57,858 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-25 16:27:58,198 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1832028352)
+2012-07-25 16:27:58,275 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <123.7837, 123.8182, 25.50379>.
+2012-07-25 16:27:58,309 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST// on port 9000 took 649 ms for a request sized 0.002468109mb response sized -9.536743E-07mb
+2012-07-25 16:28:00,071 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.178.88.162:9000/CAPS/dd7c85fa-9cf1-4422-9519-6ba76484fac20000/
+2012-07-25 16:28:02,465 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.178.88.162:62660 took 329ms
+2012-07-25 16:28:02,650 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-25 16:28:03,760 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-25 16:28:04,922 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for GET//CAPS/GetDisplayNames/d00f8163-934a-48f0-9521-e796e5427359/ on port 9000 took 746 ms for a request sized 0mb response sized 0.0004873276mb
+2012-07-25 16:28:07,205 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-25 16:28:39,474 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/22d020d1-3e53-4a57-a799-76e8080ab72d7198 on port 9000 took 1397 ms for a request sized 0.001634598mb response sized 0.0001897812mb
+2012-07-25 16:28:39,514 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.ArgumentException: failed to convert parameters
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.FireEvent (System.String evName, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/4da/4daabc7b-3860-4e11-952b-e9e0f2529daa.dll
+2012-07-25 16:30:50,683 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 16:30:52,272 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 16:34:23,960 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/133bcb6b-0da9-4335-b55b-82a17bf1f04d5527 on port 9000 took 1236 ms for a request sized 0.001646996mb response sized 0.0001897812mb
+2012-07-25 16:35:02,443 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/6ac890fa-052a-4f3d-8135-114d9e909afe7477 on port 9000 took 1074 ms for a request sized 0.001659393mb response sized 0.0001897812mb
+2012-07-25 16:35:52,276 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 16:35:52,361 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 16:37:31,479 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(49,31): Error: Unexpected symbol `(', expecting identifier
+(49,40): Error: Only assignment, call, increment, decrement, and new object expressions can be used as a statement
+(49,41): Error: Unexpected symbol `)', expecting `;'
+(52,8): Error: Unexpected symbol `else', expecting `;'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/fe7/fe76683a-d120-4d21-a08c-8993432c801f.dll
+2012-07-25 16:37:31,506 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/718b9d42-762b-48cd-b11f-7b87d179d82c6276 on port 9000 took 541 ms for a request sized 0.001730919mb response sized 0.000535965mb
+2012-07-25 16:37:40,688 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 16:37:41,010 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(49,31): Error: Unexpected symbol `(', expecting identifier
+(49,40): Error: Only assignment, call, increment, decrement, and new object expressions can be used as a statement
+(49,42): Error: Unexpected symbol `)'
+(52,8): Error: Unexpected symbol `else'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/a46/a468d338-0ef0-4354-be7a-a601759cd05e.dll
+2012-07-25 16:39:20,992 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 16:39:21,309 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(49,31): Error: Unexpected symbol `(', expecting identifier
+(49,40): Error: Only assignment, call, increment, decrement, and new object expressions can be used as a statement
+(49,41): Error: Unexpected symbol `)', expecting `;'
+(52,8): Error: Unexpected symbol `else', expecting `;'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/5f5/5f5d202b-2588-4056-9131-527e556a835f.dll
+2012-07-25 16:39:34,873 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 16:39:35,187 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(49,52): Error: Unexpected symbol `(', expecting identifier
+(49,61): Error: Only assignment, call, increment, decrement, and new object expressions can be used as a statement
+(49,62): Error: Unexpected symbol `)', expecting `;'
+(52,8): Error: Unexpected symbol `else', expecting `;'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/5b0/5b0a3469-b63a-4c37-8cec-db8fb6cf7599.dll
+2012-07-25 16:39:48,841 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 16:39:49,970 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/4a6e9b72-6df1-4b86-8eb6-9864b84eb6217229 on port 9000 took 1142 ms for a request sized 0.001749992mb response sized 0.0001897812mb
+2012-07-25 16:40:06,643 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/2a2e9811-5cff-4244-be5f-4a92563247036136 on port 9000 took 1037 ms for a request sized 0.001729965mb response sized 0.0001897812mb
+2012-07-25 16:40:52,365 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 16:40:52,443 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 16:45:52,444 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 19:00:25,933 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(81,8): Error: Unexpected symbol `else'
+ prim name: Skynet@ <121.2999, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/377/3777dda5-0362-4233-a24e-4416aedaf052.dll
+2012-07-25 19:00:42,097 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 19:00:43,236 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/fa56378f-505b-4e23-b453-0a66cdec4e157891 on port 9000 took 1154 ms for a request sized 0.002802849mb response sized 0.0001897812mb
+2012-07-25 19:00:52,452 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 19:00:52,544 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 19:03:29,926 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/81f6373d-ecfb-4318-a893-8d82257300c75463 on port 9000 took 1362 ms for a request sized 0.0001688004mb response sized 0.0001897812mb
+2012-07-25 19:04:03,105 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-25 19:04:24,194 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-25 19:04:24,246 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 135221790)
+2012-07-25 19:04:24,265 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <128.309, 106.459, 22.1829>.
+2012-07-25 19:04:25,753 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.178.88.162:9000/CAPS/e2bed00b-d56f-4413-a108-4da4a28035f40000/
+2012-07-25 19:04:26,944 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.178.88.162:53142 took 7ms
+2012-07-25 19:04:27,360 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-25 19:04:28,770 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-25 19:04:32,181 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-25 19:05:10,984 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/49ae0cd9-4980-4d0d-8850-d04c7e0f08cc7072 on port 9000 took 1124 ms for a request sized 0.002841949mb response sized 0.0001897812mb
+2012-07-25 19:05:31,606 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/26d7d53c-a75b-4bcc-b70a-d45ffbe10aa25002 on port 9000 took 1202 ms for a request sized 0.0001783371mb response sized 0.0001897812mb
+2012-07-25 19:05:52,549 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 19:05:52,610 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 19:10:52,612 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 19:40:52,618 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 19:40:52,684 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 19:44:02,432 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,28): Error: A field initializer cannot reference the nonstatic field, method, or property `Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass.m_apis'
+ prim name: Skynet@ <123.4986, 101.4654, 22.02803> itemID: f5d3b5bb-3d9e-4b55-bc64-e9041fb1377a, CompiledFile: ScriptEngines/275/275f5ed1-6306-4594-ba8f-1d4b739bfe0c.dll
+2012-07-25 19:44:02,468 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/d64ac358-96cc-49af-b9a0-1c739728e1587384 on port 9000 took 1024 ms for a request sized 0.002846718mb response sized 0.0003786087mb
+2012-07-25 19:44:13,642 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'server talk relay.lsl' to fire event changed
+2012-07-25 19:45:52,687 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 19:45:52,772 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 19:50:52,776 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 19:50:52,862 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 19:55:52,866 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 19:55:52,931 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 20:00:52,934 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 20:00:53,004 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 20:05:53,007 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 20:05:53,093 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 20:07:29,324 ERROR - Aurora.Framework.BaseConsole Exception in poll service thread: System.NullReferenceException: Object reference not set to an instance of an object
+  at Griffin.Networking.Channels.TcpChannel.Disconnect () [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Channels.TcpChannel.HandleDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.Pipeline+ChannelAsDownstreeamHandler.HandleDownstream (IPipelineHandlerContext context, IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineDownstreamContext.Invoke (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineDownstreamContext.SendDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Http.Handlers.ResponseEncoder.HandleDownstream (IPipelineHandlerContext context, IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineDownstreamContext.Invoke (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.Pipeline.SendDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Griffin.Networking.Pipelines.PipelineUpstreamContext.SendDownstream (IPipelineMessage message) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.OSHttpResponse.Send () [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.SendGenericHTTPResponse (System.Collections.Hashtable responsedata, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, Aurora.Framework.Servers.HttpServer.OSHttpRequest request) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.PollServiceWorkerThread.Run () [0x00000] in <filename unknown>:0 
+2012-07-25 20:10:53,096 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 20:10:53,167 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 20:15:53,167 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-25 21:48:01,655 WARN  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Ack timeout, disconnecting 71dbd2d4-6c56-423a-af3e-227c3263c844
+2012-07-25 21:48:01,656 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-25 21:50:56,773 INFO  - Aurora.Framework.BaseConsole [COMMANDFILE]: Running shutdown_commands.txt
+2012-07-25 21:50:56,776 INFO  - Aurora.Framework.BaseConsole [Scene]: Closing down the single simulator: Genesis HQ
+2012-07-25 21:50:56,778 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-25 21:50:56,908 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-25 21:50:57,989 INFO  - Aurora.Framework.BaseConsole [RegisterRegionWithGrid]: Deregistering region Genesis HQ from the grid...
+2012-07-25 21:50:57,999 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Terminating
+2012-07-25 21:50:58,000 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2012-07-26 01:16:16,882 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-26 01:16:16,911 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-26 01:16:16,911 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-26 01:16:16,911 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-26 01:16:16,911 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-26 01:16:17,704 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-26 01:16:19,398 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-26 01:16:19,726 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-26 01:16:19,745 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-26 01:16:19,953 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-26 01:16:19,955 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-26 01:16:26,257 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-26 01:16:26,343 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 143 object(s) in Genesis HQ
+2012-07-26 01:16:26,353 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-26 01:16:27,254 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-26 01:16:27,257 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 11.222s
+2012-07-26 01:21:24,386 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-26 01:21:25,851 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-26 01:26:25,852 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-26 04:10:00,157 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-26 04:10:00,490 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 693063465)
+2012-07-26 04:10:00,589 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <123.6646, 109.0743, 22.18291>.
+2012-07-26 04:10:00,604 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST// on port 9000 took 638 ms for a request sized 0.002468109mb response sized -9.536743E-07mb
+2012-07-26 04:10:02,725 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.150.24.155:9000/CAPS/80aba825-37f5-4da1-b96e-96ee201f4cc60000/
+2012-07-26 04:10:06,398 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.150.24.155:64307 took 262ms
+2012-07-26 04:10:06,709 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-26 04:10:08,688 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-26 04:10:11,973 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-26 12:15:10,830 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/9e4a208a-3c02-4f82-bb95-9ad25e813d55/ on port 9000 took 562 ms for a request sized 0.002707481mb response sized 0mb
+2012-07-27 01:16:24,380 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 01:16:24,497 FATAL - Aurora.Framework.BaseConsole 8 PRIMS WERE NOT GOING TO BE SAVED! FORCE SAVING NOW! 
+2012-07-27 01:16:25,453 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 11:00:18,194 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/9e4a208a-3c02-4f82-bb95-9ad25e813d55/ on port 9000 took 522 ms for a request sized 0.002717972mb response sized 0mb
+2012-07-27 22:05:59,502 WARN  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Ack timeout, disconnecting 71dbd2d4-6c56-423a-af3e-227c3263c844
+2012-07-27 22:05:59,509 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-27 22:50:50,640 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-27 22:50:50,655 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-27 22:50:50,655 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-27 22:50:50,655 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-27 22:50:50,655 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-27 22:50:51,440 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-27 22:50:52,655 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-27 22:50:52,798 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-27 22:50:52,817 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-27 22:50:52,862 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-27 22:50:52,865 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-27 22:50:54,262 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-27 22:50:54,325 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 143 object(s) in Genesis HQ
+2012-07-27 22:50:54,335 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-27 22:50:54,624 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-27 22:50:54,637 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 4.342s
+2012-07-27 22:52:16,089 WARN  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: HTTP handler threw an exception System.IO.FileNotFoundException: Could not find file "/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico".
+File name: '/Users/nathan/Documents/Aurora-Sim/bin/html/favicon.ico'
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllBytes (System.String path) [0x00000] in <filename unknown>:0 
+  at Aurora.Modules.Web.WebInterface.FindAndSendPage (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.GenericStreamHandler.Handle (System.String path, System.IO.Stream request, Aurora.Framework.Servers.HttpServer.OSHttpRequest httpRequest, Aurora.Framework.Servers.HttpServer.OSHttpResponse httpResponse) [0x00000] in <filename unknown>:0 
+  at Aurora.Framework.Servers.HttpServer.MessageHandler.HandleStreamHandler (Aurora.Framework.Servers.HttpServer.OSHttpRequest request, Aurora.Framework.Servers.HttpServer.OSHttpResponse response, System.String path, System.Int32& respcontentLength, IStreamedRequestHandler requestHandler) [0x00000] in <filename unknown>:0 .
+2012-07-27 22:52:36,525 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 86.130.7.26 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-27 22:52:36,724 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1553462943)
+2012-07-27 22:52:36,780 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <123.6352, 109.0743, 22.18291>.
+2012-07-27 22:52:36,809 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST// on port 9000 took 670 ms for a request sized 0.002468109mb response sized -9.536743E-07mb
+2012-07-27 22:52:40,637 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.130.7.26:9000/CAPS/c1262a74-6390-45fe-aac6-b2ce8ba74b5b0000/
+2012-07-27 22:52:55,923 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.130.7.26:63933 took 169ms
+2012-07-27 22:52:56,243 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-27 22:53:03,065 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-27 22:53:06,746 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-27 22:53:18,680 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.RequestImagePacket for Nathan Marck, The specified itemm is not in the queue.   at Mischel.Collections.PriorityQueue`2[OpenSim.Region.ClientStack.LindenUDP.J2KImage,System.Single].Remove (OpenSim.Region.ClientStack.LindenUDP.J2KImage item, IEqualityComparer comparer) [0x00000] in <filename unknown>:0 
+  at Mischel.Collections.PriorityQueue`2[OpenSim.Region.ClientStack.LindenUDP.J2KImage,System.Single].Remove (OpenSim.Region.ClientStack.LindenUDP.J2KImage item) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLImageManager.EnqueueReq (Aurora.Framework.TextureRequestArgs newRequest) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleRequestImage (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-27 22:54:41,931 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/bad37efe-5b4d-43ca-a26f-54bc6fb3a9f76413 on port 9000 took 939 ms for a request sized 5.340576E-05mb response sized 0.0001897812mb
+2012-07-27 22:55:53,408 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 22:55:54,589 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 22:56:55,018 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(20,4): Error: The name `osMakeNotecard' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/44e/44eff0ae-4fa1-422c-bac0-8c9fa614ed94.dll
+2012-07-27 22:56:55,028 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/9fa9e009-b531-4fcb-9537-1cdeec31e9f27325 on port 9000 took 667 ms for a request sized 9.536743E-05mb response sized 0.000295639mb
+2012-07-27 22:57:04,722 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 22:57:05,361 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(20,4): Error: The name `osMakeNotecard' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/8e0/8e0cca28-aa34-4916-918b-792d19b7e845.dll
+2012-07-27 22:57:05,385 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/46c89545-2537-49e8-a296-6b658d5c3cf87556 on port 9000 took 1235 ms for a request sized 0.0001068115mb response sized 0.000295639mb
+2012-07-27 23:00:11,547 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:00:12,312 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(20,4): Error: The name `osMakeNotecard' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/8e7/8e70f724-893d-48da-a8cf-66e931ca8f58.dll
+2012-07-27 23:00:12,361 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/0de743c8-978d-4453-962b-0422994fd2a87744 on port 9000 took 820 ms for a request sized 0.0001049042mb response sized 0.000295639mb
+2012-07-27 23:00:54,592 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 23:00:54,664 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 23:05:54,665 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-27 23:06:12,006 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:06:12,782 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(21,4): Error: The name `llGetNotecardLine' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/106/106b0120-8f0d-40eb-92d7-057fe192c073.dll
+2012-07-27 23:06:12,821 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/8f4c17e0-3eab-4db1-9ced-44410ee121fe5444 on port 9000 took 819 ms for a request sized 0.0001449585mb response sized 0.0002985001mb
+2012-07-27 23:06:34,598 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:06:35,240 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(21,4): Error: The name `llGetNotecardLine' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/5c4/5c4bde3d-9737-4538-b2e0-0305d0bc74f0.dll
+2012-07-27 23:06:35,261 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/82d77134-b20d-42a7-b32d-c207bc6b98e85163 on port 9000 took 668 ms for a request sized 0.0001354218mb response sized 0.0002985001mb
+2012-07-27 23:10:21,889 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:10:22,018 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(1,3) syntax error prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/501/501c3c08-81ec-4c7c-8ca2-65e9626302c2.dll
+2012-07-27 23:10:37,054 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:10:37,177 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(8,1) Unexpected EOF prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 390d73ea-222e-474c-be41-3ed461f5009e, CompiledFile: ScriptEngines/b75/b7502252-95f5-41c1-a283-501959561f7b.dll
+2012-07-27 23:10:54,667 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 23:10:54,728 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 23:13:10,297 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:13:11,314 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/671bdafd-dba2-42d4-9a82-6c7969f8d3177734 on port 9000 took 1021 ms for a request sized 0.0004281998mb response sized 0.0001897812mb
+2012-07-27 23:13:35,508 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/a51aa895-cf0d-49d8-929a-32bb3c10c3116931 on port 9000 took 1021 ms for a request sized 0.0004997253mb response sized 0.0001897812mb
+2012-07-27 23:15:41,290 INFO  - Aurora.Framework.BaseConsole [PRIM INVENTORY]: Update with item License Key requested of prim 3059490624 for Nathan Marck
+2012-07-27 23:15:54,731 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 23:15:54,795 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 23:18:02,368 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/62a27c47-46d4-428f-a375-f87b90fbf1725210 on port 9000 took 1091 ms for a request sized 0.0005664825mb response sized 0.0001897812mb
+2012-07-27 23:20:54,798 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 23:20:54,881 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 23:25:54,881 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-27 23:46:59,459 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(18,1) Unexpected EOF prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/4fd/4fda6236-dc54-4445-a1bd-63439762973c.dll
+2012-07-27 23:47:14,055 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:47:14,984 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(15,0): Error: The name `licensewait' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/1ad/1ad5b20f-3e93-4eb8-b7dd-fc9c4df4f8ef.dll
+2012-07-27 23:47:15,020 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/0d212f65-fdfa-4d74-965b-937cdbcbc1c75318 on port 9000 took 968 ms for a request sized 0.0002908707mb response sized 0.000292778mb
+2012-07-27 23:47:28,110 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:47:29,179 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/828ab76b-9f76-48a5-a3bd-60131992b6407122 on port 9000 took 1073 ms for a request sized 0.0003108978mb response sized 0.0001897812mb
+2012-07-27 23:47:55,238 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/e1f165b2-25df-4080-9431-8c687601ab787104 on port 9000 took 1040 ms for a request sized 0.0003681183mb response sized 0.0001897812mb
+2012-07-27 23:49:48,384 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(11,46) syntax error prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/62e/62e9c546-4ef8-48f4-b449-2ebb044a8c9f.dll
+2012-07-27 23:50:36,570 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:50:36,693 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(20,50) syntax error prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/6d1/6d10cc5c-cf44-44bd-82cd-5ce327724358.dll
+2012-07-27 23:50:41,622 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:50:42,741 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/8cbe31be-2d26-461f-b1cb-4fa2fe45d2666111 on port 9000 took 1123 ms for a request sized 0.0005235672mb response sized 0.0001897812mb
+2012-07-27 23:50:52,160 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/971907b6-c3c1-425e-9fbf-ac5737ec155c5795 on port 9000 took 1070 ms for a request sized 0.0005245209mb response sized 0.0001897812mb
+2012-07-27 23:50:54,884 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 23:50:54,967 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-27 23:51:37,139 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/b4b66993-8035-48a6-9d29-6b422e0d2b935523 on port 9000 took 1091 ms for a request sized 0.0005664825mb response sized 0.0001897812mb
+2012-07-27 23:52:24,865 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/43c12b17-da61-46a7-a714-7eea5f8d73497867 on port 9000 took 1279 ms for a request sized 0.0006284714mb response sized 0.0001897812mb
+2012-07-27 23:52:57,897 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/3ed489cb-40da-4c35-afd2-239174dd93e57007 on port 9000 took 1132 ms for a request sized 0.0005617142mb response sized 0.0001897812mb
+2012-07-27 23:53:14,363 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(25,0): Error: The name `initilize' does not exist in the current context
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/aaf/aaf2d986-4468-4f03-8b30-22898fe2c7c3.dll
+2012-07-27 23:53:14,385 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/adbbe62d-2855-4ba9-b290-bcdf082186736340 on port 9000 took 1023 ms for a request sized 0.0005254745mb response sized 0.0002908707mb
+2012-07-27 23:53:20,655 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-27 23:53:21,827 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/f742592c-6548-4b68-8547-ede568b388ac7098 on port 9000 took 1176 ms for a request sized 0.0005264282mb response sized 0.0001897812mb
+2012-07-27 23:55:54,969 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-27 23:55:55,051 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 00:00:55,053 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 01:03:13,387 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/a0345dc2-412b-4e87-bb63-325eb07db3fe5604 on port 9000 took 1019 ms for a request sized 0.0001468658mb response sized 0.0001897812mb
+2012-07-28 01:04:42,128 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(20,4) syntax error prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/611/61175520-6196-4160-b5ee-04c469bbfbed.dll
+2012-07-28 01:04:48,364 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-28 01:04:49,291 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(24,4): Error: No overload for method `llDetectedLinkNumber' takes `0' arguments
+(1,1): Error: /Users/nathan/Documents/Aurora-Sim/bin/Aurora.ScriptEngine.AuroraDotNetEngine.dll (Location of the symbol related to previous error)
+ prim name: Genesis PDA@ <120.2384, 112.1607, 22.21237> itemID: 3f448b6e-2b75-4136-a7f1-6c549f3a24dd, CompiledFile: ScriptEngines/2ef/2ef417f9-ebcd-4f9a-acdb-783e3bd683e0.dll
+2012-07-28 01:04:49,333 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/e3b29297-7885-49a1-aafc-9f95e5d887377162 on port 9000 took 1043 ms for a request sized 0.0006752014mb response sized 0.0004529953mb
+2012-07-28 01:05:08,470 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-28 01:05:09,540 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ab00f4a5-f69d-4fb8-9f3c-06c44202b7cc7761 on port 9000 took 1075 ms for a request sized 0.0006761551mb response sized 0.0001897812mb
+2012-07-28 01:05:32,815 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-28 01:05:45,028 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 01:05:45,092 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 01:05:46,875 INFO  - Aurora.Framework.BaseConsole [COMMANDFILE]: Running shutdown_commands.txt
+2012-07-28 01:05:46,878 INFO  - Aurora.Framework.BaseConsole [Scene]: Closing down the single simulator: Genesis HQ
+2012-07-28 01:05:46,880 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 01:05:46,939 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 01:05:48,037 INFO  - Aurora.Framework.BaseConsole [RegisterRegionWithGrid]: Deregistering region Genesis HQ from the grid...
+2012-07-28 01:05:48,092 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Terminating
+2012-07-28 01:05:48,092 INFO  - Aurora.Framework.BaseConsole [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2012-07-28 10:56:57,989 FATAL - Aurora.Framework.BaseConsole [Console]: Console log level is INFO
+2012-07-28 10:56:58,004 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-28 10:56:58,004 WARN  - Aurora.Framework.BaseConsole ====================== STARTING AURORA (x86) ======================
+2012-07-28 10:56:58,004 WARN  - Aurora.Framework.BaseConsole ====================================================================
+2012-07-28 10:56:58,004 WARN  - Aurora.Framework.BaseConsole [AuroraStartup]: Version: Aurora (2012-07-19.c603935) (Unix/Mono)
+
+2012-07-28 10:56:58,963 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 9000
+2012-07-28 10:57:00,442 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: Listening on port 8005
+2012-07-28 10:57:00,646 INFO  - Aurora.Framework.BaseConsole [LIBRARY INVENTORY]: Found previously loaded iar file DefaultInventory/CorrectDefaultInventory.iar, ignoring.
+2012-07-28 10:57:00,666 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Database Plugin
+2012-07-28 10:57:00,714 INFO  - Aurora.Framework.BaseConsole [LoadRegions]: Checking for regions from Web Server Plugin
+2012-07-28 10:57:00,717 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Starting region "Genesis HQ" at @ 10000,10000
+2012-07-28 10:57:02,449 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loading objects for Genesis HQ from FileBasedDatabase
+2012-07-28 10:57:02,515 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Loaded 143 object(s) in Genesis HQ
+2012-07-28 10:57:02,526 INFO  - Aurora.Framework.BaseConsole [BackupModule]: Starting scripts in Genesis HQ
+2012-07-28 10:57:04,013 INFO  - Aurora.Framework.BaseConsole [SceneManager]: Startup Complete in region Genesis HQ
+2012-07-28 10:57:04,019 INFO  - Aurora.Framework.BaseConsole [SceneManager]: All regions are started. This took 0m 6.596s
+2012-07-28 10:57:18,879 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 127.0.0.1 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-28 10:57:19,119 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 104033559)
+2012-07-28 10:57:19,195 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <121.3537, 113.7235, 22.1829>.
+2012-07-28 10:57:20,868 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.130.7.26:9000/CAPS/5406cdfe-f86b-4254-a1ee-c6486161ffff0000/
+2012-07-28 10:57:23,611 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.130.7.26:57812 took 215ms
+2012-07-28 10:57:23,993 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-28 10:57:25,896 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-28 10:57:29,450 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-28 11:02:01,361 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 11:02:02,675 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 11:07:02,676 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 11:26:55,909 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,909 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,909 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,909 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,909 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,909 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,914 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:55,910 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,309 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,329 ERROR - Aurora.Framework.BaseConsole [REGION]: Failed with exception System.NullReferenceException: Object reference not set to an instance of an object
+  at Aurora.Physics.AuroraOpenDynamicsEngine.AuroraODEPhysicsScene.Simulate (Single timeElapsed) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePhysics (Double elapsed) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.Scene.Update () [0x00000] in <filename unknown>:0  in region: Genesis HQ
+2012-07-28 11:26:57,345 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,351 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,368 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,385 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,396 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,381 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,386 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,395 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:26:57,391 ERROR - Aurora.Framework.BaseConsole [LLCLIENTVIEW]: Caught exception while processing OpenMetaverse.Packets.ObjectFlagUpdatePacket for Nathan Marck, Object reference not set to an instance of an object   at OpenSim.Region.Framework.Scenes.SceneObjectGroup.RebuildPhysicalRepresentation (Boolean keepSelectedStatuses) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneObjectGroup.UpdatePrimFlags (UInt32 localID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, Boolean IsVolumeDetect, .ExtraPhysicsBlock[] blocks) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.Framework.Scenes.SceneGraph.UpdatePrimFlags (UInt32 LocalID, Boolean UsePhysics, Boolean IsTemporary, Boolean IsPhantom, .ExtraPhysicsBlock[] blocks, IClientAPI remoteClient) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.HandleObjectFlagUpdate (IClientAPI sender, OpenMetaverse.Packets.Packet Pack) [0x00000] in <filename unknown>:0 
+  at OpenSim.Region.ClientStack.LindenUDP.LLClientView.ProcessSpecificPacketAsync (System.Object state) [0x00000] in <filename unknown>:0 
+2012-07-28 11:27:02,679 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 11:27:02,759 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 11:32:02,761 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 11:37:02,767 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 11:37:02,855 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 11:42:02,858 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 11:42:02,927 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 11:46:35,488 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/bcf43ac9-7492-48f3-b123-f62f30d413967557 on port 9000 took 1132 ms for a request sized 0.0001468658mb response sized 0.0001897812mb
+2012-07-28 11:46:50,359 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/2cf75145-fe0b-4411-b89a-5caf397208c56240 on port 9000 took 1203 ms for a request sized 0.0006761551mb response sized 0.0001897812mb
+2012-07-28 11:47:02,931 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 11:47:03,023 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 11:52:03,024 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 11:57:03,027 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 11:57:03,099 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 12:02:03,099 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 12:51:53,657 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(1,1) Unexpected EOF prim name: Genesis PDA@ <120.1892, 112.3703, 22.23263> itemID: bb8d1af9-84bf-4799-b111-06b9c9e835fc, CompiledFile: ScriptEngines/883/8839f2ee-4f63-417c-8300-45c2e9b9e25c.dll
+2012-07-28 12:52:03,106 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 12:52:03,236 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 12:52:24,400 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 12:52:50,208 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 12:55:09,772 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 12:55:09,773 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 12:56:42,496 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 12:57:03,239 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 12:57:03,332 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 12:57:12,976 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 12:57:18,296 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:00:06,996 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:00:26,436 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:02:03,336 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 13:02:03,405 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 13:05:58,172 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch_start
+2012-07-28 13:05:58,174 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,215 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,238 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,271 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,285 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,308 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,319 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,341 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,480 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,494 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,505 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,525 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,536 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,603 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,632 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,663 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,686 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,711 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,735 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,766 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,778 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:58,800 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch
+2012-07-28 13:05:59,039 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event touch_end
+2012-07-28 13:07:03,407 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 13:07:12,182 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:10:15,541 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:10:16,805 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(20,0): Error: The name `data' does not exist in the current context
+(63,0): Error: The name `data' does not exist in the current context
+(69,0): Error: The name `data' does not exist in the current context
+ prim name: Genesis PDA@ <120.1892, 112.3703, 22.23263> itemID: 81fde620-0066-4b9d-aa9f-c079a358a6a4, CompiledFile: ScriptEngines/029/029bcda3-9cc0-49c7-b2d2-34247772a467.dll
+2012-07-28 13:10:16,813 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/c1c5f42c-d223-4d36-83be-66d69bc71c265411 on port 9000 took 1475 ms for a request sized 0.001032829mb response sized 0.0004482269mb
+2012-07-28 13:10:32,826 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'main.lsl' to fire event changed
+2012-07-28 13:10:32,826 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:10:33,996 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/bbc8efa8-af59-4be8-9c20-56bd92a3fc617708 on port 9000 took 1174 ms for a request sized 0.001042366mb response sized 0.0001897812mb
+2012-07-28 13:11:43,501 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:11:43,637 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(26,53) syntax error prim name: Genesis PDA@ <120.1892, 112.3703, 22.23263> itemID: 92660b4d-76b5-472d-9f0f-6f1f6fe0462a, CompiledFile: ScriptEngines/f76/f760abc7-20db-4707-97f0-c13a30041af5.dll
+2012-07-28 13:11:51,684 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'license checker.lsl' to fire event changed
+2012-07-28 13:11:51,684 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:11:52,752 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/8dac9607-e21f-4d0e-bc96-a18d8bd739637319 on port 9000 took 1072 ms for a request sized 0.0007505417mb response sized 0.0001897812mb
+2012-07-28 13:12:03,409 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 13:12:03,481 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 13:12:23,825 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:12:23,960 ERROR - Aurora.Framework.BaseConsole Error compiling script:
+(8,43) syntax error prim name: Genesis PDA@ <120.1892, 112.3703, 22.23263> itemID: bb8d1af9-84bf-4799-b111-06b9c9e835fc, CompiledFile: ScriptEngines/bb2/bb2da824-05f3-4bd1-8287-c983647ddee9.dll
+2012-07-28 13:12:37,802 INFO  - Aurora.Framework.BaseConsole [AuroraDotNetEngine]: Could not load script from item 'error handler.lsl' to fire event changed
+2012-07-28 13:12:38,918 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/b6ef6339-3824-4631-ada1-7bfc9e07fa896699 on port 9000 took 1120 ms for a request sized 0.0004482269mb response sized 0.0001897812mb
+2012-07-28 13:13:28,438 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.Exception: Runtime Error: osMakeNotecard permission denied.  Allowed threat level is Moderate but function threat level is High.
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptProtectionModule.Error (System.String surMessage, System.String msg) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptProtectionModule+ThreatLevelDefinition.CheckThreatLevel (System.String function, ISceneChildEntity m_host, System.String API) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptProtectionModule.CheckThreatLevel (ThreatLevel level, System.String function, ISceneChildEntity m_host, System.String API, UUID itemID) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.APIs.OSSL_Api.osMakeNotecard (System.String notecardName, Aurora.ScriptEngine.AuroraDotNetEngine.list contents) [0x00000] in <filename unknown>:0 
+  at Script.ScriptClass+<default_event_link_message>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Genesis PDA@ <120.1892, 112.3703, 22.23263> itemID: bb8d1af9-84bf-4799-b111-06b9c9e835fc, CompiledFile: ScriptEngines/2bc/2bced8ba-d1d4-404e-a471-819a63ee3b39.dll
+2012-07-28 13:13:55,341 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/62540255-ab83-4c48-b55d-d50f3dc2f7da5314 on port 9000 took 1123 ms for a request sized 0.0004472733mb response sized 0.0001897812mb
+2012-07-28 13:13:59,639 ERROR - Aurora.Framework.BaseConsole Error executing script:
+System.Exception: Runtime Error: osMakeNotecard permission denied.  Allowed threat level is Moderate but function threat level is High.
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptProtectionModule.Error (System.String surMessage, System.String msg) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptProtectionModule+ThreatLevelDefinition.CheckThreatLevel (System.String function, ISceneChildEntity m_host, System.String API) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.ScriptProtectionModule.CheckThreatLevel (ThreatLevel level, System.String function, ISceneChildEntity m_host, System.String API, UUID itemID) [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.APIs.OSSL_Api.osMakeNotecard (System.String notecardName, Aurora.ScriptEngine.AuroraDotNetEngine.list contents) [0x00000] in <filename unknown>:0 
+  at Script.ScriptClass+<default_event_link_message>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
+  at Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.Executor.ExecuteEvent (System.String state, System.String FunctionName, System.Object[] args, Aurora.ScriptEngine.AuroraDotNetEngine.EnumeratorInfo Start, System.Exception& ex) [0x00000] in <filename unknown>:0  prim name: Genesis PDA@ <120.1892, 112.3703, 22.23263> itemID: bb8d1af9-84bf-4799-b111-06b9c9e835fc, CompiledFile: ScriptEngines/c38/c38cc0ca-44aa-4aa5-973d-1062669f4966.dll
+2012-07-28 13:14:50,460 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/3303bf5b-b6f5-4aa3-991c-a96df9f5ac836167 on port 9000 took 1137 ms for a request sized 0.0003948212mb response sized 0.0001897812mb
+2012-07-28 13:15:19,072 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/c378556b-cdc4-4aac-8da1-2b8484703e9b7648 on port 9000 took 1175 ms for a request sized 0.001093864mb response sized 0.0001897812mb
+2012-07-28 13:15:19,278 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 16, NEW 17, FUNCTION NAME dataserver
+2012-07-28 13:15:19,298 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 16, NEW 17, FUNCTION NAME dataserver
+2012-07-28 13:15:30,469 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 17, NEW 18, FUNCTION NAME dataserver
+2012-07-28 13:15:30,488 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 17, NEW 18, FUNCTION NAME dataserver
+2012-07-28 13:15:58,495 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 18, NEW 19, FUNCTION NAME dataserver
+2012-07-28 13:15:58,514 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 18, NEW 19, FUNCTION NAME dataserver
+2012-07-28 13:17:03,485 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 13:17:03,557 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 13:17:39,382 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/0b985b13-d14f-4aba-8f57-8338937f4bfd7558 on port 9000 took 1192 ms for a request sized 0.001202583mb response sized 0.0001897812mb
+2012-07-28 13:17:39,571 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 19, NEW 20, FUNCTION NAME dataserver
+2012-07-28 13:17:39,589 WARN  - Aurora.Framework.BaseConsole FOUND BAD VERSION ID, OLD 19, NEW 20, FUNCTION NAME dataserver
+2012-07-28 13:18:55,764 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/238d8dbd-9f50-4dc9-a620-12d2ba4ad5485896 on port 9000 took 1441 ms for a request sized 0.001068115mb response sized 0.0001897812mb
+2012-07-28 13:20:36,901 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/376d0cd9-41ed-416d-911f-8b9808e3e6885383 on port 9000 took 1480 ms for a request sized 0.001194mb response sized 0.0001897812mb
+2012-07-28 13:22:03,561 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 13:22:03,640 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 13:27:03,641 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 13:32:26,372 INFO  - Aurora.Framework.BaseConsole [BASE HTTP SERVER]: slow request for POST//CAPS/ViewerStats/d4f74281-53e0-4ef1-ad74-7e3af7aea69d/ on port 9000 took 553 ms for a request sized 0.002733231mb response sized 0mb
+2012-07-28 13:57:03,645 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saving backup for region Genesis HQ
+2012-07-28 13:57:03,755 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Saved Backup for region Genesis HQ
+2012-07-28 14:02:03,757 INFO  - Aurora.Framework.BaseConsole [FileBasedSimulationData]: Not saving backup, not required
+2012-07-28 15:44:20,416 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ
+2012-07-28 23:50:41,279 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: Login request for Nathan Marck from 86.130.7.26 with user agent Firestorm-Release 4.1.1.28744 starting in last
+2012-07-28 23:50:41,344 INFO  - Aurora.Framework.BaseConsole [ConnectionBegin]: Region Genesis HQ authenticated and authorized incoming root agent 71dbd2d4-6c56-423a-af3e-227c3263c844 (circuit code 1374687980)
+2012-07-28 23:50:41,363 INFO  - Aurora.Framework.BaseConsole [LLOGIN SERVICE]: All clear. Sending login response to client to login to region Genesis HQ, tried to login to last at <122.071, 111.8962, 22.18291>.
+2012-07-28 23:50:47,072 INFO  - Aurora.Framework.BaseConsole [CapsHandlers]: Handling Seed Cap request at http://86.130.7.26:9000/CAPS/cf71deaa-150d-455a-bedf-09a731a10fde0000/
+2012-07-28 23:51:06,703 INFO  - Aurora.Framework.BaseConsole [LLUDPSERVER]: Handling UseCircuitCode request from 86.130.7.26:60659 took 65ms
+2012-07-28 23:51:07,314 INFO  - Aurora.Framework.BaseConsole [ATTACHMENTS MODULE]:  Found 0 attachments to attach to avatar Nathan Marck
+2012-07-28 23:51:11,137 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-28 23:51:16,598 WARN  - Aurora.Framework.BaseConsole [PHYSICS]: re-creating the following avatar ODE data, even though it already exists - Shell Body 
+2012-07-29 00:00:02,051 INFO  - Aurora.Framework.BaseConsole [ActivityDetector]: Detected logout of user Nathan Marck in region Genesis HQ

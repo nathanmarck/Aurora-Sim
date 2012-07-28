@@ -124,6 +124,8 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
         private readonly List<string> FuncCalls = new List<string>();
         //        public Dictionary<string, string> IenFunctions = new Dictionary<string, string>();
         private readonly Dictionary<string, GlobalVar> GlobalVariables = new Dictionary<string, GlobalVar>();
+        private Dictionary<string, SYMBOL> DuplicatedGlobalVariables = new Dictionary<string, SYMBOL>();
+        private Dictionary<string, Dictionary<string, SYMBOL>> DuplicatedLocalVariables = new Dictionary<string, Dictionary<string, SYMBOL>>();
 
         /// <summary>
         ///   This saves the variables in methods so that we can make sure multiple variables do not have the same name, and if they do, rename/assign them to the correct variable name
@@ -394,6 +396,8 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             }
 
             m_astRoot = codeTransformer.Transform(LocalMethods, LocalMethodArguements);
+            DuplicatedGlobalVariables = codeTransformer.DuplicatedGlobalVars;
+            DuplicatedLocalVariables = codeTransformer.DuplicatedLocalVars;
             OriginalScript = script;
             string returnstring = "";
 
@@ -1588,7 +1592,9 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             return fullretstr;
         }
 
-        private GlobalFunctionDefinition _currentFunctionDeclaration = null;
+        private GlobalFunctionDefinition _currentGlobalFunctionDeclaration = null;
+        private StateEvent _currentLocalFunctionDeclaration = null;
+        private State _currentLocalStateDeclaration = null;
         /// <summary>
         ///   Generates the code for a GlobalFunctionDefinition node.
         /// </summary>
@@ -1599,7 +1605,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             MethodVariables.Clear();
             VariablesToRename.Clear();
             StringBuilder retstr = new StringBuilder();
-            _currentFunctionDeclaration = gf;
+            _currentGlobalFunctionDeclaration = gf;
 
             // we need to separate the argument declaration list from other kids
             List<SYMBOL> argumentDeclarationListKids = new List<SYMBOL>();
@@ -1646,7 +1652,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             }
 
             IsParentEnumerable = false;
-            _currentFunctionDeclaration = null;
+            _currentGlobalFunctionDeclaration = null;
             return retstr.ToString();
         }
 
@@ -1673,17 +1679,70 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                     checkForMultipleAssignments(identifiers, a);
 
                     IsaGlobalVar = true;
-                    string VarName = GenerateNode((SYMBOL)a.kids.Pop());
+                    SYMBOL variableName = (SYMBOL)a.kids.Pop();
+                    string VarName = GenerateNode(variableName);
                     innerretstr += VarName;
                     IsaGlobalVar = false;
 
                     #region Find the var name and type
 
-                    string[] vars = VarName.Split(' ');
-                    string type = vars[0];
-                    string varName = vars[1];
+                    Declaration dec = variableName as Declaration;
+                    string type = dec.Datatype;
+                    string varName = dec.Id;
 
                     #endregion
+
+                    if (DuplicatedGlobalVariables.ContainsKey(((Declaration)variableName).Id))
+                    {
+                        if (a.kids.Count == 1)
+                        {
+                            SYMBOL assignmentChild = (SYMBOL)a.kids[0];
+                            if (assignmentChild is IdentExpression)
+                            {
+                                IdentExpression identEx = (IdentExpression)assignmentChild;
+                            }
+                            else if (assignmentChild is ListConstant)
+                            {
+                                ListConstant listConst = (ListConstant)assignmentChild;
+                                foreach (SYMBOL listChild in listConst.kids)
+                                {
+                                    if (listChild is ArgumentList)
+                                    {
+                                        ArgumentList argList = (ArgumentList)listChild;
+                                        int i = 0;
+                                        bool changed = false;
+                                        object[] p = new object[argList.kids.Count];
+                                        foreach (SYMBOL objChild in argList.kids)
+                                        {
+                                            p[i] = objChild;
+                                            if (objChild is IdentExpression)
+                                            {
+                                                IdentExpression identEx = (IdentExpression)objChild;
+                                            }
+                                            i++;
+                                        }
+                                        if (changed)
+                                        {
+                                            argList.kids = new ObjectList();
+                                            foreach (object o in p)
+                                                argList.kids.Add(o);
+                                        }
+                                    }
+                                }
+                            }
+                            else if (assignmentChild is Constant)
+                            {
+                                Constant identEx = (Constant)assignmentChild;
+                                string value = GetValue(identEx);
+                                Constant dupConstant = (Constant)DuplicatedGlobalVariables[dec.Id];
+                                dupConstant.Value = dupConstant.Value == null ? GetValue(dupConstant) : dupConstant.Value;
+                                if (value != dupConstant.Value)
+                                {
+                                    return "";
+                                }
+                            }
+                        }
+                    }
 
                     innerretstr += Generate(String.Format(" {0} ", a.AssignmentType), a);
                     foreach (SYMBOL kid in a.kids)
@@ -1700,6 +1759,47 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             }
 
             return retstr;
+        }
+
+        private string GetValue(Constant identEx)
+        {
+            if (identEx.Value != null)
+                return identEx.Value;
+            if (identEx is VectorConstant)
+            {
+                VectorConstant vc = (VectorConstant)identEx;
+                string retstr = "";
+
+                retstr += Generate(String.Format("new {0}(", vc.Type), vc);
+                retstr += GenerateNode((SYMBOL)vc.kids[0]);
+                retstr += Generate(", ");
+                retstr += GenerateNode((SYMBOL)vc.kids[1]);
+                retstr += Generate(", ");
+                retstr += GenerateNode((SYMBOL)vc.kids[2]);
+                retstr += Generate(")");
+
+                return retstr;
+            }
+            if (identEx is RotationConstant)
+            {
+                RotationConstant rc = (RotationConstant)identEx;
+                string retstr = "";
+
+                retstr += Generate(String.Format("new {0}(", rc.Type), rc);
+                retstr += GenerateNode((SYMBOL)rc.kids[0]);
+                retstr += Generate(", ");
+                retstr += GenerateNode((SYMBOL)rc.kids[1]);
+                retstr += Generate(", ");
+                retstr += GenerateNode((SYMBOL)rc.kids[2]);
+                retstr += Generate(", ");
+                retstr += GenerateNode((SYMBOL)rc.kids[3]);
+                retstr += Generate(")");
+
+                return retstr;
+            }
+            if (identEx is ListConstant)
+                return GenerateListConstant((ListConstant)identEx);
+            return null;
         }
 
         private string CheckIfGlobalVariable(string varName, string type, SYMBOL kid)
@@ -1743,11 +1843,15 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                     }
                     c.Value = globalVarValue;
                 }
-                GlobalVariables.Add(varName, new GlobalVar
+                else if (GlobalVariables.ContainsKey(varName))
                 {
-                    Type = type,
-                    Value = globalVarValue
-                });
+                }
+                else
+                    GlobalVariables.Add(varName, new GlobalVar
+                    {
+                        Type = type,
+                        Value = globalVarValue
+                    });
                 return globalVarValue;
             }
             else if (kid is IdentExpression)
@@ -1797,6 +1901,8 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
         {
             string retstr = "";
 
+            _currentLocalStateDeclaration = s;
+
             foreach (SYMBOL kid in s.kids)
                 if (kid is StateEvent)
                     retstr += GenerateStateEvent((StateEvent)kid, s.Name);
@@ -1817,6 +1923,8 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             // we need to separate the argument declaration list from other kids
             List<SYMBOL> argumentDeclarationListKids = new List<SYMBOL>();
             List<SYMBOL> remainingKids = new List<SYMBOL>();
+
+            _currentLocalFunctionDeclaration = se;
 
             MethodVariables.Clear();
             VariablesToRename.Clear();
@@ -2004,7 +2112,66 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                             Assignment a = kid as Assignment;
                             List<string> identifiers = new List<string>();
                             checkForMultipleAssignments(identifiers, a);
-                            retstr += GenerateNode((SYMBOL)a.kids.Pop());
+
+                            SYMBOL firstChild = (SYMBOL)a.kids[0];
+                            bool retStrChanged = false;
+                            if (firstChild is Declaration &&
+                                        DuplicatedLocalVariables[GetLocalDeclarationKey()].ContainsKey(((Declaration)firstChild).Id))
+                            {
+                                Declaration dec = ((Declaration)firstChild);
+                                if (a.kids.Count == 2)
+                                {
+                                    SYMBOL assignmentChild = (SYMBOL)a.kids[1];
+                                    if (assignmentChild is IdentExpression)
+                                    {
+                                        IdentExpression identEx = (IdentExpression)assignmentChild;
+                                    }
+                                    else if (assignmentChild is ListConstant)
+                                    {
+                                        ListConstant listConst = (ListConstant)assignmentChild;
+                                        foreach (SYMBOL listChild in listConst.kids)
+                                        {
+                                            if (listChild is ArgumentList)
+                                            {
+                                                ArgumentList argList = (ArgumentList)listChild;
+                                                int i = 0;
+                                                bool changed = false;
+                                                object[] p = new object[argList.kids.Count];
+                                                foreach (SYMBOL objChild in argList.kids)
+                                                {
+                                                    p[i] = objChild;
+                                                    if (objChild is IdentExpression)
+                                                    {
+                                                        IdentExpression identEx = (IdentExpression)objChild;
+                                                    }
+                                                    i++;
+                                                }
+                                                if (changed)
+                                                {
+                                                    argList.kids = new ObjectList();
+                                                    foreach (object o in p)
+                                                        argList.kids.Add(o);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else if (assignmentChild is Constant)
+                                    {
+                                        Constant identEx = (Constant)assignmentChild;
+                                        string value = GetValue(identEx);
+                                        Constant dupConstant = (Constant)DuplicatedLocalVariables[GetLocalDeclarationKey()][dec.Id];
+                                        dupConstant.Value = dupConstant.Value == null ? GetValue(dupConstant) : dupConstant.Value;
+                                        if (value != dupConstant.Value)
+                                        {
+                                            retStrChanged = true;
+                                            retstr += dec.Id;
+                                            a.kids.Pop();
+                                        }
+                                    }
+                                }
+                            }
+                            if (!retStrChanged)
+                                retstr += GenerateNode((SYMBOL)a.kids.Pop());
                             retstr += Generate(String.Format(" {0} ", a.AssignmentType), a);
                             foreach (SYMBOL akid in a.kids)
                             {
@@ -2077,6 +2244,18 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             return DumpFunc(marc) + retstr + DumpAfterFunc(marc);
         }
 
+        private string GetLocalDeclarationKey()
+        {
+            if (_currentLocalStateDeclaration == null)
+            {
+                if (_currentGlobalFunctionDeclaration == null)
+                    return null;
+                else
+                    return "global_function_" + _currentGlobalFunctionDeclaration.Name;
+            }
+            return _currentLocalStateDeclaration.Name + "_" + _currentLocalFunctionDeclaration.Name;
+        }
+
         /// <summary>
         ///   Generates the code for an Assignment node.
         /// </summary>
@@ -2089,6 +2268,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
 
             bool marc = FuncCallsMarc();
             checkForMultipleAssignments(identifiers, a);
+
             if (a.kids[a.kids.Count - 1] is ListConstant && isAdditionExpression) //Deal with the list memory hack
             {
                 a.kids.Pop(); //Get rid of the first one
@@ -2187,7 +2367,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                     retstr += GenerateLine("yield break;", rs);
                 else
                 {
-                    retstr += Generate(string.Format("yield return ({0})(", _currentFunctionDeclaration.ReturnType), rs);
+                    retstr += Generate(string.Format("yield return ({0})(", _currentGlobalFunctionDeclaration.ReturnType), rs);
                     foreach (SYMBOL kid in rs.kids)
                         retstr += GenerateNode(kid);
                     retstr += GenerateLine(");", null);
@@ -2197,7 +2377,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             }
             else
             {
-                retstr += Generate(string.Format("return ({0})", _currentFunctionDeclaration.ReturnType), rs);
+                retstr += Generate(string.Format("return ({0})", _currentGlobalFunctionDeclaration.ReturnType), rs);
 
                 foreach (SYMBOL kid in rs.kids)
                     retstr += GenerateNode(kid);

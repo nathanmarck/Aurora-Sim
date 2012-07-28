@@ -181,7 +181,7 @@ namespace Aurora.Modules.Archivers
             //We save the groups so that we can back them up later
             List<SceneObjectGroup> groupsToBackup = new List<SceneObjectGroup>();
             List<LandData> landData = new List<LandData>();
-            IUserManagement UserManager = m_scene.RequestModuleInterface<IUserManagement>();
+            IUserFinder UserManager = m_scene.RequestModuleInterface<IUserFinder>();
 
             // must save off some stuff until after assets have been saved and recieved new uuids
             // keeping these collection local because I am sure they will get large and garbage collection is better that way
@@ -500,7 +500,7 @@ namespace Aurora.Modules.Archivers
             UUID u;
             if (!m_validUserUuids.TryGetValue(uuid, out u))
             {
-                UserAccount account = m_scene.UserAccountService.GetUserAccount(m_scene.RegionInfo.ScopeID, uuid);
+                UserAccount account = m_scene.UserAccountService.GetUserAccount(m_scene.RegionInfo.AllScopeIDs, uuid);
                 if (account != null)
                 {
                     m_validUserUuids.Add(uuid, uuid);
@@ -512,7 +512,7 @@ namespace Aurora.Modules.Archivers
                     string first, last, url, secret;
                     if (HGUtil.ParseUniversalUserIdentifier(creatorData, out hid, out url, out first, out last, out secret))
                     {
-                        account = m_scene.UserAccountService.GetUserAccount(m_scene.RegionInfo.ScopeID, first, last);
+                        account = m_scene.UserAccountService.GetUserAccount(m_scene.RegionInfo.AllScopeIDs, first, last);
                         if (account != null)
                         {
                             m_validUserUuids.Add(uuid, account.PrincipalID);
@@ -520,9 +520,9 @@ namespace Aurora.Modules.Archivers
                         }
                     }
                 }
-                IUserManagement uf = m_scene.RequestModuleInterface<IUserManagement>();
+                IUserFinder uf = m_scene.RequestModuleInterface<IUserFinder>();
                 if (uf != null)
-                    if (uf.GetUserExists(uuid))//Foreign user, don't remove their info
+                    if (!uf.IsLocalGridUser(uuid))//Foreign user, don't remove their info
                     {
                         m_validUserUuids.Add(uuid, uuid);
                         return uuid;
@@ -532,7 +532,7 @@ namespace Aurora.Modules.Archivers
                 {
                 tryAgain:
                     string ownerName = MainConsole.Instance.Prompt(string.Format("User Name to use instead of UUID '{0}'", uuid), "");
-                    account = m_scene.UserAccountService.GetUserAccount(m_scene.RegionInfo.ScopeID, ownerName);
+                account = m_scene.UserAccountService.GetUserAccount(m_scene.RegionInfo.AllScopeIDs, ownerName);
                     if (account != null)
                         id = account.PrincipalID;
                     else if (ownerName != "")

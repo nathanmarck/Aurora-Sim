@@ -46,12 +46,9 @@ namespace Aurora.Modules.WorldMap
     public class AuroraWorldMapModule : INonSharedRegionModule, IWorldMapModule
 	{
         private const string DEFAULT_WORLD_MAP_EXPORT_PATH = "exportmap.jpg";
-        //private static readonly UUID STOP_UUID = UUID.Random();
 
-        //private IConfig m_config;
         protected IScene m_scene;
         protected bool m_Enabled;
-        private IConfigSource m_config;
         private readonly ExpiringCache<ulong, List< mapItemReply>> m_mapItemCache = new ExpiringCache<ulong, List<mapItemReply>>();
 
         private readonly ConcurrentQueue<MapItemRequester> m_itemsToRequest = new ConcurrentQueue<MapItemRequester>();
@@ -71,8 +68,6 @@ namespace Aurora.Modules.WorldMap
                         "AuroraWorldMapModule")
                     return;
                 m_Enabled = true;
-                //MainConsole.Instance.Info("[AuroraWorldMap] Initializing");
-                m_config = source;
                 MapViewLength = source.Configs["MapModule"].GetInt("MapViewLength", MapViewLength);
             }
 		}
@@ -275,7 +270,8 @@ namespace Aurora.Modules.WorldMap
                 List<mapItemReply> mapitems;
                 if (!m_mapItemCache.TryGetValue(item.regionhandle, out mapitems)) //try again, might have gotten picked up by this already
                 {
-                    multipleMapItemReply allmapitems = m_scene.GridService.GetMapItems(item.regionhandle, (GridItemType)item.itemtype);
+                    multipleMapItemReply allmapitems = m_scene.GridService.GetMapItems(item.remoteClient.AllScopeIDs, 
+                        item.regionhandle, (GridItemType)item.itemtype);
 
                     if (allmapitems == null)
                         continue;
@@ -401,7 +397,7 @@ namespace Aurora.Modules.WorldMap
                         break;
                     List<MapBlockData> mapBlocks = new List<MapBlockData>();
 
-                    List<GridRegion> regions = m_scene.GridService.GetRegionRange(m_scene.RegionInfo.ScopeID,
+                    List<GridRegion> regions = m_scene.GridService.GetRegionRange(item.remoteClient.AllScopeIDs,
                             (item.minX - 4) * Constants.RegionSize,
                             (item.maxX + 4) * Constants.RegionSize,
                             (item.minY - 4) * Constants.RegionSize,
@@ -521,10 +517,10 @@ namespace Aurora.Modules.WorldMap
 
             List<MapBlockData> blocks = new List<MapBlockData>();
 
-            List<GridRegion> regionInfos = m_scene.GridService.GetRegionsByName(UUID.Zero, mapName, 0, 20);
+            List<GridRegion> regionInfos = m_scene.GridService.GetRegionsByName(remoteClient.AllScopeIDs, mapName, 0, 20);
             if (TryCoordsSearch)
             {
-                GridRegion region = m_scene.GridService.GetRegionByPosition(m_scene.RegionInfo.ScopeID, XCoord * Constants.RegionSize, YCoord * Constants.RegionSize);
+                GridRegion region = m_scene.GridService.GetRegionByPosition(remoteClient.AllScopeIDs, XCoord * Constants.RegionSize, YCoord * Constants.RegionSize);
                 if (region != null)
                 {
                     region.RegionName = mapName + " - " + region.RegionName;
@@ -543,7 +539,7 @@ namespace Aurora.Modules.WorldMap
                         blocks.Add(SearchMapBlockFromGridRegion(region));
                     }
                     //Then send surrounding regions
-                    List<GridRegion> regions = m_scene.GridService.GetRegionRange(m_scene.RegionInfo.ScopeID,
+                    List<GridRegion> regions = m_scene.GridService.GetRegionRange(remoteClient.AllScopeIDs,
                         (region.RegionLocX - (4 * Constants.RegionSize)),
                         (region.RegionLocX + (4 * Constants.RegionSize)),
                         (region.RegionLocY - (4 * Constants.RegionSize)),
@@ -729,7 +725,7 @@ namespace Aurora.Modules.WorldMap
             MainConsole.Instance.InfoFormat(
                 "[WORLD MAP]: Exporting world map for {0} to {1}", m_scene.RegionInfo.RegionName, exportPath);
 
-            List<GridRegion> regions = m_scene.GridService.GetRegionRange(m_scene.RegionInfo.ScopeID,
+            List<GridRegion> regions = m_scene.GridService.GetRegionRange(null,
                     m_scene.RegionInfo.RegionLocX - (9 * Constants.RegionSize),
                     m_scene.RegionInfo.RegionLocX + (9 * Constants.RegionSize),
                     m_scene.RegionInfo.RegionLocY - (9 * Constants.RegionSize),

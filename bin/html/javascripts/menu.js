@@ -5,17 +5,16 @@ $(document).ready(function(){
 	var content = $("#content");
 	
 	//Manage click events
-	sections.click(function(){
+	sections.click(function(event){
 		//show the loading bar
 		showLoading();
 		//load selected section
 		switch(this.id){
 {MenuItemsArrayBegin}
 			case "{MenuItemID}":
-				content.slideUp('swing',  function()
-				{ 
-				content.load("{MenuItemLocation}" + window.location.search, hideLoading);
-				content.slideDown();
+				content.slideUp('swing',  function() { 
+				    content.load("{MenuItemLocation}" + window.location.search, hideLoading);
+				    content.slideDown();
 				});
 				
 				break;
@@ -25,6 +24,7 @@ $(document).ready(function(){
 				hideLoading();
 				break;
 		}
+		event.stopPropagation();
 	});
 
 	//show loading bar

@@ -36,6 +36,30 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
         private static Dictionary<string, string> m_datatypeLSL2OpenSim;
         private readonly SYMBOL m_astRoot;
         private readonly Dictionary<string, string> m_globalVariableValues = new Dictionary<string, string>();
+        private readonly Dictionary<string, SYMBOL> m_duplicatedGlobalVariableValues = new Dictionary<string, SYMBOL>();
+        private Dictionary<string, Dictionary<string, SYMBOL>> m_localVariableValues = new Dictionary<string, Dictionary<string, SYMBOL>>();
+        private Dictionary<string, Dictionary<string, string>> m_localVariableValuesStr = new Dictionary<string, Dictionary<string, string>>();
+        private readonly Dictionary<string, Dictionary<string, SYMBOL>> m_duplicatedLocalVariableValues = new Dictionary<string, Dictionary<string, SYMBOL>>();
+        private string m_currentEvent = "";
+        private string m_currentState = "";
+
+        public Dictionary<string, SYMBOL> DuplicatedGlobalVars
+        {
+            get { return m_duplicatedGlobalVariableValues; }
+        }
+        public Dictionary<string, string> GlobalVars
+        {
+            get { return m_globalVariableValues; }
+        }
+
+        public Dictionary<string, Dictionary<string, SYMBOL>> DuplicatedLocalVars
+        {
+            get { return m_duplicatedLocalVariableValues; }
+        }
+        public Dictionary<string, Dictionary<string, SYMBOL>> LocalVars
+        {
+            get { return m_localVariableValues; }
+        }
 
         /// <summary>
         ///   Pass the new CodeTranformer an abstract syntax tree.
@@ -91,44 +115,52 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
             // ie: since IdentConstant and StringConstant inherit from Constant,
             // put IdentConstant and StringConstant before Constant
             if (s is Declaration)
-                ((Declaration)s).Datatype = m_datatypeLSL2OpenSim[((Declaration)s).Datatype];
+            {
+                Declaration dec = (Declaration)s;
+                dec.Datatype = m_datatypeLSL2OpenSim[dec.Datatype];
+            }
             else if (s is Constant)
                 ((Constant)s).Type = m_datatypeLSL2OpenSim[((Constant)s).Type];
             else if (s is TypecastExpression)
                 ((TypecastExpression)s).TypecastType = m_datatypeLSL2OpenSim[((TypecastExpression)s).TypecastType];
             else if (s is GlobalFunctionDefinition)
             {
-                if ("void" == ((GlobalFunctionDefinition)s).ReturnType) // we don't need to translate "void"
+                GlobalFunctionDefinition fun = (GlobalFunctionDefinition)s;
+                if ("void" == fun.ReturnType) // we don't need to translate "void"
                 {
-                    if (GlobalMethods != null && !GlobalMethods.ContainsKey(((GlobalFunctionDefinition)s).Name))
-                        GlobalMethods.Add(((GlobalFunctionDefinition)s).Name, "void");
+                    if (GlobalMethods != null && !GlobalMethods.ContainsKey(fun.Name))
+                        GlobalMethods.Add(fun.Name, "void");
                 }
                 else
                 {
-                    ((GlobalFunctionDefinition)s).ReturnType =
-                        m_datatypeLSL2OpenSim[((GlobalFunctionDefinition)s).ReturnType];
-                    if (GlobalMethods != null && !GlobalMethods.ContainsKey(((GlobalFunctionDefinition)s).Name))
+                    fun.ReturnType =
+                        m_datatypeLSL2OpenSim[fun.ReturnType];
+                    if (GlobalMethods != null && !GlobalMethods.ContainsKey(fun.Name))
                     {
-                        GlobalMethods.Add(((GlobalFunctionDefinition)s).Name, ((GlobalFunctionDefinition)s).ReturnType);
-                        MethodArguements.Add(((GlobalFunctionDefinition)s).Name, (s).kids);
+                        GlobalMethods.Add(fun.Name, fun.ReturnType);
+                        MethodArguements.Add(fun.Name, (s).kids);
                     }
                 }
                 //Reset the variables, we changed events
-                /*m_allVariableValues = new List<string>();
-                foreach(SYMBOL child in s.kids)
-                {
-                    if(child is ArgumentDeclarationList)
-                    {
-                        foreach(SYMBOL assignmentChild in child.kids)
-                        {
-                            if(assignmentChild is Declaration)
-                            {
-                                Declaration d = (Declaration)assignmentChild;
-                                m_allVariableValues.Add(d.Id);
-                            }
-                        }
-                    }
-                }*/
+                m_currentEvent = fun.Name;
+                m_localVariableValues.Add("global_function_" + fun.Name, new Dictionary<string, SYMBOL>());
+                m_localVariableValuesStr.Add("global_function_" + fun.Name, new Dictionary<string, string>());
+                m_duplicatedLocalVariableValues.Add("global_function_" + fun.Name, new Dictionary<string, SYMBOL>());
+            }
+            else if (s is State)
+            {
+                //Reset the variables, we changed events
+                State evt = (State)s;
+                m_currentState = evt.Name;
+            }
+            else if (s is StateEvent)
+            {
+                //Reset the variables, we changed events
+                StateEvent evt = (StateEvent)s;
+                m_currentEvent = evt.Name;
+                m_localVariableValues.Add(m_currentState + "_" + evt.Name, new Dictionary<string, SYMBOL>());
+                m_localVariableValuesStr.Add(m_currentState + "_" + evt.Name, new Dictionary<string, string>());
+                m_duplicatedLocalVariableValues.Add(m_currentState + "_" + evt.Name, new Dictionary<string, SYMBOL>());
             }
             else if (s is GlobalVariableDeclaration)
             {
@@ -151,7 +183,11 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                             {
                                 IdentExpression identEx = (IdentExpression)assignmentChild;
                                 if (isDeclaration)
+                                {
+                                    if (m_globalVariableValues.ContainsKey(decID))
+                                        m_duplicatedGlobalVariableValues[decID] = identEx;
                                     m_globalVariableValues[decID] = identEx.Name;
+                                }
                             }
                             else if (assignmentChild is ListConstant)
                             {
@@ -175,10 +211,10 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                                                     changed = true;
                                                     p[i] = new IdentExpression(identEx.yyps,
                                                                                m_globalVariableValues[identEx.Name])
-                                                               {
-                                                                   pos = objChild.pos,
-                                                                   m_dollar = objChild.m_dollar
-                                                               };
+                                                    {
+                                                        pos = objChild.pos,
+                                                        m_dollar = objChild.m_dollar
+                                                    };
                                                 }
                                             }
                                             i++;
@@ -189,25 +225,194 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                                             foreach (object o in p)
                                                 argList.kids.Add(o);
                                         }
+                                        if (isDeclaration)
+                                        {
+                                            if (m_globalVariableValues.ContainsKey(decID))
+                                                m_duplicatedGlobalVariableValues[decID] = listConst;
+                                            m_globalVariableValues[decID] = listConst.Value;
+                                        }
                                     }
+                                }
+                            }
+                            else if (assignmentChild is VectorConstant || assignmentChild is RotationConstant)
+                            {
+                                Constant listConst = (Constant)assignmentChild;
+                                int i = 0;
+                                bool changed = false;
+                                object[] p = new object[listConst.kids.Count];
+                                foreach (SYMBOL objChild in listConst.kids)
+                                {
+                                    p[i] = objChild;
+                                    if (objChild is IdentExpression)
+                                    {
+                                        IdentExpression identEx = (IdentExpression)objChild;
+                                        if (m_globalVariableValues.ContainsKey(identEx.Name))
+                                        {
+                                            changed = true;
+                                            p[i] = new IdentExpression(identEx.yyps,
+                                                                       m_globalVariableValues[identEx.Name])
+                                            {
+                                                pos = objChild.pos,
+                                                m_dollar = objChild.m_dollar
+                                            };
+                                        }
+                                    }
+                                    i++;
+                                }
+                                if (changed)
+                                {
+                                    listConst.kids = new ObjectList();
+                                    foreach (object o in p)
+                                        listConst.kids.Add(o);
+                                }
+                                if (isDeclaration)
+                                {
+                                    if (m_globalVariableValues.ContainsKey(decID))
+                                        m_duplicatedGlobalVariableValues[decID] = listConst;
+                                    m_globalVariableValues[decID] = listConst.Value;
                                 }
                             }
                             else if (assignmentChild is Constant)
                             {
                                 Constant identEx = (Constant)assignmentChild;
                                 if (isDeclaration)
+                                {
+                                    if (m_globalVariableValues.ContainsKey(decID))
+                                        m_duplicatedGlobalVariableValues[decID] = identEx;
                                     m_globalVariableValues[decID] = identEx.Value;
+                                }
                             }
                         }
                     }
                 }
             }
-            /*if(s is StateEvent)
+            else if (s is Assignment && m_currentEvent != "")
             {
-                //Reset the variables, we changed events
-                m_allVariableValues = new List<string>();
+                Assignment ass = (Assignment)s;
+                bool isDeclaration = false;
+                string decID = "";
+                foreach (SYMBOL assignmentChild in ass.kids)
+                {
+                    if (assignmentChild is Declaration)
+                    {
+                        Declaration d = (Declaration)assignmentChild;
+                        decID = d.Id;
+                        isDeclaration = true;
+                    }
+                    else if (assignmentChild is IdentExpression)
+                    {
+                        IdentExpression identEx = (IdentExpression)assignmentChild;
+                        if (isDeclaration)
+                        {
+                            if (m_localVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID) && 
+                                !m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID))
+                                m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()][decID] = m_localVariableValues[GetLocalVariableDictionaryKey()][decID];
+                            m_localVariableValues[GetLocalVariableDictionaryKey()][decID] = identEx;
+                            m_localVariableValuesStr[GetLocalVariableDictionaryKey()][decID] = identEx.Name;
+                        }
+                    }
+                    else if (assignmentChild is ListConstant)
+                    {
+                        ListConstant listConst = (ListConstant)assignmentChild;
+                        foreach (SYMBOL listChild in listConst.kids)
+                        {
+                            if (listChild is ArgumentList)
+                            {
+                                ArgumentList argList = (ArgumentList)listChild;
+                                int i = 0;
+                                bool changed = false;
+                                object[] p = new object[argList.kids.Count];
+                                foreach (SYMBOL objChild in argList.kids)
+                                {
+                                    p[i] = objChild;
+                                    if (objChild is IdentExpression)
+                                    {
+                                        IdentExpression identEx = (IdentExpression)objChild;
+                                        if (m_localVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(identEx.Name))
+                                        {
+                                            changed = true;
+                                            p[i] = new IdentExpression(identEx.yyps,
+                                                                        m_localVariableValuesStr[GetLocalVariableDictionaryKey()][identEx.Name])
+                                            {
+                                                pos = objChild.pos,
+                                                m_dollar = objChild.m_dollar
+                                            };
+                                        }
+                                    }
+                                    i++;
+                                }
+                                if (changed)
+                                {
+                                    argList.kids = new ObjectList();
+                                    foreach (object o in p)
+                                        argList.kids.Add(o);
+                                }
+                                if (isDeclaration)
+                                {
+                                    if (m_localVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID) &&
+                                        !m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID))
+                                        m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()][decID] = m_localVariableValues[GetLocalVariableDictionaryKey()][decID];
+                                    m_localVariableValues[GetLocalVariableDictionaryKey()][decID] = listConst;
+                                    m_localVariableValuesStr[GetLocalVariableDictionaryKey()][decID] = listConst.Value;
+                                }
+                            }
+                        }
+                    }
+                    else if (assignmentChild is VectorConstant || assignmentChild is RotationConstant)
+                    {
+                        Constant listConst = (Constant)assignmentChild;
+                        int i = 0;
+                        bool changed = false;
+                        object[] p = new object[listConst.kids.Count];
+                        foreach (SYMBOL objChild in listConst.kids)
+                        {
+                            p[i] = objChild;
+                            if (objChild is IdentExpression)
+                            {
+                                IdentExpression identEx = (IdentExpression)objChild;
+                                if (m_localVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(identEx.Name))
+                                {
+                                    changed = true;
+                                    p[i] = new IdentExpression(identEx.yyps,
+                                                                m_localVariableValuesStr[GetLocalVariableDictionaryKey()][identEx.Name])
+                                    {
+                                        pos = objChild.pos,
+                                        m_dollar = objChild.m_dollar
+                                    };
+                                }
+                            }
+                            i++;
+                        }
+                        if (changed)
+                        {
+                            listConst.kids = new ObjectList();
+                            foreach (object o in p)
+                                listConst.kids.Add(o);
+                        }
+                        if (isDeclaration)
+                        {
+                            if (m_localVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID) &&
+                                !m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID))
+                                m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()][decID] = m_localVariableValues[GetLocalVariableDictionaryKey()][decID];
+                            m_localVariableValues[GetLocalVariableDictionaryKey()][decID] = listConst;
+                            m_localVariableValuesStr[GetLocalVariableDictionaryKey()][decID] = listConst.Value;
+                        }
+                    }
+                    else if (assignmentChild is Constant)
+                    {
+                        Constant identEx = (Constant)assignmentChild;
+                        if (isDeclaration)
+                        {
+                            if (m_localVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID) &&
+                                !m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()].ContainsKey(decID))
+                                m_duplicatedLocalVariableValues[GetLocalVariableDictionaryKey()][decID] = m_localVariableValues[GetLocalVariableDictionaryKey()][decID];
+                            m_localVariableValues[GetLocalVariableDictionaryKey()][decID] = identEx;
+                            m_localVariableValuesStr[GetLocalVariableDictionaryKey()][decID] = identEx.Value;
+                        }
+                    }
+                }
             }
-            if(s is Statement)
+            /*if(s is Statement)
             {
                 if(s.kids.Count == 1 && s.kids[0] is Assignment)
                 {
@@ -273,6 +478,13 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.CompilerTools
                     TransformNode((SYMBOL)s.kids[i], null, null);
                 }
             }
+        }
+
+        private string GetLocalVariableDictionaryKey()
+        {
+            if (m_currentState == "")
+                return "global_function_" + m_currentEvent;
+            return m_currentState + "_" + m_currentEvent;
         }
 
         /// <summary>

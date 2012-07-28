@@ -32,6 +32,7 @@ using System.Web;
 using Aurora.Framework;
 using Nini.Config;
 using OpenMetaverse;
+using OpenMetaverse.StructuredData;
 using OpenSim.Services.Interfaces;
 
 namespace Aurora.Services.DataService
@@ -69,7 +70,7 @@ namespace Aurora.Services.DataService
             get { return "IUserAccountData"; }
         }
 
-        public UserAccount[] Get(string[] fields, string[] values)
+        public UserAccount[] Get(List<UUID> scopeIDs, string[] fields, string[] values)
         {
             Dictionary<string, object> where = new Dictionary<string, object>(values.Length);
 
@@ -83,11 +84,7 @@ namespace Aurora.Services.DataService
                 andFilters = where
             }, null, null, null);
 
-            List<UserAccount> list = new List<UserAccount>();
-
-            ParseQuery(query, ref list);
-
-            return list.ToArray();
+            return ParseQuery(scopeIDs, query).ToArray();
         }
 
         public bool Store(UserAccount data)
@@ -95,7 +92,7 @@ namespace Aurora.Services.DataService
             if (data.UserTitle == null)
                 data.UserTitle = "";
 
-            Dictionary<string, object> row = new Dictionary<string, object>(11);
+            Dictionary<string, object> row = new Dictionary<string, object>(12);
             row["PrincipalID"] = data.PrincipalID;
             row["ScopeID"] = data.ScopeID;
             row["FirstName"] = data.FirstName;
@@ -107,6 +104,7 @@ namespace Aurora.Services.DataService
             row["UserFlags"] = data.UserFlags;
             row["UserTitle"] = data.UserTitle;
             row["Name"] = data.Name;
+            row["OSD"] = OSDParser.SerializeJsonString(data.ToOSD());
 
             return GD.Replace(m_realm, row);
         }
@@ -123,19 +121,14 @@ namespace Aurora.Services.DataService
             return GD.Delete(m_realm, filter);
         }
 
-        public UserAccount[] GetUsers(UUID scopeID, string query)
+        public UserAccount[] GetUsers(List<UUID> scopeIDs, string query)
         {
-            return GetUsers(scopeID, query, null, null);
+            return GetUsers(scopeIDs, query, null, null);
         }
 
-        private static QueryFilter GetUsersFilter(UUID scopeID, string query){
+        private static QueryFilter GetUsersFilter(string query)
+        {
             QueryFilter filter = new QueryFilter();
-
-            filter.orMultiFilters["ScopeID"] = new List<object>
-            {
-                scopeID,
-                UUID.Zero
-            };
 
             string[] words = query.Split(new[] { ' ' });
 
@@ -167,11 +160,9 @@ namespace Aurora.Services.DataService
             return filter;
         }
 
-        public UserAccount[] GetUsers(UUID scopeID, string query, uint? start, uint? count)
+        public UserAccount[] GetUsers(List<UUID> scopeIDs, string query, uint? start, uint? count)
         {
-            List<UserAccount> data = new List<UserAccount>();
-
-            QueryFilter filter = GetUsersFilter(scopeID, query);
+            QueryFilter filter = GetUsersFilter(query);
 
             Dictionary<string, bool> sort = new Dictionary<string, bool>(2);
             sort["LastName"] = true;
@@ -188,23 +179,19 @@ namespace Aurora.Services.DataService
                                                    "UserLevel",
                                                    "UserFlags",
                                                    "UserTitle",
-                                                   "IFNULL(Name, " + GD.ConCat(new[] {"FirstName", "' '", "LastName"}) + ") as Name"
+                                                   "IFNULL(Name, " + GD.ConCat(new[] {"FirstName", "' '", "LastName"}) + ") as Name",
+                                                   "OSD"
                                                }, m_realm, filter, sort, start, count);
 
-            ParseQuery(retVal, ref data);
-
-            return data.ToArray();
+            return ParseQuery(scopeIDs, retVal).ToArray();
         }
 
-        public UserAccount[] GetUsers(UUID scopeID, int level, int flag)
+        public UserAccount[] GetUsers(List<UUID> scopeIDs, int level, int flag)
         {
-            List<UserAccount> data = new List<UserAccount>();
-
             QueryFilter filter = new QueryFilter();
             filter.andGreaterThanEqFilters["UserLevel"] = level;
             if (flag != 0)  
                 filter.andBitfieldAndFilters["UserFlags"] = (uint)flag;
-            filter.andFilters["ScopeID"] = scopeID;
 
             Dictionary<string, bool> sort = new Dictionary<string, bool>(2);
             sort["LastName"] = true;
@@ -221,17 +208,16 @@ namespace Aurora.Services.DataService
                                                    "UserLevel",
                                                    "UserFlags",
                                                    "UserTitle",
-                                                   "IFNULL(Name, " + GD.ConCat(new[] {"FirstName", "' '", "LastName"}) + ") as Name"
+                                                   "IFNULL(Name, " + GD.ConCat(new[] {"FirstName", "' '", "LastName"}) + ") as Name",
+                                                   "OSD"
                                                }, m_realm, filter, sort, null, null);
 
-            ParseQuery(retVal, ref data);
-
-            return data.ToArray();
+            return ParseQuery(scopeIDs, retVal).ToArray();
         }
 
-        public uint NumberOfUsers(UUID scopeID, string query)
+        public uint NumberOfUsers(List<UUID> scopeIDs, string query)
         {
-            return uint.Parse(GD.Query(new[] { "COUNT(*)" }, m_realm, GetUsersFilter(scopeID, query), null, null, null)[0]);
+            return uint.Parse(GD.Query(new[] { "COUNT(*)" }, m_realm, GetUsersFilter(query), null, null, null)[0]);
         }
 
         #endregion
@@ -240,12 +226,14 @@ namespace Aurora.Services.DataService
         {
         }
 
-        private void ParseQuery(List<string> query, ref List<UserAccount> list)
+        private List<UserAccount> ParseQuery(List<UUID> scopeIDs, List<string> query)
         {
-            for (int i = 0; i < query.Count; i += 11)
+            List<UserAccount> list = new List<UserAccount>();
+            for (int i = 0; i < query.Count; i += 12)
             {
-                UserAccount data = new UserAccount
-                                       {PrincipalID = UUID.Parse(query[i + 0]), ScopeID = UUID.Parse(query[i + 1])};
+                UserAccount data = new UserAccount { PrincipalID = UUID.Parse(query[i + 0]), ScopeID = UUID.Parse(query[i + 1]) };
+                if(query[i + 11] != "")
+                    data.FromOSD((OSDMap)OSDParser.DeserializeJson(query[i + 11]));
 
                 //We keep these even though we don't always use them because we might need to create the "Name" from them
                 string FirstName = query[i + 2];
@@ -272,6 +260,8 @@ namespace Aurora.Services.DataService
                 }
                 list.Add(data);
             }
+
+            return AllScopeIDImpl.CheckScopeIDs(scopeIDs, list);
         }
     }
 }

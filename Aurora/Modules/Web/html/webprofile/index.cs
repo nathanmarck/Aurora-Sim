@@ -22,6 +22,7 @@ namespace Aurora.Modules.Web
                 return new[]
                        {
                            "html/webprofile/index.html",
+                           "html/webprofile/base.html",
                            "html/webprofile/"
                        };
             }
@@ -42,20 +43,20 @@ namespace Aurora.Modules.Web
                 string userid = httpRequest.Query["userid"].ToString();
 
                 account = webInterface.Registry.RequestModuleInterface<IUserAccountService>().
-                    GetUserAccount(UUID.Zero, UUID.Parse(userid));
+                    GetUserAccount(null, UUID.Parse(userid));
             }
             else if (httpRequest.Query.ContainsKey("name") || username.Contains('.'))
             {
                 string name = httpRequest.Query.ContainsKey("name") ? httpRequest.Query["name"].ToString() : username;
                 name = name.Replace('.', ' ');
                 account = webInterface.Registry.RequestModuleInterface<IUserAccountService>().
-                    GetUserAccount(UUID.Zero, name);
+                    GetUserAccount(null, name);
             }
             else
             {
                 username = username.Replace("%20", " ");
                 account = webInterface.Registry.RequestModuleInterface<IUserAccountService>().
-                    GetUserAccount(UUID.Zero, username);
+                    GetUserAccount(null, username);
             }
 
             if (account == null)
@@ -72,7 +73,7 @@ namespace Aurora.Modules.Web
                 if (profile.Partner != UUID.Zero)
                 {
                     account = webInterface.Registry.RequestModuleInterface<IUserAccountService>().
-                        GetUserAccount(UUID.Zero, profile.Partner);
+                        GetUserAccount(null, profile.Partner);
                     vars.Add("UserPartner", account.Name);
                 }
                 else
@@ -88,6 +89,11 @@ namespace Aurora.Modules.Web
             IClientCapsService clientCaps = capsService == null ? null : capsService.GetClientCapsService(account.PrincipalID);
             if (clientCaps != null)
                 vars.Add("OnlineLocation", clientCaps.GetRootCapsService().Region.RegionName);
+
+            // Menu Profile
+            vars.Add("MenuProfileTitle", translator.GetTranslatedString("MenuProfileTitle"));
+            vars.Add("MenuGroupTitle", translator.GetTranslatedString("MenuGroupTitle"));
+            vars.Add("MenuPicksTitle", translator.GetTranslatedString("MenuPicksTitle"));
 
             vars.Add("UserIsOnline", clientCaps != null);
             vars.Add("IsOnline", clientCaps != null ? translator.GetTranslatedString("Online") : translator.GetTranslatedString("Offline"));
@@ -105,6 +111,10 @@ namespace Aurora.Modules.Web
             vars.Add("styles3", translator.GetTranslatedString("styles3"));
             vars.Add("styles4", translator.GetTranslatedString("styles4"));
             vars.Add("styles5", translator.GetTranslatedString("styles5"));
+
+			vars.Add("StyleSwitcherStylesText", translator.GetTranslatedString("StyleSwitcherStylesText"));
+			vars.Add("StyleSwitcherLanguagesText", translator.GetTranslatedString("StyleSwitcherLanguagesText"));
+			vars.Add("StyleSwitcherChoiceText", translator.GetTranslatedString("StyleSwitcherChoiceText"));
 			
             // Language Switcher
             vars.Add("en", translator.GetTranslatedString("en"));

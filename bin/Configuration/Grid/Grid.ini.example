@@ -27,11 +27,12 @@
     EmailConnector = LocalConnector
 
     DoRemoteCalls = True
-	CapsServiceDoRemoteCalls = False
+    CapsServiceDoRemoteCalls = False
     AllowRemoteCalls = False
-	
+
 [Configuration]
     UseRegistrationService = false
+<<<<<<< HEAD
 <<<<<<< HEAD
     OSDRequestTimeout = 10000
     OSDRequestTryCount = 5
@@ -41,6 +42,12 @@
 	OSDRequestTryCount = 5
 	RegisterRegionPassword = 
 	
+>>>>>>> auroragit/master
+=======
+    OSDRequestTimeout = 10000
+    OSDRequestTryCount = 5
+    RegisterRegionPassword = 
+
 >>>>>>> auroragit/master
 [Handlers]
     AbuseReportHandler = AbuseReportsService

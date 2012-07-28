@@ -566,7 +566,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.APIs
         {
             if (!ScriptProtection.CheckThreatLevel(ThreatLevel.None, "aaAvatarFullName2Key", m_host, "AA", m_itemID))
                 return new LSL_String();
-            UserAccount account = World.UserAccountService.GetUserAccount(World.RegionInfo.ScopeID, fullname);
+            UserAccount account = World.UserAccountService.GetUserAccount(World.RegionInfo.AllScopeIDs, fullname);
 
             if (null == account)
                 return UUID.Zero.ToString();
@@ -613,7 +613,6 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.APIs
                 LSL_Float gravForce = value.GetLSLFloatItem(1);
                 LSL_Float radius = value.GetLSLFloatItem(2);
                 LSL_Integer ident = value.GetLSLIntegerItem(3);
-                float[] grav = m_host.ParentEntity.Scene.PhysicsScene.GetGravityForce();
                 m_host.ParentEntity.Scene.PhysicsScene.AddGravityPoint(false,
                                                                        new Vector3((float)pos.x, (float)pos.y,
                                                                                    (float)pos.z),
@@ -628,7 +627,6 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.APIs
                 LSL_Float zForce = value.GetLSLFloatItem(3);
                 LSL_Float radius = value.GetLSLFloatItem(4);
                 LSL_Integer ident = value.GetLSLIntegerItem(5);
-                float[] grav = m_host.ParentEntity.Scene.PhysicsScene.GetGravityForce();
                 m_host.ParentEntity.Scene.PhysicsScene.AddGravityPoint(true,
                                                                        new Vector3((float)pos.x, (float)pos.y,
                                                                                    (float)pos.z),
@@ -695,7 +693,7 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.APIs
         public string resolveName(UUID objecUUID)
         {
             // try avatar username surname
-            UserAccount account = World.UserAccountService.GetUserAccount(World.RegionInfo.ScopeID, objecUUID);
+            UserAccount account = World.UserAccountService.GetUserAccount(World.RegionInfo.AllScopeIDs, objecUUID);
             if (account != null)
                 return account.Name;
 
@@ -1057,6 +1055,11 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.APIs
 
             ConvertLSLToWindlight(ref cycle, 0, list);
             gc.AddGeneric(World.RegionInfo.RegionID, "EnvironmentSettings", "", new OSDWrapper { Info = cycle.ToOSD() }.ToOSD());
+
+            IEnvironmentSettingsModule environmentSettings = World.RequestModuleInterface<IEnvironmentSettingsModule>();
+            if (environmentSettings != null)
+                environmentSettings.TriggerWindlightUpdate(1);
+            
             return ScriptBaseClass.WL_OK;
         }
 
@@ -1078,6 +1081,11 @@ namespace Aurora.ScriptEngine.AuroraDotNetEngine.APIs
 
             ConvertLSLToWindlight(ref cycle, dayCycleIndex, list);
             gc.AddGeneric(World.RegionInfo.RegionID, "EnvironmentSettings", "", new OSDWrapper { Info = cycle.ToOSD() }.ToOSD());
+
+            IEnvironmentSettingsModule environmentSettings = World.RequestModuleInterface<IEnvironmentSettingsModule>();
+            if (environmentSettings != null)
+                environmentSettings.TriggerWindlightUpdate(1);
+            
             return ScriptBaseClass.WL_OK;
         }
 

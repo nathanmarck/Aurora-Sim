@@ -184,7 +184,7 @@ namespace Aurora.Modules.Search
                                    string queryText, uint queryFlags, int queryStart)
         {
             //Find the user accounts
-            List<UserAccount> accounts = m_Scenes[0].UserAccountService.GetUserAccounts(remoteClient.ScopeID,
+            List<UserAccount> accounts = m_Scenes[0].UserAccountService.GetUserAccounts(remoteClient.AllScopeIDs,
                                                                                         queryText);
             List<DirPeopleReplyData> ReturnValues =
                 new List<DirPeopleReplyData>();
@@ -207,20 +207,10 @@ namespace Aurora.Modules.Search
                     {
                         person.group = "";
                         GroupMembershipData[] memberships = GroupsModule.GetMembershipData(item.PrincipalID);
-#if (!ISWIN)
-                        foreach (GroupMembershipData membership in memberships)
-                        {
-                            if (membership.Active)
-                            {
-                                person.group = membership.GroupName;
-                            }
-                        }
-#else
                         foreach (GroupMembershipData membership in memberships.Where(membership => membership.Active))
                         {
                             person.group = membership.GroupName;
                         }
-#endif
                     }
                     //Then we have to pull the GUI to see if the user is online or not
                     UserInfo Pinfo =
@@ -245,20 +235,10 @@ namespace Aurora.Modules.Search
                         person.group = "";
                         //Check what group they have set
                         GroupMembershipData[] memberships = GroupsModule.GetMembershipData(item.PrincipalID);
-#if (!ISWIN)
-                        foreach (GroupMembershipData membership in memberships)
-                        {
-                            if (membership.Active)
-                            {
-                                person.group = membership.GroupName;
-                            }
-                        }
-#else
                         foreach (GroupMembershipData membership in memberships.Where(membership => membership.Active))
                         {
                             person.group = membership.GroupName;
                         }
-#endif
                     }
                     //Then we have to pull the GUI to see if the user is online or not
                     UserInfo Pinfo =
@@ -356,7 +336,7 @@ namespace Aurora.Modules.Search
             Utils.LongToUInts(remoteClient.Scene.RegionInfo.RegionHandle, out xstart, out ystart);
             GridRegion GR = null;
 
-            GR = regionhandle == 0 ? new GridRegion(remoteClient.Scene.RegionInfo) : m_Scenes[0].GridService.GetRegionByPosition(UUID.Zero, (int) xstart, (int) ystart);
+            GR = regionhandle == 0 ? new GridRegion(remoteClient.Scene.RegionInfo) : m_Scenes[0].GridService.GetRegionByPosition(remoteClient.AllScopeIDs, (int)xstart, (int)ystart);
             if (GR == null)
             {
                 //No region???
@@ -437,7 +417,7 @@ namespace Aurora.Modules.Search
                     if (locY == 0 && locX == 0)
                     {
                         //Ask the grid service for the coordinates if the region is not local
-                        GridRegion r = m_Scenes[0].GridService.GetRegionByUUID(UUID.Zero, landdata.RegionID);
+                        GridRegion r = m_Scenes[0].GridService.GetRegionByUUID(remoteClient.AllScopeIDs, landdata.RegionID);
                         if (r != null)
                         {
                             locX = r.RegionLocX;
@@ -501,7 +481,7 @@ namespace Aurora.Modules.Search
                     if (locY == 0 && locX == 0)
                     {
                         //Ask the grid service for the coordinates if the region is not local
-                        GridRegion r = m_Scenes[0].GridService.GetRegionByUUID(UUID.Zero, landdata.RegionID);
+                        GridRegion r = m_Scenes[0].GridService.GetRegionByUUID(remoteClient.AllScopeIDs, landdata.RegionID);
                         if (r != null)
                         {
                             locX = r.RegionLocX;
@@ -595,7 +575,7 @@ namespace Aurora.Modules.Search
                 foreach (Classified classified in Classifieds)
                 {
                     //Get the region so we have its position
-                    GridRegion region = m_Scenes[0].GridService.GetRegionByName(UUID.Zero, classified.SimName);
+                    GridRegion region = m_Scenes[0].GridService.GetRegionByName(remoteClient.AllScopeIDs, classified.SimName);
 
                     mapitem = new mapItemReply
                                   {
@@ -648,7 +628,7 @@ namespace Aurora.Modules.Search
         public void ProcessAvatarPickerRequest(IClientAPI client, UUID avatarID, UUID RequestID, string query)
         {
             IScene scene = client.Scene;
-            List<UserAccount> accounts = scene.UserAccountService.GetUserAccounts(scene.RegionInfo.ScopeID, query);
+            List<UserAccount> accounts = scene.UserAccountService.GetUserAccounts(scene.RegionInfo.AllScopeIDs, query);
 
             if (accounts == null)
                 accounts = new List<UserAccount>(0);

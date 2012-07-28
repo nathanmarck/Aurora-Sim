@@ -41,7 +41,7 @@ namespace Aurora.Framework
         Normal = 3
     }
 
-    public class RegionInfo : IDataTransferable
+    public class RegionInfo : AllScopeIDImpl
     {
         public string RegionFile = String.Empty;
         public bool Disabled = false;
@@ -59,7 +59,6 @@ namespace Aurora.Framework
         protected int m_regionLocZ;
         public UUID RegionID = UUID.Zero;
         public UUID Password = UUID.Random();
-        public UUID ScopeID = UUID.Zero;
         private UUID m_GridSecureSessionID = UUID.Zero;
         public int NumberStartup = 0;
         public StartupType Startup = StartupType.Normal;
@@ -300,6 +299,7 @@ namespace Aurora.Framework
             {
                 args["disabled"] = OSD.FromBoolean(Disabled);
                 args["scope_id"] = OSD.FromUUID(ScopeID);
+                args["all_scope_ids"] = AllScopeIDs.ToOSDArray();
                 args["object_capacity"] = OSD.FromInteger(m_objectCapacity);
                 args["region_type"] = OSD.FromString(RegionType);
                 args["see_into_this_sim_from_neighbor"] = OSD.FromBoolean(SeeIntoThisSimFromNeighbor);
@@ -352,6 +352,8 @@ namespace Aurora.Framework
                 Disabled = args["disabled"].AsBoolean();
             if (args.ContainsKey("scope_id"))
                 ScopeID = args["scope_id"].AsUUID();
+            if (args.ContainsKey("all_scope_ids"))
+                AllScopeIDs = ((OSDArray)args["all_scope_ids"]).ConvertAll<UUID>(o => o);
 
             if (args.ContainsKey("region_size_x"))
                 RegionSizeX = args["region_size_x"].AsInteger();

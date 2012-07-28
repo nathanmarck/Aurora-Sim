@@ -41,7 +41,7 @@ namespace Aurora.Modules.Web
                 IGridService gridService = webInterface.Registry.RequestModuleInterface<IGridService>();
                 string regionname = requestParameters["regionname"].ToString();
                 int start = httpRequest.Query.ContainsKey("Start") ? int.Parse(httpRequest.Query["Start"].ToString()) : 0;
-                uint count = gridService.GetRegionsByNameCount(UUID.Zero, regionname);
+                uint count = gridService.GetRegionsByNameCount(null, regionname);
                 int maxPages = (int)(count / amountPerQuery) - 1;
 
                 if (start == -1)
@@ -51,7 +51,7 @@ namespace Aurora.Modules.Web
                 vars.Add("NextOne", start + 1 > maxPages ? start : start + 1);
                 vars.Add("BackOne", start - 1 < 0 ? 0 : start - 1);
 
-                var regions = gridService.GetRegionsByName(UUID.Zero, regionname, (uint)start, amountPerQuery);
+                var regions = gridService.GetRegionsByName(null, regionname, (uint)start, amountPerQuery);
                 if (regions != null)
                 {
                     foreach (var region in regions)
@@ -67,8 +67,7 @@ namespace Aurora.Modules.Web
                 vars.Add("NextOne", 0);
                 vars.Add("BackOne", 0);
             }
-
-
+					
             vars.Add("RegionsList", regionslist);
             vars.Add("RegionSearchText", translator.GetTranslatedString("RegionSearchText"));
             vars.Add("SearchForRegionText", translator.GetTranslatedString("SearchForRegionText"));
@@ -81,6 +80,10 @@ namespace Aurora.Modules.Web
             vars.Add("LastText", translator.GetTranslatedString("LastText"));
             vars.Add("CurrentPageText", translator.GetTranslatedString("CurrentPageText"));
 
+            vars.Add("SearchResultForRegionText", translator.GetTranslatedString("SearchResultForRegionText"));
+            vars.Add("RegionMoreInfo", translator.GetTranslatedString("RegionMoreInfo"));
+			vars.Add("MoreInfoText", translator.GetTranslatedString("MoreInfoText"));
+			
             return vars;
         }
 

@@ -42,11 +42,16 @@ namespace Aurora.Modules.Web
                 string password = requestParameters["password"].ToString();
                 string passwordconf = requestParameters["passwordconf"].ToString();
 
-                IAuthenticationService authService = webInterface.Registry.RequestModuleInterface<IAuthenticationService>();
-                if (authService != null)
-                    error = authService.SetPassword(user, "UserAccount", password) ? "" : "Failed to set your password, try again later";
+                if (passwordconf != password)
+                    error = "Passwords do not match";
                 else
-                    error = "No authentication service was available to change your password";
+                {
+                    IAuthenticationService authService = webInterface.Registry.RequestModuleInterface<IAuthenticationService>();
+                    if (authService != null)
+                        error = authService.SetPassword(user, "UserAccount", password) ? "" : "Failed to set your password, try again later";
+                    else
+                        error = "No authentication service was available to change your password";
+                }
             }
             else if (requestParameters.ContainsKey("Submit") &&
                 requestParameters["Submit"].ToString() == "SubmitEmailChange")
@@ -56,7 +61,7 @@ namespace Aurora.Modules.Web
                 IUserAccountService userService = webInterface.Registry.RequestModuleInterface<IUserAccountService>();
                 if (userService != null)
                 {
-                    UserAccount account = userService.GetUserAccount(UUID.Zero, user);
+                    UserAccount account = userService.GetUserAccount(null, user);
                     account.Email = email;
                     userService.StoreUserAccount(account);
                 }
@@ -70,7 +75,7 @@ namespace Aurora.Modules.Web
                 string password = requestParameters["password"].ToString();
 
                 ILoginService loginService = webInterface.Registry.RequestModuleInterface<ILoginService>();
-                if (loginService.VerifyClient(UUID.Zero, username, "UserAccount", password, UUID.Zero))
+                if (loginService.VerifyClient(UUID.Zero, username, "UserAccount", password))
                 {
                     IUserAccountService userService = webInterface.Registry.RequestModuleInterface<IUserAccountService>();
                     if (userService != null)

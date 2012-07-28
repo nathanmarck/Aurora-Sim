@@ -62,7 +62,7 @@ namespace Aurora.Modules.Archivers
 
         public AvatarAppearance LoadAvatarArchive(string FileName, string Name)
         {
-            UserAccount account = UserAccountService.GetUserAccount(UUID.Zero, Name);
+            UserAccount account = UserAccountService.GetUserAccount(null, Name);
             MainConsole.Instance.Info("[AvatarArchive] Loading archive from " + FileName);
             if (account == null)
             {
@@ -112,7 +112,7 @@ namespace Aurora.Modules.Archivers
             OSDMap map = ((OSDMap)OSDParser.DeserializeLLSDXml(archiveXML));
 
             OSDMap assetsMap = ((OSDMap)map["Assets"]);
-            OSDMap itemsMap = ((OSDMap)map["Items"]);
+            //OSDMap itemsMap = ((OSDMap)map["Items"]);
             OSDMap bodyMap = ((OSDMap)map["Body"]);
 
             AvatarAppearance appearance = ConvertXMLToAvatarAppearance(bodyMap, out FolderNameToLoadInto);
@@ -156,8 +156,6 @@ namespace Aurora.Modules.Archivers
         {
             if (destinationFolder == null)
                 throw new Exception("Cannot locate folder(s)");
-            IAssetService m_AssetService;
-            m_AssetService = m_registry.RequestModuleInterface<IAssetService>().InnerService;
             items = new List<InventoryItemBase>();
 
             // Wearables
@@ -316,7 +314,7 @@ namespace Aurora.Modules.Archivers
             {
                 MainConsole.Instance.Info("[AvatarArchive] Not enough parameters!");
             }
-            UserAccount account = UserAccountService.GetUserAccount(UUID.Zero, cmdparams[3] + " " + cmdparams[4]);
+            UserAccount account = UserAccountService.GetUserAccount(null, cmdparams[3] + " " + cmdparams[4]);
             if (account == null)
             {
                 MainConsole.Instance.Error("[AvatarArchive] User not found!");
@@ -396,13 +394,13 @@ namespace Aurora.Modules.Archivers
                     archive.Name = cmdparams[5].Substring(0, cmdparams[5].LastIndexOf(".database"));
                     if (cmdparams.Length > 7)
                     {
-                        if (cmdparams.Contains("--Snapshot"))
+                        if (cmdparams.Contains("--snapshot"))
                         {
                             UUID snapshot;
                             int index = 0;
                             for(; index < cmdparams.Length; index++)
                             {
-                                if(cmdparams[index] == "--Snapshot")
+                                if(cmdparams[index] == "--snapshot")
                                 {
                                     index++;
                                     break;
@@ -552,8 +550,8 @@ namespace Aurora.Modules.Archivers
             if (MainConsole.Instance != null)
             {
                 MainConsole.Instance.Commands.AddCommand("save avatar archive",
-                                                         "save avatar archive <First> <Last> <Filename> <FolderNameToSaveInto> (--Snapshot <UUID>) (--public)",
-                                                         "Saves appearance to an avatar archive (Note: put \"\" around the FolderName if you need more than one word. Put all attachments in BodyParts folder before saving the archive) Both Snapshot UUID and \"--public\" are optional.",
+                                                         "save avatar archive <First> <Last> <Filename> <FolderNameToSaveInto> (--snapshot <UUID>) (--public)",
+                                                         "Saves appearance to an avatar archive (Note: put \"\" around the FolderName if you need more than one word. Put all attachments in BodyParts folder before saving the archive) Both --snapshot and --public are optional.",
                                                          HandleSaveAvatarArchive);
                 MainConsole.Instance.Commands.AddCommand("load avatar archive",
                                                          "load avatar archive <First> <Last> <Filename>",

@@ -701,8 +701,6 @@ namespace Aurora.Modules.InventoryAccess
 
             bRayEndIsIntersection = (byte) (RayEndIsIntersection ? 1 : 0);
 
-            Vector3 scale = new Vector3 (0.5f, 0.5f, 0.5f);
-
             XmlDocument doc;
             InventoryItemBase item = new InventoryItemBase (itemID, remoteClient.AgentId);
             item = m_scene.InventoryService.GetItem (item);
@@ -1124,7 +1122,7 @@ namespace Aurora.Modules.InventoryAccess
                 assetRequestItem.CreatorData != null && 
                 assetRequestItem.CreatorData != string.Empty)
             {
-                IUserManagement userManagement = m_scene.RequestModuleInterface<IUserManagement> ();
+                IUserFinder userManagement = m_scene.RequestModuleInterface<IUserFinder>();
                 if (userManagement != null)
                     userManagement.AddUser (assetRequestItem.CreatorIdAsUuid, assetRequestItem.CreatorData);
             }
