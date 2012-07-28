@@ -1,0 +1,24 @@
+using Aurora.ScriptEngine.AuroraDotNetEngine.Runtime;
+using Aurora.ScriptEngine.AuroraDotNetEngine;
+using Aurora.ScriptEngine.AuroraDotNetEngine.APIs.Interfaces;
+using Aurora.Framework;
+using OpenSim.Services.Interfaces;
+using OpenSim.Region.Framework.Interfaces;
+using OpenSim.Region.Framework.Scenes;
+using OpenMetaverse;
+using System;
+using System.Collections.Generic;
+using System.Collections;
+namespace Script
+{
+public class ScriptClass : Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass, IDisposable
+{
+
+
+public void state_entry()
+{
+   //osMakeNotecard("License Key","adminlicense");
+   llGetNotecardLine("License Key",0 );
+}
+}
+}

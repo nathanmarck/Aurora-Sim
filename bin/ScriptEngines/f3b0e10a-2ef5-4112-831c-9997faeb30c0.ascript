@@ -1,0 +1,73 @@
+using Aurora.ScriptEngine.AuroraDotNetEngine.Runtime;
+using Aurora.ScriptEngine.AuroraDotNetEngine;
+using Aurora.ScriptEngine.AuroraDotNetEngine.APIs.Interfaces;
+using Aurora.Framework;
+using OpenSim.Services.Interfaces;
+using OpenSim.Region.Framework.Interfaces;
+using OpenSim.Region.Framework.Scenes;
+using OpenMetaverse;
+using System;
+using System.Collections.Generic;
+using System.Collections;
+namespace Script
+{
+public class ScriptClass : Aurora.ScriptEngine.AuroraDotNetEngine.Runtime.ScriptBaseClass, IDisposable
+{
+
+/*
+This is the server talk relay script. This script allows the device to use a new API that talks to the genesis main server. Without this script there is no possible way to interface with the genesis servers.
+
+This script is not allowed to be used in un-authorized devices. You can apply for permission to use the API at a later date. If you have obtained this script and decide to use it you may be subject to bans and even losing your region.
+
+Made by Nathan ©2012.
+*/
+string origname;
+list seperated;
+default
+{
+    state_entry()
+    {
+        origname = ((ILSL_Api)m_apis["ll"]).llGetObjectName();
+        ((ILSL_Api)m_apis["ll"]).llRegionSay(-300,llGetObjectDesc());
+        ((ILSL_Api)m_apis["ll"]).llSetTimerEvent(30);
+        ((ILSL_Api)m_apis["ll"]).llListen(-300,"","","");
+        
+    }
+    listen(integer chan, string name, key id, string msg)
+    {
+        if (msg == "confirm")
+        {
+        ((ILSL_Api)m_apis["ll"]).llSetObjectName("API Controller");
+        ((ILSL_Api)m_apis["ll"]).llOwnerSay("API has been activated. Thank you.");
+        ((ILSL_Api)m_apis["ll"]).llSetObjectName(origname);
+        ((ILSL_Api)m_apis["ll"]).llSetTimerEvent(0);
+        }
+    }
+    link_message(integer sender_num, integer num, string apifunction, key id)
+    {
+      
+      
+    
+        if (apifunction == "lockdown")
+        {
+            ((ILSL_Api)m_apis["ll"]).llRegionSay(-876,"lockdown");
+        }
+        else if (apifunction == "lockdownoff")
+        {
+            ((ILSL_Api)m_apis["ll"]).llRegionSay(-876,"lockdownoff");
+        }
+        else
+        {
+            ((ILSL_Api)m_apis["ll"]).llOwnerSay("Incorrect API Function called... Ignoring...");
+        }
+       
+}
+
+    timer()
+    {
+        ((ILSL_Api)m_apis["ll"]).llOwnerSay("FATAL: Cannot connect to server...");
+        ((ILSL_Api)m_apis["ll"]).llSetTimerEvent(0);
+    }
+}
+}
+}
